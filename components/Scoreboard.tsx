@@ -1,28 +1,159 @@
 import React, { useEffect, useState } from "react";
 
-export const Scoreboard = () => {
+type Player = {
+  name: string;
+};
+
+const fields = [
+  { id: "0", label: "Ones", value: 0 },
+  { id: "1", label: "Twos", value: 0 },
+  { id: "2", label: "Threes", value: 0 },
+  { id: "3", label: "Fours", value: 0 },
+  { id: "4", label: "Fives", value: 0 },
+  { id: "5", label: "Sixes", value: 0 },
+  { id: "6", label: "Summary", value: 0, disabled: true },
+  { id: "7", label: "Bonus", value: 0, disabled: true },
+  { id: "8", label: "One Pair", value: 0 },
+  { id: "9", label: "Two Pairs", value: 0 },
+  { id: "10", label: "Three of a kind", value: 0 },
+  { id: "11", label: "Four of a kind", value: 0 },
+  { id: "12", label: "Small Ladder", value: 0 },
+  { id: "13", label: "Big Ladder", value: 0 },
+  { id: "14", label: "House", value: 0 },
+  { id: "15", label: "Chance", value: 0 },
+  { id: "16", label: "Yahtze", value: 0 },
+  { id: "17", label: "Total", value: 0, disabled: true },
+];
+
+class StandardYathzeCard {
+  constructor(parameters) {}
+}
+
+const ScoreCard = ({ player, onUpdate, updateName }) => {
   return (
-    <div className="">
-      <table className="bg-green-300 w-full text-left">
-        <thead>
-          <tr>
-            <th>Team</th>
-            <th>Mthrfck</th>
-            <th>Total Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Here we go</td>
-            <td>Mtdrfck</td>
-            <td>Total Score</td>
-          </tr>
-        </tbody>
-      </table>
-      <div className="py-2">
-        <button className="bg-green-500 p-2" onClick={() => console.log("clicked")}>
-          Add User
+    <table className="w-full text-left border">
+      <tbody>
+        <tr className="h-10 whitespace-nowrap ">
+          <th className="px-2">
+            <input
+              onChange={(event) => updateName(event)}
+              value={player.name}
+              className="min-w-0 w-full"
+              type="string"
+            />
+          </th>
+        </tr>
+        {player.scoreCard.map((field) => {
+          return (
+            <tr
+              className={`min-w-0 w-full whitespace-nowrap h-10 ${field.disabled && "bg-lime-100"}`}
+              key={field.id}
+              id={field.id}
+            >
+              <td className="border px-2">
+                <input
+                  onChange={(event) => onUpdate(field.id, event)}
+                  value={field.value === 0 ? "" : field.value}
+                  className="min-w-0 w-full"
+                  type="number"
+                  disabled={field.disabled}
+                />
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  );
+};
+
+export const Scoreboard = () => {
+  const [players, setPlayers] = useState([{ name: "Player 1", scoreCard: [...fields] }]);
+
+  function addPlayer() {
+    const newPlayer = { name: `Player ${players.length + 1}`, scoreCard: [...fields] };
+    setPlayers((previous) => [...previous, newPlayer]);
+  }
+
+  function updateName({ event, index }) {
+    const copy = [...players];
+    const player = copy[index];
+    console.log("Koca: player ", player);
+    player.name = event.target.value;
+    setPlayers(copy);
+  }
+
+  function updatePlayer({ playerIndex, fieldId, event }) {
+    const copyState = [...players];
+    const scoreCard = copyState[playerIndex].scoreCard;
+    const fieldIndex = scoreCard.findIndex((field) => field.id === fieldId);
+    const value = event.target.value ? event.target.value : 0;
+    scoreCard[fieldIndex].value = value;
+
+    scoreCard[6].value =
+      parseFloat(scoreCard[0].value) +
+      parseFloat(scoreCard[1].value) +
+      parseFloat(scoreCard[2].value) +
+      parseFloat(scoreCard[3].value) +
+      parseFloat(scoreCard[4].value) +
+      parseFloat(scoreCard[5].value);
+
+    if (parseFloat(scoreCard[6].value) >= 53) {
+      scoreCard[7].value = 50;
+    } else {
+      scoreCard[7].value = 0;
+    }
+
+    scoreCard[17].value =
+      parseFloat(scoreCard[6].value) +
+      parseFloat(scoreCard[7].value) +
+      parseFloat(scoreCard[8].value) +
+      parseFloat(scoreCard[9].value) +
+      parseFloat(scoreCard[10].value) +
+      parseFloat(scoreCard[11].value) +
+      parseFloat(scoreCard[12].value) +
+      parseFloat(scoreCard[13].value) +
+      parseFloat(scoreCard[14].value) +
+      parseFloat(scoreCard[15].value) +
+      parseFloat(scoreCard[16].value);
+
+    console.log("KOCA UPDATING PLAYER:", playerIndex, fieldId, event.target.value);
+    setPlayers(copyState);
+  }
+
+  return (
+    <div className="w-full flex-row overflow-scroll">
+      <div className="fixed right-0">
+        <button className="bg-green-300 p-1" onClick={() => addPlayer()}>
+          Add player
         </button>
+      </div>
+      <h1 className="font-serif text-2xl pb-2">Yahtze</h1>
+      <div className="w-full flex">
+        <table className="w-full text-left border">
+          <tbody>
+            <tr className="h-10 whitespace-nowrap">
+              <th className="h-10 whitespace-nowrap bg-slate-100 px-2">Player</th>
+            </tr>
+            {fields.map((field) => {
+              return (
+                <tr className="h-10 whitespace-nowrap overflow-hidden bg-slate-300" key={field.id} id={field.id}>
+                  <td className="border px-2">{field.label}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        {players.map((player: Player, index: number) => {
+          return (
+            <ScoreCard
+              key={index}
+              player={player}
+              onUpdate={(fieldId, event) => updatePlayer({ playerIndex: index, fieldId: fieldId, event: event })}
+              updateName={(event) => updateName({ index, event })}
+            />
+          );
+        })}
       </div>
     </div>
   );

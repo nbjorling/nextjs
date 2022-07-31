@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MenuIcon from "../icons/menu_color.svg";
+import MenuIcon from "../icons/menu_black.svg";
 
 export const Menu = () => {
   const [isMenuOpen, setMenu] = useState(false);
@@ -12,16 +12,22 @@ export const Menu = () => {
   return (
     <div className={`app-menu ${isMenuOpen ? "menu-open" : ""}`}>
       <div className="" onClick={() => toggleMenu()}>
-        <div className="flex bg-slate-200 p-2">
-          <MenuIcon />
+        <div className="flex bg-slate-300 p-2">
+          {/* <MenuIcon /> */}
+          Menu
         </div>
       </div>
       <div
         className={`fixed z-10 w-full h-screen transition-all ${isMenuOpen ? "-translate-x-0" : "-translate-x-full"}`}
       >
-        <div className={"bg-red-300 h-full"}>
-          <div className="">Header</div>
-          <div className="">Footer</div>
+        <div className={"bg-gray-700 h-full  text-white flex-row relative"}>
+          <div className="p-10">
+            <div>Yathzee</div>
+            <div>Yathzee Extreme</div>
+          </div>
+          <div className="absolute bottom-8 w-full h-12 bg-slate-600 flex">
+            <div className="text-center items-center w-full p-2">Made By Björling</div>
+          </div>
         </div>
       </div>
     </div>

@@ -14,8 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Menu />
-      <main className="p-2">
-        <h1 className="font-serif text-2xl ">Yahtze</h1>
+      <main className="p-2 flex flex-col w-full">
         <Scoreboard />
       </main>
 
