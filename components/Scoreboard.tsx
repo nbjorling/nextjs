@@ -87,8 +87,7 @@ export const Scoreboard = () => {
     const copyState = [...players];
     const scoreCard = copyState[playerIndex].scoreCard;
     const fieldIndex = scoreCard.findIndex((field) => field.id === fieldId);
-    const value = event.target.value ? event.target.value : 0;
-    scoreCard[fieldIndex].value = value;
+    scoreCard[fieldIndex].value = event.target.value ? event.target.value : 0;
 
     scoreCard[6].value =
       parseFloat(scoreCard[0].value) +
