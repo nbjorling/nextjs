@@ -44,9 +44,13 @@ const ScoreCard = ({ player, onUpdate, updateName }) => {
           </th>
         </tr>
         {player.scoreCard.map((field) => {
+          console.log("Koca: field.value ", field.value);
+          console.log("Koca: field.disabled ", field.disabled);
           return (
             <tr
-              className={`min-w-0 w-full whitespace-nowrap h-10 ${field.disabled && "bg-lime-100"}`}
+              className={`min-w-0 w-full whitespace-nowrap h-10 ${
+                field.disabled === false && field.value > 0 && "bg-lime-100"
+              } ${field.disabled && field.value > 0 && "bg-lime-200"}`}
               key={field.id}
               id={field.id}
             >
@@ -55,7 +59,9 @@ const ScoreCard = ({ player, onUpdate, updateName }) => {
                   key={player.name + field.id}
                   onChange={(event) => onUpdate({ fieldId: field.id, event })}
                   value={field.value === 0 ? "" : field.value}
-                  className="min-w-0 w-full"
+                  className={`min-w-0 w-full ${field.disabled === false && field.value > 0 && "bg-lime-100"} ${
+                    field.disabled && field.value > 0 && "bg-lime-200"
+                  }`}
                   type="number"
                   disabled={field.disabled}
                 />
@@ -98,7 +104,7 @@ export const Scoreboard = () => {
       parseFloat(scoreCard[4].value) +
       parseFloat(scoreCard[5].value);
 
-    if (parseFloat(scoreCard[6].value) >= 53) {
+    if (parseFloat(scoreCard[6].value) >= 63) {
       scoreCard[7].value = 50;
     } else {
       scoreCard[7].value = 0;
