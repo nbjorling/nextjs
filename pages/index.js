@@ -18,8 +18,8 @@ export default function Home() {
         <Scoreboard />
       </main>
 
-      <footer className="flex w-full bg-blue-100 items-center border-t-2 p-8 border-cyan-400">
-        <a
+      <footer className="flex w-full bg-slate-300 items-center border-t-2 p-8 border-slate-700">
+        {/* <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
@@ -28,7 +28,7 @@ export default function Home() {
           <span className="ml-2 z-0">
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
-        </a>
+        </a> */}
       </footer>
     </div>
   );
