@@ -52,7 +52,8 @@ const ScoreCard = ({ player, onUpdate, updateName }) => {
             >
               <td className="border px-2">
                 <input
-                  onChange={(event) => onUpdate(field.id, event)}
+                  key={player.name + field.id}
+                  onChange={(event) => onUpdate({ fieldId: field.id, event })}
                   value={field.value === 0 ? "" : field.value}
                   className="min-w-0 w-full"
                   type="number"
@@ -68,26 +69,26 @@ const ScoreCard = ({ player, onUpdate, updateName }) => {
 };
 
 export const Scoreboard = () => {
-  const [players, setPlayers] = useState([{ name: "Player 1", scoreCard: [...fields] }]);
+  const [players, setPlayers] = useState([{ name: "Player 1", scoreCard: JSON.parse(JSON.stringify(fields)) }]);
 
   function addPlayer() {
-    const newPlayer = { name: `Player ${players.length + 1}`, scoreCard: [...fields] };
+    const newPlayer = { name: `Player ${players.length + 1}`, scoreCard: JSON.parse(JSON.stringify(fields)) };
     setPlayers((previous) => [...previous, newPlayer]);
   }
 
   function updateName({ event, index }) {
     const copy = [...players];
     const player = copy[index];
-    console.log("Koca: player ", player);
     player.name = event.target.value;
     setPlayers(copy);
   }
 
-  function updatePlayer({ playerIndex, fieldId, event }) {
+  function updatePlayer({ playerIndex, fieldId, event, playerName }) {
     const copyState = [...players];
     const scoreCard = copyState[playerIndex].scoreCard;
     const fieldIndex = scoreCard.findIndex((field) => field.id === fieldId);
     scoreCard[fieldIndex].value = event.target.value ? event.target.value : 0;
+    copyState[playerIndex].scoreCard = scoreCard;
 
     scoreCard[6].value =
       parseFloat(scoreCard[0].value) +
@@ -116,7 +117,6 @@ export const Scoreboard = () => {
       parseFloat(scoreCard[15].value) +
       parseFloat(scoreCard[16].value);
 
-    console.log("KOCA UPDATING PLAYER:", playerIndex, fieldId, event.target.value);
     setPlayers(copyState);
   }
 
@@ -148,7 +148,9 @@ export const Scoreboard = () => {
             <ScoreCard
               key={index}
               player={player}
-              onUpdate={(fieldId, event) => updatePlayer({ playerIndex: index, fieldId: fieldId, event: event })}
+              onUpdate={({ fieldId, event }) =>
+                updatePlayer({ playerIndex: index, fieldId: fieldId, event: event, playerName: player.name })
+              }
               updateName={(event) => updateName({ index, event })}
             />
           );
