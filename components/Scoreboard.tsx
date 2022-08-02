@@ -182,12 +182,12 @@ export const Scoreboard = () => {
 
   return (
     <div className="w-full p-4 flex-row bg-slate-400 font-convergence">
-      <div className="fixed right-0">
+      <div className="absolute right-0">
         <button className="bg-green-300 p-1 pl-2 rounded-l" onClick={() => addPlayer()}>
           Add player
         </button>
       </div>
-      <div className="fixed left-0">
+      <div className="absolute left-0">
         <button className="bg-orange-300 p-1 pr-2 rounded-r" onClick={() => toggleIcons()}>
           Toggle Icons
         </button>
