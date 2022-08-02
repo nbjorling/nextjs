@@ -14,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Menu />
-      <main className="p-2 flex flex-col w-full">
+      <main className="flex flex-col w-full">
         <Scoreboard />
       </main>
 

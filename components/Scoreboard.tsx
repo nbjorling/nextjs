@@ -2,66 +2,58 @@ import React, { useEffect, useState } from "react";
 
 type Player = {
   name: string;
+  scoreCard: object[];
 };
 
 const fields = [
-  { id: "0", label: "Ones", value: 0 },
-  { id: "1", label: "Twos", value: 0 },
-  { id: "2", label: "Threes", value: 0 },
-  { id: "3", label: "Fours", value: 0 },
-  { id: "4", label: "Fives", value: 0 },
-  { id: "5", label: "Sixes", value: 0 },
+  { id: "0", label: "Ones", value: 0, disabled: false },
+  { id: "1", label: "Twos", value: 0, disabled: false },
+  { id: "2", label: "Threes", value: 0, disabled: false },
+  { id: "3", label: "Fours", value: 0, disabled: false },
+  { id: "4", label: "Fives", value: 0, disabled: false },
+  { id: "5", label: "Sixes", value: 0, disabled: false },
   { id: "6", label: "Summary", value: 0, disabled: true },
   { id: "7", label: "Bonus", value: 0, disabled: true },
-  { id: "8", label: "One Pair", value: 0 },
-  { id: "9", label: "Two Pairs", value: 0 },
-  { id: "10", label: "Three of a kind", value: 0 },
-  { id: "11", label: "Four of a kind", value: 0 },
-  { id: "12", label: "Small Ladder", value: 0 },
-  { id: "13", label: "Big Ladder", value: 0 },
-  { id: "14", label: "House", value: 0 },
-  { id: "15", label: "Chance", value: 0 },
-  { id: "16", label: "Yahtze", value: 0 },
+  { id: "8", label: "One Pair", value: 0, disabled: false },
+  { id: "9", label: "Two Pairs", value: 0, disabled: false },
+  { id: "10", label: "Three of a kind", value: 0, disabled: false },
+  { id: "11", label: "Four of a kind", value: 0, disabled: false },
+  { id: "12", label: "Small Ladder", value: 0, disabled: false },
+  { id: "13", label: "Big Ladder", value: 0, disabled: false },
+  { id: "14", label: "House", value: 0, disabled: false },
+  { id: "15", label: "Chance", value: 0, disabled: false },
+  { id: "16", label: "Yahtze", value: 0, disabled: false },
   { id: "17", label: "Total", value: 0, disabled: true },
 ];
 
-class StandardYathzeCard {
-  constructor(parameters) {}
-}
-
 const ScoreCard = ({ player, onUpdate, updateName }) => {
   return (
-    <table className="w-full text-left border">
+    <table className="w-full border border-white min-w-[100px]">
       <tbody>
-        <tr className="h-10 whitespace-nowrap ">
+        <tr className="h-10 whitespace-nowrap bg-slate-300">
           <th className="px-2">
             <input
               onChange={(event) => updateName(event)}
               value={player.name}
-              className="min-w-0 w-full"
+              className="w-full bg-slate-300"
               type="string"
             />
           </th>
         </tr>
         {player.scoreCard.map((field) => {
-          console.log("Koca: field.value ", field.value);
-          console.log("Koca: field.disabled ", field.disabled);
+          let backgroundColor = "bg-slate-200";
+          if (field.value > 0) backgroundColor = "bg-lime-200";
+          if (field.disabled && field.value > 0) backgroundColor = "bg-lime-500";
+
+          if (field.id === "7" && field.value === 0) backgroundColor = "bg-red-200";
           return (
-            <tr
-              className={`min-w-0 w-full whitespace-nowrap h-10 ${
-                field.disabled === false && field.value > 0 && "bg-lime-100"
-              } ${field.disabled && field.value > 0 && "bg-lime-200"}`}
-              key={field.id}
-              id={field.id}
-            >
-              <td className="border px-2">
+            <tr className={`min-w-0 w-full whitespace-nowrap h-10 ${backgroundColor}`} key={field.id} id={field.id}>
+              <td className="border border-white px-3 ">
                 <input
                   key={player.name + field.id}
                   onChange={(event) => onUpdate({ fieldId: field.id, event })}
                   value={field.value === 0 ? "" : field.value}
-                  className={`min-w-0 w-full ${field.disabled === false && field.value > 0 && "bg-lime-100"} ${
-                    field.disabled && field.value > 0 && "bg-lime-200"
-                  }`}
+                  className={`min-w-0 w-full ${backgroundColor}`}
                   type="number"
                   disabled={field.disabled}
                 />
@@ -127,14 +119,14 @@ export const Scoreboard = () => {
   }
 
   return (
-    <div className="w-full flex-row overflow-scroll">
+    <div className="w-full p-4 flex-row bg-slate-400 ">
       <div className="fixed right-0">
-        <button className="bg-green-300 p-1" onClick={() => addPlayer()}>
+        <button className="bg-green-300 p-1 pl-2 rounded-l" onClick={() => addPlayer()}>
           Add player
         </button>
       </div>
-      <h1 className="font-serif text-2xl pb-2">Yahtze</h1>
-      <div className="w-full flex">
+      <h1 className="font-serif text-2xl text-white pb-2">Yahtze</h1>
+      <div className="w-full flex overflow-scroll p-2 rounded bg-slate-300">
         <table className="w-full text-left border">
           <tbody>
             <tr className="h-10 whitespace-nowrap">
