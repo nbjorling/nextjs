@@ -10,7 +10,7 @@ export const Menu = () => {
   };
 
   return (
-    <div className={`app-menu ${isMenuOpen ? "menu-open" : ""}`}>
+    <div className={`app-menu font-convergence ${isMenuOpen ? "menu-open" : ""}`}>
       <div className="" onClick={() => toggleMenu()}>
         <div className="flex bg-slate-300 p-2">
           {/* <MenuIcon /> */}

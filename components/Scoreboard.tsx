@@ -119,13 +119,13 @@ export const Scoreboard = () => {
   }
 
   return (
-    <div className="w-full p-4 flex-row bg-slate-400 ">
+    <div className="w-full p-4 flex-row bg-slate-400 font-convergence">
       <div className="fixed right-0">
         <button className="bg-green-300 p-1 pl-2 rounded-l" onClick={() => addPlayer()}>
           Add player
         </button>
       </div>
-      <h1 className="font-serif text-2xl text-white pb-2">Yahtze</h1>
+      <h1 className="font-serif text-2xl text-white pb-2 font-convergence">Yahtze</h1>
       <div className="w-full flex overflow-scroll p-2 rounded bg-slate-300">
         <table className="w-full text-left border">
           <tbody>
