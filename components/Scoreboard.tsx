@@ -126,7 +126,7 @@ const ScoreCard = ({ player, onUpdate, updateName }) => {
 
 export const Scoreboard = () => {
   const [players, setPlayers] = useState([{ name: "Player 1", scoreCard: JSON.parse(JSON.stringify(fields)) }]);
-  const [useIcons, setUseIcons] = useState(true);
+  const [useIcons, setUseIcons] = useState(false);
   function addPlayer() {
     const newPlayer = { name: `Player ${players.length + 1}`, scoreCard: JSON.parse(JSON.stringify(fields)) };
     setPlayers((previous) => [...previous, newPlayer]);
