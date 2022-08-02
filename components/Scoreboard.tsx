@@ -1,4 +1,10 @@
 import React, { useEffect, useState } from "react";
+import Dice1Color from "../icons/dice_1_color.svg";
+import Dice2Color from "../icons/dice_2_color.svg";
+import Dice3Color from "../icons/dice_3_color.svg";
+import Dice4Color from "../icons/dice_4_color.svg";
+import Dice5Color from "../icons/dice_5_color.svg";
+import Dice6Color from "../icons/dice_6_color.svg";
 
 type Player = {
   name: string;
@@ -6,23 +12,71 @@ type Player = {
 };
 
 const fields = [
-  { id: "0", label: "Ones", value: 0, disabled: false },
-  { id: "1", label: "Twos", value: 0, disabled: false },
-  { id: "2", label: "Threes", value: 0, disabled: false },
-  { id: "3", label: "Fours", value: 0, disabled: false },
-  { id: "4", label: "Fives", value: 0, disabled: false },
-  { id: "5", label: "Sixes", value: 0, disabled: false },
+  { id: "0", label: "Ones", icon: <Dice1Color />, value: 0, disabled: false },
+  { id: "1", label: "Twos", icon: <Dice2Color />, value: 0, disabled: false },
+  { id: "2", label: "Threes", icon: <Dice3Color />, value: 0, disabled: false },
+  { id: "3", label: "Fours", icon: <Dice4Color />, value: 0, disabled: false },
+  { id: "4", label: "Fives", icon: <Dice5Color />, value: 0, disabled: false },
+  { id: "5", label: "Sixes", icon: <Dice6Color />, value: 0, disabled: false },
   { id: "6", label: "Summary", value: 0, disabled: true },
   { id: "7", label: "Bonus", value: 0, disabled: true },
-  { id: "8", label: "One Pair", value: 0, disabled: false },
-  { id: "9", label: "Two Pairs", value: 0, disabled: false },
-  { id: "10", label: "Three of a kind", value: 0, disabled: false },
-  { id: "11", label: "Four of a kind", value: 0, disabled: false },
-  { id: "12", label: "Small Ladder", value: 0, disabled: false },
-  { id: "13", label: "Big Ladder", value: 0, disabled: false },
-  { id: "14", label: "House", value: 0, disabled: false },
-  { id: "15", label: "Chance", value: 0, disabled: false },
-  { id: "16", label: "Yahtze", value: 0, disabled: false },
+  { id: "8", label: "One Pair", icon: [<Dice1Color />, <Dice1Color />], value: 0, disabled: false },
+  {
+    id: "9",
+    label: "Two Pairs",
+    icon: [<Dice2Color />, <Dice2Color />, <Dice3Color />, <Dice3Color />],
+    value: 0,
+    disabled: false,
+  },
+  {
+    id: "10",
+    label: "Three of a kind",
+    icon: [<Dice4Color />, <Dice4Color />, <Dice4Color />],
+    value: 0,
+    disabled: false,
+  },
+  {
+    id: "11",
+    label: "Four of a kind",
+    icon: [<Dice5Color />, <Dice5Color />, <Dice5Color />, <Dice5Color />],
+    value: 0,
+    disabled: false,
+  },
+  {
+    id: "12",
+    label: "Small Ladder",
+    icon: [<Dice1Color />, <Dice2Color />, <Dice3Color />, <Dice4Color />, <Dice5Color />],
+    value: 0,
+    disabled: false,
+  },
+  {
+    id: "13",
+    label: "Big Ladder",
+    icon: [<Dice2Color />, <Dice3Color />, <Dice4Color />, <Dice5Color />, <Dice6Color />],
+    value: 0,
+    disabled: false,
+  },
+  {
+    id: "14",
+    label: "House",
+    value: 0,
+    icon: [<Dice6Color />, <Dice6Color />, <Dice6Color />, <Dice5Color />, <Dice5Color />],
+    disabled: false,
+  },
+  {
+    id: "15",
+    label: "Chance",
+    icon: [<Dice2Color />, <Dice6Color />, <Dice4Color />, <Dice5Color />, <Dice5Color />],
+    value: 0,
+    disabled: false,
+  },
+  {
+    id: "16",
+    label: "Yahtze",
+    icon: [<Dice1Color />, <Dice1Color />, <Dice1Color />, <Dice1Color />, <Dice1Color />],
+    value: 0,
+    disabled: false,
+  },
   { id: "17", label: "Total", value: 0, disabled: true },
 ];
 
@@ -47,8 +101,12 @@ const ScoreCard = ({ player, onUpdate, updateName }) => {
 
           if (field.id === "7" && field.value === 0) backgroundColor = "bg-red-200";
           return (
-            <tr className={`min-w-0 w-full whitespace-nowrap h-10 ${backgroundColor}`} key={field.id} id={field.id}>
-              <td className="border border-white px-3 ">
+            <tr
+              className={`min-w-0 w-full whitespace-nowrap border flex h-10 ${backgroundColor}`}
+              key={field.id}
+              id={field.id}
+            >
+              <td className="flex self-center border-white px-3 ">
                 <input
                   key={player.name + field.id}
                   onChange={(event) => onUpdate({ fieldId: field.id, event })}
@@ -68,10 +126,14 @@ const ScoreCard = ({ player, onUpdate, updateName }) => {
 
 export const Scoreboard = () => {
   const [players, setPlayers] = useState([{ name: "Player 1", scoreCard: JSON.parse(JSON.stringify(fields)) }]);
-
+  const [useIcons, setUseIcons] = useState(true);
   function addPlayer() {
     const newPlayer = { name: `Player ${players.length + 1}`, scoreCard: JSON.parse(JSON.stringify(fields)) };
     setPlayers((previous) => [...previous, newPlayer]);
+  }
+
+  function toggleIcons() {
+    setUseIcons((previous) => !previous);
   }
 
   function updateName({ event, index }) {
@@ -125,7 +187,12 @@ export const Scoreboard = () => {
           Add player
         </button>
       </div>
-      <h1 className="font-serif text-2xl text-white pb-2 font-convergence">Yahtze</h1>
+      <div className="fixed left-0">
+        <button className="bg-orange-300 p-1 pr-2 rounded-r" onClick={() => toggleIcons()}>
+          Toggle Icons
+        </button>
+      </div>
+      <h1 className="font-serif text-2xl text-white w-full text-center pb-2 font-convergence">Yahtze</h1>
       <div className="w-full flex overflow-scroll p-2 rounded bg-slate-300">
         <table className="w-full text-left border">
           <tbody>
@@ -133,9 +200,14 @@ export const Scoreboard = () => {
               <th className="h-10 whitespace-nowrap bg-slate-100 px-2">Player</th>
             </tr>
             {fields.map((field) => {
+              let labelElement = useIcons ? field.icon : field.label;
               return (
-                <tr className="h-10 whitespace-nowrap overflow-hidden bg-slate-300" key={field.id} id={field.id}>
-                  <td className="border px-2">{field.label}</td>
+                <tr
+                  className="h-10 flex whitespace-nowrap overflow-hidden border bg-slate-300"
+                  key={field.id}
+                  id={field.id}
+                >
+                  <td className="flex  self-center  px-2">{labelElement ? labelElement : field.label}</td>
                 </tr>
               );
             })}
