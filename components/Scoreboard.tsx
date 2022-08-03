@@ -112,7 +112,7 @@ const ScoreCard = ({ player, onUpdate, updateName }) => {
                   onChange={(event) => onUpdate({ fieldId: field.id, event })}
                   value={field.value === 0 ? "" : field.value}
                   className={`min-w-0 w-full ${backgroundColor}`}
-                  type="number"
+                  type="tel"
                   disabled={field.disabled}
                 />
               </td>
