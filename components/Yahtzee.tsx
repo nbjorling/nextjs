@@ -72,7 +72,7 @@ const fields = [
   },
   {
     id: "16",
-    label: "Yahtze",
+    label: "Yahtzee",
     icon: [<Dice1Color />, <Dice1Color />, <Dice1Color />, <Dice1Color />, <Dice1Color />],
     value: 0,
     disabled: false,
@@ -193,7 +193,7 @@ export const Yahtzee = () => {
           Toggle Icons
         </button>
       </div>
-      <h1 className="text-2xl text-white w-full text-center pb-2 font-convergence">Yahtze</h1>
+      <h1 className="text-2xl text-white w-full text-center pb-2 font-convergence">Yahtzee</h1>
       <div className="w-full flex overflow-scroll p-2 rounded bg-slate-300">
         <table className="w-full text-left border">
           <tbody>
