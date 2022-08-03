@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
-import { Scoreboard } from "../components/Scoreboard.tsx";
+import { Yahtzee } from "../components/Yahtzee.tsx";
 import { Menu } from "../components/Menu.tsx";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
       <Menu />
       <main className="flex flex-col w-full">
-        <Scoreboard />
+        <Yahtzee />
       </main>
 
       <footer className="flex w-full bg-slate-300 items-center border-t-2 p-8 border-slate-700">

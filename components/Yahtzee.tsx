@@ -82,10 +82,10 @@ const fields = [
 
 const ScoreCard = ({ player, onUpdate, updateName }) => {
   return (
-    <table className="w-full border border-white min-w-[100px]">
+    <table className="w-full border min-w-[100px]">
       <tbody>
         <tr className="h-10 whitespace-nowrap bg-slate-300">
-          <th className="px-2">
+          <th className="px-2 border border-white">
             <input
               onChange={(event) => updateName(event)}
               value={player.name}
@@ -102,16 +102,16 @@ const ScoreCard = ({ player, onUpdate, updateName }) => {
           if (field.id === "7" && field.value === 0) backgroundColor = "bg-red-200";
           return (
             <tr
-              className={`min-w-0 w-full whitespace-nowrap border flex h-10 ${backgroundColor}`}
+              className={`min-w-0 w-full whitespace-nowrap border border-white flex h-10 ${backgroundColor}`}
               key={field.id}
               id={field.id}
             >
-              <td className="flex self-center border-white px-3 ">
+              <td className="flex self-center h-full ">
                 <input
                   key={player.name + field.id}
                   onChange={(event) => onUpdate({ fieldId: field.id, event })}
                   value={field.value === 0 ? "" : field.value}
-                  className={`min-w-0 w-full ${backgroundColor}`}
+                  className={`min-w-0 w-full h-full px-3 ${backgroundColor}`}
                   type="tel"
                   disabled={field.disabled}
                 />
@@ -124,7 +124,7 @@ const ScoreCard = ({ player, onUpdate, updateName }) => {
   );
 };
 
-export const Scoreboard = () => {
+export const Yahtzee = () => {
   const [players, setPlayers] = useState([{ name: "Player 1", scoreCard: JSON.parse(JSON.stringify(fields)) }]);
   const [useIcons, setUseIcons] = useState(false);
   function addPlayer() {
@@ -147,7 +147,8 @@ export const Scoreboard = () => {
     const copyState = [...players];
     const scoreCard = copyState[playerIndex].scoreCard;
     const fieldIndex = scoreCard.findIndex((field) => field.id === fieldId);
-    scoreCard[fieldIndex].value = event.target.value ? event.target.value : 0;
+    const reg = new RegExp("^[0-9]$");
+    scoreCard[fieldIndex].value = reg.test(event.target.value) ? event.target.value : 0;
     copyState[playerIndex].scoreCard = scoreCard;
 
     scoreCard[6].value =
@@ -192,7 +193,7 @@ export const Scoreboard = () => {
           Toggle Icons
         </button>
       </div>
-      <h1 className="font-serif text-2xl text-white w-full text-center pb-2 font-convergence">Yahtze</h1>
+      <h1 className="text-2xl text-white w-full text-center pb-2 font-convergence">Yahtze</h1>
       <div className="w-full flex overflow-scroll p-2 rounded bg-slate-300">
         <table className="w-full text-left border">
           <tbody>
@@ -207,7 +208,7 @@ export const Scoreboard = () => {
                   key={field.id}
                   id={field.id}
                 >
-                  <td className="flex  self-center  px-2">{labelElement ? labelElement : field.label}</td>
+                  <td className="flex self-center px-2">{labelElement ? labelElement : field.label}</td>
                 </tr>
               );
             })}
