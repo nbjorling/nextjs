@@ -149,7 +149,7 @@ export const Yahtzee = () => {
     const copyState = [...players];
     const scoreCard = copyState[playerIndex].scoreCard;
     const fieldIndex = scoreCard.findIndex((field) => field.id === fieldId);
-    const reg = new RegExp("/^d{1,2}$/;");
+    const reg = new RegExp("^[0-9]*$");
     scoreCard[fieldIndex].value = reg.test(event.target.value) ? event.target.value : 0;
     copyState[playerIndex].scoreCard = scoreCard;
 
