@@ -12,7 +12,7 @@ export const Menu = () => {
   return (
     <div className={`app-menu font-convergence ${isMenuOpen ? "menu-open" : ""}`}>
       <div className="" onClick={() => toggleMenu()}>
-        <div className="flex bg-slate-300 p-2">
+        <div className="flex bg-slate-700 text-white border-slate-500 border-b p-2">
           {/* <MenuIcon /> */}
           Menu
         </div>
@@ -20,7 +20,7 @@ export const Menu = () => {
       <div
         className={`fixed z-10 w-full h-screen transition-all ${isMenuOpen ? "-translate-x-0" : "-translate-x-full"}`}
       >
-        <div className={"bg-gray-700 h-full  text-white flex-row relative"}>
+        <div className={"bg-slate-700 h-full  text-white flex-row relative"}>
           <div className="p-10">
             <div>Yathzee</div>
             <div>Yathzee Extreme</div>

@@ -80,19 +80,21 @@ const fields = [
   { id: "17", label: "Total", value: 0, disabled: true },
 ];
 
+const borderColor = "border-r border-t border-l border-slate-400";
+
 const ScoreCard = ({ player, onUpdate, updateName }) => {
   return (
-    <table className="w-full border min-w-[100px]">
+    <table className={`w-full min-w-[90px] `}>
       <tbody>
-        <tr className="h-10 whitespace-nowrap bg-slate-300">
-          <th className="px-2 border border-white">
+        <tr className={`h-10 flex whitespace-nowrap bg-slate-300 ${borderColor} `}>
+          <td className="h-full">
             <input
               onChange={(event) => updateName(event)}
               value={player.name}
-              className="w-full bg-slate-300"
+              className="w-full h-full px-2 bg-slate-300"
               type="string"
             />
-          </th>
+          </td>
         </tr>
         {player.scoreCard.map((field) => {
           let backgroundColor = "bg-slate-200";
@@ -102,7 +104,7 @@ const ScoreCard = ({ player, onUpdate, updateName }) => {
           if (field.id === "7" && field.value === 0) backgroundColor = "bg-red-200";
           return (
             <tr
-              className={`min-w-0 w-full whitespace-nowrap border border-white flex h-10 ${backgroundColor}`}
+              className={`min-w-0 w-full whitespace-nowrap flex h-10 ${backgroundColor} ${borderColor}`}
               key={field.id}
               id={field.id}
             >
@@ -182,7 +184,7 @@ export const Yahtzee = () => {
   }
 
   return (
-    <div className="w-full p-4 flex-row bg-slate-400 font-convergence">
+    <div className="w-full p-4 flex-row bg-slate-800 font-convergence">
       <div className="absolute right-0">
         <button className="bg-green-300 p-1 pl-2 rounded-l" onClick={() => addPlayer()}>
           Add player
@@ -195,16 +197,19 @@ export const Yahtzee = () => {
       </div>
       <h1 className="text-2xl text-white w-full text-center pb-2 font-convergence">Yahtzee</h1>
       <div className="w-full flex overflow-scroll p-2 rounded bg-slate-300">
-        <table className="w-full text-left border">
+        <table className="w-full text-left">
           <tbody>
             <tr className="h-10 whitespace-nowrap">
-              <th className="h-10 whitespace-nowrap bg-slate-100 px-2">Player</th>
+              <td className={`h-10 flex items-center whitespace-nowrap bg-slate-100 px-2 ${borderColor}`}>Player</td>
             </tr>
             {fields.map((field) => {
               let labelElement = useIcons ? field.icon : field.label;
               return (
                 <tr
-                  className="h-10 flex whitespace-nowrap overflow-hidden border bg-slate-300"
+                  className={`h-10 flex whitespace-nowrap overflow-hidden bg-slate-300 ${borderColor} ${
+                    field.id === "17" && "bg-gray-400"
+                  }
+                  `}
                   key={field.id}
                   id={field.id}
                 >

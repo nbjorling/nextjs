@@ -14,13 +14,13 @@ export default function Home() {
         <link href="http://fonts.cdnfonts.com/css/convergence" rel="stylesheet" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Menu />
+      {/* <Menu /> */}
       <main className="flex flex-col w-full">
         <Yahtzee />
       </main>
-
+      {/*
       <footer className="flex w-full bg-slate-300 items-center border-t-2 p-8 border-slate-700">
-        {/* <a
+        <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
@@ -29,8 +29,8 @@ export default function Home() {
           <span className="ml-2 z-0">
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
-        </a> */}
-      </footer>
+        </a>
+      </footer> */}
     </div>
   );
 }
