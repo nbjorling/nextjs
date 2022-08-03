@@ -91,7 +91,7 @@ const ScoreCard = ({ player, onUpdate, updateName }) => {
             <input
               onChange={(event) => updateName(event)}
               value={player.name}
-              className="w-full h-full px-2 bg-slate-300"
+              className="w-full  h-full px-2 bg-slate-300"
               type="string"
             />
           </td>
@@ -149,7 +149,7 @@ export const Yahtzee = () => {
     const copyState = [...players];
     const scoreCard = copyState[playerIndex].scoreCard;
     const fieldIndex = scoreCard.findIndex((field) => field.id === fieldId);
-    const reg = new RegExp("^[0-9]$");
+    const reg = new RegExp("/^d{1,2}$/;");
     scoreCard[fieldIndex].value = reg.test(event.target.value) ? event.target.value : 0;
     copyState[playerIndex].scoreCard = scoreCard;
 
