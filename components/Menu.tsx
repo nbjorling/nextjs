@@ -5,7 +5,7 @@ const LinkElement = ({ href, title }) => {
   return (
     <Link href={href}>
       <div className="text-xl cursor-pointer mb-2 pl-0 hover:pl-1 transition-all">
-        <div className="hover:text-cyan-200">{title}</div>
+        <div className="hover:text-cyan-200 select-none">{title}</div>
       </div>
     </Link>
   );
@@ -21,7 +21,9 @@ export const Menu = () => {
   return (
     <div className={`app-menu font-convergence pb-4 ${isMenuOpen ? "menu-open" : ""}`}>
       <div className="" onClick={() => toggleMenu()}>
-        <div className="flex bg-slate-700 text-white border-slate-500 border-b pl-8 p-2">Menu</div>
+        <div className="flex bg-slate-700 text-white border-slate-500 border-b pl-8 p-2 cursor-pointer select-none">
+          {isMenuOpen ? "Close Menu" : "Menu"}
+        </div>
       </div>
       <div
         className={`fixed z-10 w-[300px] h-screen transition-all ${

@@ -42,9 +42,9 @@ export default function Home() {
                       </div>
                     )} */}
                     <div className="flex flex-col h-full">
-                      <h3 className="text-2xl font-convergence text-white mb-2">{item.title}</h3>
+                      <h3 className="text-2xl font-convergence text-white mb-2 select-none">{item.title}</h3>
                       {item.description && (
-                        <p className="text-sm font-convergence font-bold text-cyan-300 leading-4 ">
+                        <p className="text-sm font-convergence font-bold text-cyan-300 leading-4 select-none">
                           {item.description}
                         </p>
                       )}
