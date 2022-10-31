@@ -31,10 +31,10 @@ export default function Home() {
             {StartPageItems.map((item, index) => {
               return (
                 <Link href={item.href} key={index}>
-                  <div className="relative bg-slate-700 rounded-lg p-8 border-slate-500 border-2 transition-color duration-300 hover:bg-slate-600 cursor-pointer max-h-96 aspect-square shadow-xl min-h-[200px]">
+                  <div className="relative bg-slate-700 rounded-lg p-8 border-slate-500 border-2 transition-color duration-300 hover:bg-slate-600 cursor-pointer max-h-96  md:aspect-square shadow-xl min-w-[200px]">
                     {item.comingSoon && (
                       <div className="flex absolute -left-[5%] w-[110%] top-2/3 p-2">
-                        <div className="bg-gradient-to-l py-2  from-cyan-400 via-cyan-300 to-cyan-600 w-full text-center font-convergence">
+                        <div className="bg-gradient-to-l py-2 from-cyan-400 via-cyan-300 to-cyan-600 w-full text-center font-convergence">
                           Coming soon!
                         </div>
                       </div>
