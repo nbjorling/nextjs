@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Dice1Color from "../icons/dice_1_color.svg";
-import Dice2Color from "../icons/dice_2_color.svg";
-import Dice3Color from "../icons/dice_3_color.svg";
-import Dice4Color from "../icons/dice_4_color.svg";
-import Dice5Color from "../icons/dice_5_color.svg";
-import Dice6Color from "../icons/dice_6_color.svg";
+import Dice1Color from "/icons/dice_1_color.svg";
+import Dice2Color from "/icons/dice_2_color.svg";
+import Dice3Color from "/icons/dice_3_color.svg";
+import Dice4Color from "/icons/dice_4_color.svg";
+import Dice5Color from "/icons/dice_5_color.svg";
+import Dice6Color from "/icons/dice_6_color.svg";
 
 type Player = {
   name: string;
@@ -185,17 +185,15 @@ export const Yahtzee = () => {
 
   return (
     <div className="w-full p-4 flex-row bg-slate-800 font-convergence">
-      <div className="absolute right-0">
-        <button className="bg-green-300 p-1 pl-2 rounded-l" onClick={() => addPlayer()}>
+      <div className="flex mb-2">
+        <button className="bg-orange-300 shrink-0 py-2 px-4 rounded" onClick={() => toggleIcons()}>
+          Toggle Icons
+        </button>
+        <h1 className="text-2xl text-white w-full text-center pb-2 font-convergence">Yahtzee</h1>
+        <button className="bg-green-300 shrink-0 py-2 px-4 rounded" onClick={() => addPlayer()}>
           Add player
         </button>
       </div>
-      <div className="absolute left-0">
-        <button className="bg-orange-300 p-1 pr-2 rounded-r" onClick={() => toggleIcons()}>
-          Toggle Icons
-        </button>
-      </div>
-      <h1 className="text-2xl text-white w-full text-center pb-2 font-convergence">Yahtzee</h1>
       <div className="w-full flex overflow-scroll p-2 rounded bg-slate-300">
         <table className="w-full text-left">
           <tbody>
