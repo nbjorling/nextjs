@@ -42,13 +42,13 @@ const ScoreCard = ({ player }) => {
   return (
     <tr>
       <td className="text-left">{player.name}</td>
-      {player.scoreCard.out.holes.map((hole) => {
+      {player.scoreCard.out.holes.map((hole, index) => {
         const scoreBalance = hole.score - (hole.par + hole.extraShots);
         let bgColor = " bg-white";
         if (scoreBalance < 0) bgColor = " bg-[#77dd77] bg-opacity-100 text-red-600";
         if (scoreBalance > 0) bgColor = " bg-blue-400 bg-opacity-100";
         return (
-          <td>
+          <td key={index}>
             <div className={`min-w-20 mt-4 bg-white bg-opacity-50 border-black border ${bgColor}`}>
               {hole.score !== 0 && hole.score}
               {hole.score !== 0 && typeof scoreBalance === "number" && ` (${scoreBalance})`}
@@ -57,13 +57,13 @@ const ScoreCard = ({ player }) => {
         );
       })}
       <td></td>
-      {player.scoreCard.in.holes.map((hole) => {
+      {player.scoreCard.in.holes.map((hole, index) => {
         const scoreBalance = hole.score - (hole.par + hole.extraShots);
         let bgColor = " bg-white";
         if (scoreBalance < 0) bgColor = " bg-[#77dd77] bg-opacity-100 text-red-600";
         if (scoreBalance > 0) bgColor = " bg-blue-400 bg-opacity-100";
         return (
-          <td>
+          <td key={index}>
             <div className={`min-w-20 mt-4 bg-white bg-opacity-50 border-black border ${bgColor}`}>
               {hole.score !== 0 && hole.score}
               {hole.score !== 0 && typeof scoreBalance === "number" && ` (${scoreBalance})`}
@@ -127,32 +127,48 @@ export const GolfScoreCard = () => {
             <tr className="h-4 text-center">
               <th className="text-left w-80">Hole</th>
 
-              {course.out.holes.map((hole) => {
-                return <th className="min-w-40">{hole.label}</th>;
+              {course.out.holes.map((hole, index) => {
+                return (
+                  <th key={index} className="min-w-40">
+                    {hole.label}
+                  </th>
+                );
               })}
               <th>--</th>
-              {course.in.holes.map((hole) => {
-                return <th className="min-w-40">{hole.label}</th>;
+              {course.in.holes.map((hole, index) => {
+                return (
+                  <th key={index} className="min-w-40">
+                    {hole.label}
+                  </th>
+                );
               })}
             </tr>
             <tr className="border-b-2 h-10 text-center">
               <th className="text-left">Par</th>
-              {course.out.holes.map((hole) => {
-                return <th className="min-w-40">{hole.par}</th>;
+              {course.out.holes.map((hole, index) => {
+                return (
+                  <th key={index} className="min-w-40">
+                    {hole.par}
+                  </th>
+                );
               })}
 
               <th></th>
 
-              {course.in.holes.map((hole) => {
-                return <th className="min-w-40">{hole.par}</th>;
+              {course.in.holes.map((hole, index) => {
+                return (
+                  <th key={index} className="min-w-40">
+                    {hole.par}
+                  </th>
+                );
               })}
 
               <th>Result</th>
               <th>To par</th>
               <th># Played</th>
             </tr>
-            {playersData.map((player) => {
-              return <ScoreCard player={player} />;
+            {playersData.map((player, index) => {
+              return <ScoreCard key={index} player={player} />;
             })}
           </tbody>
         </table>
