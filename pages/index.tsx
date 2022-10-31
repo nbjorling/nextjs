@@ -6,11 +6,10 @@ import { Menu } from "../components/Menu";
 
 const StartPageItems = [
   { title: "Yahtzee", description: "Play the original Yahtzee game", href: "/yahtzee" },
-  { title: "Yahtzee Maxi", href: "/yahtzee", comingSoon: true },
-  { title: "Gold ScoreCard", href: "/yahtzee", comingSoon: true },
-  { title: "Other", href: "/yahtzee", comingSoon: true },
-  { title: "Other", href: "/yahtzee", comingSoon: true },
-  { title: "Other", href: "/yahtzee", comingSoon: true },
+  { title: "Yahtzee Maxi", description: "The extreme version with 6 dice", href: "/yahtzee" },
+  { title: "Golf ScoreCard", description: "Keep track on the gold course", href: "/yahtzee" },
+  { title: "Other", description: "TBD", href: "/yahtzee" },
+  { title: "Other", description: "TBD", href: "/yahtzee" },
 ];
 
 export default function Home() {
@@ -27,18 +26,21 @@ export default function Home() {
         {/* <Yahtzee /> */}
         {/* <GolfScoreCard /> */}
         <div className="flex justify-center pt-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 lf:grid-cols-5 xl:grid-cols-6 gap-8 px-8  h-fit">
+          <div
+            className="w-full max-w-7xl grid gap-8 px-8 h-fit"
+            style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}
+          >
             {StartPageItems.map((item, index) => {
               return (
                 <Link href={item.href} key={index}>
-                  <div className="relative bg-slate-700 rounded-lg p-8 border-slate-500 border-2 transition-color duration-300 hover:bg-slate-600 cursor-pointer max-h-96  md:aspect-square shadow-xl min-w-[200px]">
-                    {item.comingSoon && (
+                  <div className="relative bg-slate-700 rounded-xl p-8 border-slate-500 border-2 transition-color duration-300 hover:bg-slate-600 cursor-pointer max-h-96  md:aspect-square shadow-xl ">
+                    {/* {item.comingSoon && (
                       <div className="flex absolute -left-[5%] w-[110%] top-2/3 p-2">
                         <div className="bg-gradient-to-l py-2 from-cyan-400 via-cyan-300 to-cyan-600 w-full text-center font-convergence">
                           Coming soon!
                         </div>
                       </div>
-                    )}
+                    )} */}
                     <div className="flex flex-col h-full">
                       <h3 className="text-2xl font-convergence text-white mb-2">{item.title}</h3>
                       {item.description && (
