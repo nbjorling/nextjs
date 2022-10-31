@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MenuIcon from "../icons/menu_black.svg";
+// import MenuIcon from "../icons/menu_black.svg";
 
 export const Menu = () => {
   const [isMenuOpen, setMenu] = useState(false);
@@ -12,7 +12,7 @@ export const Menu = () => {
   return (
     <div className={`app-menu font-convergence pb-4 ${isMenuOpen ? "menu-open" : ""}`}>
       <div className="" onClick={() => toggleMenu()}>
-        <div className="flex bg-slate-700 text-white border-slate-500 border-b p-2">
+        <div className="flex bg-slate-700 text-white border-slate-500 border-b pl-8 p-2">
           {/* <MenuIcon /> */}
           Menu
         </div>

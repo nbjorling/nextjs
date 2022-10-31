@@ -27,17 +27,15 @@ export default function Home() {
         {/* <Yahtzee /> */}
         {/* <GolfScoreCard /> */}
         <div className="flex justify-center pt-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-8 px-8  h-fit">
+          <div className="grid grid-cols-1 md:grid-cols-3 lf:grid-cols-5 xl:grid-cols-6 gap-8 px-8  h-fit">
             {StartPageItems.map((item, index) => {
               return (
                 <Link href={item.href} key={index}>
-                  <div className="relative bg-slate-700 rounded-lg p-8 border-slate-500 border-2 transition-color duration-300 hover:bg-slate-600 cursor-pointer max-h-96 aspect-square overflow-hidden shadow-xl">
+                  <div className="relative bg-slate-700 rounded-lg p-8 border-slate-500 border-2 transition-color duration-300 hover:bg-slate-600 cursor-pointer max-h-96 aspect-square shadow-xl min-h-[200px]">
                     {item.comingSoon && (
-                      <div className="absolute -rotate-45 w-full left-[62%] top-[62%] h-full flex justify-center p-2 bg-gradient-to-l from-cyan-400 via-cyan-300 to-cyan-600 uppercase text-[11px]">
-                        <div className="text-center font-convergence">
-                          Coming
-                          <br />
-                          soon!
+                      <div className="flex absolute -left-[5%] w-[110%] top-2/3 p-2">
+                        <div className="bg-gradient-to-l py-2  from-cyan-400 via-cyan-300 to-cyan-600 w-full text-center font-convergence">
+                          Coming soon!
                         </div>
                       </div>
                     )}
