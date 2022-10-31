@@ -1,29 +1,37 @@
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
-// import MenuIcon from "../icons/menu_black.svg";
+
+const LinkElement = ({ href, title }) => {
+  return (
+    <Link href={href}>
+      <div className="text-xl cursor-pointer mb-2 pl-0 hover:pl-1 transition-all">
+        <div className="hover:text-cyan-200">{title}</div>
+      </div>
+    </Link>
+  );
+};
 
 export const Menu = () => {
   const [isMenuOpen, setMenu] = useState(false);
 
   const toggleMenu = () => {
-    console.log("KOCA: Toggling menu");
     setMenu((prevState) => !prevState);
   };
 
   return (
     <div className={`app-menu font-convergence pb-4 ${isMenuOpen ? "menu-open" : ""}`}>
       <div className="" onClick={() => toggleMenu()}>
-        <div className="flex bg-slate-700 text-white border-slate-500 border-b pl-8 p-2">
-          {/* <MenuIcon /> */}
-          Menu
-        </div>
+        <div className="flex bg-slate-700 text-white border-slate-500 border-b pl-8 p-2">Menu</div>
       </div>
       <div
-        className={`fixed z-10 w-full h-screen transition-all ${isMenuOpen ? "-translate-x-0" : "-translate-x-full"}`}
+        className={`fixed z-10 w-[300px] h-screen transition-all ${
+          isMenuOpen ? "-translate-x-[calc(100%-300px)]" : "-translate-x-full"
+        }`}
       >
         <div className={"bg-slate-700 h-full  text-white flex-row relative"}>
           <div className="p-10">
-            <div>Yathzee</div>
-            <div>Yathzee Extreme</div>
+            <LinkElement href="/" title="Start page" />
+            <LinkElement href="/yahtzee" title="Yahtzee" />
           </div>
           <div className="absolute bottom-8 w-full h-12 bg-slate-600 flex">
             <div className="text-center items-center w-full p-2">Made By Björling</div>
