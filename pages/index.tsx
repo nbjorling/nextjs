@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className="flex flex-col w-full min-h-screen bg-gradient-to-t from-slate-900 to-slate-700 pt-4">
       <div className="px-8 flex flex-col">
-        <h1 className="text-8xl self-center mt-">🎲</h1>
+        <h1 className="text-8xl self-center mt-4">🎲</h1>
         <h1 className="text-4xl font-convergence self-center my-8 text-white">Dice Haven</h1>
       </div>
       {/* <Yahtzee /> */}
