@@ -1,10 +1,10 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-const LinkElement = ({ href, title }) => {
+const LinkElement = ({ href, title, toggleMenu }) => {
   return (
     <Link href={href} passHref>
-      <a className="text-xl cursor-pointer mb-2 pl-0 hover:pl-1 transition-all">
+      <a onClick={() => toggleMenu()} className="text-xl cursor-pointer mb-2 pl-0 hover:pl-1 transition-all">
         <div className="hover:text-cyan-200 mb-2 select-none">{title}</div>
       </a>
     </Link>
@@ -32,8 +32,8 @@ export const Menu = () => {
       >
         <div className={"bg-slate-900 border-t-slate-600 border-t h-full  text-white flex-row relative"}>
           <div className="p-10">
-            <LinkElement href="/" title="🏠 Start page" />
-            <LinkElement href="/yahtzee" title="🎲 Yahtzee" />
+            <LinkElement toggleMenu={toggleMenu} href="/" title="🏠 Start page" />
+            <LinkElement toggleMenu={toggleMenu} href="/yahtzee" title="🎲 Yahtzee" />
           </div>
           <div className="absolute bottom-8 w-full h-12 bg-slate-900 flex shadow-lg">
             <div className="text-center items-center w-full p-2">Made By Björling</div>
