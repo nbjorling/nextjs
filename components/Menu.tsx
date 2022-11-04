@@ -26,7 +26,7 @@ export const Menu = () => {
         </div>
       </div>
       <div
-        className={`fixed z-10 w-[300px] h-screen transition-all ease-in-out ${
+        className={`fixed z-50 w-[300px] h-screen transition-all ease-in-out ${
           isMenuOpen ? "-translate-x-[calc(100%-300px)]" : "-translate-x-full"
         }`}
       >
