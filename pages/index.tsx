@@ -13,7 +13,7 @@ const StartPageItems = [
 const MenuItem = ({ href, title, description }) => {
   return (
     <Link href={href} passHref>
-      <div className="relative bg-slate-700 rounded-xl p-8 border-slate-500 border-2 transition-color duration-300 hover:bg-slate-600 cursor-pointer max-h-96  md:aspect-square shadow-xl">
+      <div className="relative bg-slate-800 rounded-xl p-8 border-slate-500 border-2 transition-color duration-300 hover:bg-slate-700 cursor-pointer max-h-96  md:aspect-square shadow-xl">
         <div className="flex flex-col h-full">
           <h3 className="text-2xl font-convergence text-white mb-2 select-none">{title}</h3>
           {description && (
@@ -38,16 +38,16 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col w-full min-h-screen bg-gradient-to-t from-slate-900 to-slate-700 pt-4">
+    <main className="flex flex-col w-full min-h-screen bg-gradient-to-t from-slate-900 to-slate-900 pt-4">
       <div className="px-8 flex flex-col">
-        <h1 className="text-8xl self-center mt-4 cursor-pointer" onClick={(e) => move(e)}>
+        <h1 className="text-9xl self-center mt-4 cursor-pointer" onClick={(e) => move(e)}>
           {emoji}
         </h1>
         <h1 className="text-4xl font-convergence self-center my-8 text-white">Dice Haven</h1>
       </div>
       <div className="flex justify-center pt-4">
         <div
-          className="w-full max-w-7xl grid gap-8 px-8 h-fit"
+          className="w-full max-w-7xl grid gap-4 px-8 h-fit"
           style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}
         >
           {StartPageItems.map((item, index) => {
