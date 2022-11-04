@@ -17,7 +17,7 @@ module.exports = {
         },
       },
       animation: {
-        rotate: "rotate 5s linear infinite",
+        rotate: "rotate 8s linear infinite",
       },
     },
   },
