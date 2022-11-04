@@ -13,15 +13,24 @@ const StartPageItems = [
 const MenuItem = ({ href, title, description, icon }) => {
   return (
     <Link href={href} passHref>
-      <div className="relative bg-slate-800 rounded-xl p-8 border-slate-500 border-2 transition-color duration-300 hover:bg-slate-700 cursor-pointer max-h-96  md:aspect-square shadow-xl">
-        <div className="flex flex-col h-full">
-          <h3 className="text-4xl text-center mb-2 select-none">{icon}</h3>
-          <h3 className="text-2xl text-center font-convergence text-white mb-2 select-none">{title}</h3>
-          {description && (
-            <p className="text-sm text-center font-convergence font-bold text-cyan-300 leading-4 select-none">
-              {description}
-            </p>
-          )}
+      <div className="relative overflow-hidden rounded-xl aspect-video md:aspect-square max-h-96 shadow-xl cursor-pointer">
+        <div
+          className="absolute z-0 -left-[50%] -top-[50%] w-[200%] h-[200%] animate-rotate"
+          style={{
+            background: "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
+            backgroundSize: "100% 100%",
+          }}
+        ></div>
+        <div className="absolute z-10 left-[2px] top-[2px] w-[calc(100%-4px)] h-[calc(100%-4px)] bg-slate-800 rounded-xl p-4 transition-color duration-300 hover:bg-slate-800 cursor-pointer max-h-96  md:aspect-square">
+          <div className="flex flex-col h-full">
+            <h3 className="text-4xl text-center mb-2 select-none">{icon}</h3>
+            <h3 className="text-2xl text-center font-convergence text-white mb-2 select-none">{title}</h3>
+            {description && (
+              <p className="text-sm text-center font-convergence font-bold text-cyan-300 leading-4 select-none">
+                {description}
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </Link>
@@ -30,10 +39,17 @@ const MenuItem = ({ href, title, description, icon }) => {
 
 export default function Home() {
   const [emoji, setEmoji] = React.useState("");
+  const [emojiText, setEmojiText] = React.useState<string>("Click on the emoji to copy it");
 
-  function move(e) {
-    console.log(e);
-    console.log(e?.target);
+  async function copy(e) {
+    try {
+      await navigator.clipboard.writeText(e.target.innerHTML);
+      setEmojiText("Emoji copied to clipboard");
+      console.log("Emoji copied to clipboard");
+      setTimeout(() => setEmojiText("Click on the emoji to copy it"), 2000);
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
   }
 
   React.useEffect(() => {
@@ -41,16 +57,17 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col w-full min-h-screen bg-gradient-to-t from-slate-900 to-slate-900 pt-4">
+    <main className="flex flex-col w-full min-h-screen bg-gradient-to-t from-[#060b15] to-slate-900 pt-4">
       <div className="px-8 flex flex-col">
-        <h1 className="text-9xl self-center mt-4 cursor-pointer" onClick={(e) => move(e)}>
+        <h1 className="text-9xl self-center mt-4 cursor-pointer mb-4" onClick={(e) => copy(e)}>
           {emoji}
         </h1>
-        <h1 className="text-2xl font-convergence self-center my-8 text-white">Your spirit emoji</h1>
+        <h1 className="text-2xl font-convergence self-center mb-2 text-white">Your spirit emoji</h1>
+        <p className="text-xs text-slate-500 font-convergence self-center ">{emojiText}</p>
       </div>
-      <div className="flex justify-center pt-4">
+      <div className="flex justify-center pt-8">
         <div
-          className="w-full max-w-7xl grid gap-4 px-8 h-fit"
+          className="w-full max-w-7xl grid gap-4 px-8 h-fit min-h-40"
           style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}
         >
           {StartPageItems.map((item, index) => {
