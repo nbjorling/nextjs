@@ -34,6 +34,8 @@ export const Menu = () => {
           <div className="p-10">
             <LinkElement toggleMenu={toggleMenu} href="/" title="🏠 Start page" />
             <LinkElement toggleMenu={toggleMenu} href="/yahtzee" title="🎲 Yahtzee" />
+            <LinkElement toggleMenu={toggleMenu} href="/projects" title="🔮  Projects" />
+            <LinkElement toggleMenu={toggleMenu} href="/codepens" title="💾 Code Pens" />
           </div>
           <div className="absolute bottom-8 w-full h-12 bg-slate-900 flex shadow-lg">
             <div className="text-center items-center w-full p-2">Made By Björling</div>
