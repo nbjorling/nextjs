@@ -1,5 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
+import { getRandomEmoji } from "../utils/getRandomEmoji";
 
 const StartPageItems = [
   { title: "Yahtzee", description: "Play the original Yahtzee game", href: "/yahtzee" },
@@ -12,7 +13,7 @@ const StartPageItems = [
 const MenuItem = ({ href, title, description }) => {
   return (
     <Link href={href} passHref>
-      <div className="relative bg-slate-700 rounded-xl p-8 border-slate-500 border-2 transition-color duration-300 hover:bg-slate-600 cursor-pointer max-h-96  md:aspect-square shadow-xl hover:pt-12">
+      <div className="relative bg-slate-700 rounded-xl p-8 border-slate-500 border-2 transition-color duration-300 hover:bg-slate-600 cursor-pointer max-h-96  md:aspect-square shadow-xl">
         <div className="flex flex-col h-full">
           <h3 className="text-2xl font-convergence text-white mb-2 select-none">{title}</h3>
           {description && (
@@ -25,16 +26,22 @@ const MenuItem = ({ href, title, description }) => {
 };
 
 export default function Home() {
+  const [emoji, setEmoji] = React.useState("");
+
   function move(e) {
     console.log(e);
     console.log(e?.target);
   }
 
+  React.useEffect(() => {
+    setEmoji(getRandomEmoji());
+  }, []);
+
   return (
     <main className="flex flex-col w-full min-h-screen bg-gradient-to-t from-slate-900 to-slate-700 pt-4">
       <div className="px-8 flex flex-col">
         <h1 className="text-8xl self-center mt-4 cursor-pointer" onClick={(e) => move(e)}>
-          🎲
+          {emoji}
         </h1>
         <h1 className="text-4xl font-convergence self-center my-8 text-white">Dice Haven</h1>
       </div>

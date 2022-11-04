@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 const LinkElement = ({ href, title, toggleMenu }) => {
   return (
     <Link href={href} passHref>
-      <a onClick={() => toggleMenu()} className="text-xl cursor-pointer mb-2 pl-0 hover:pl-1 transition-all">
+      <a onClick={() => toggleMenu()} className="text-xl cursor-pointer mb-2">
         <div className="hover:text-cyan-200 mb-2 select-none">{title}</div>
       </a>
     </Link>
@@ -26,7 +26,7 @@ export const Menu = () => {
         </div>
       </div>
       <div
-        className={`fixed z-10 w-[300px] h-screen transition-all ${
+        className={`fixed z-10 w-[300px] h-screen transition-all ease-in-out ${
           isMenuOpen ? "-translate-x-[calc(100%-300px)]" : "-translate-x-full"
         }`}
       >
