@@ -20,7 +20,7 @@ export default function StartPage() {
       </Link>
       <div className="p-8">
         <h1 className="text-6xl mb-4 text-white font-convergence">Code Pens</h1>
-        <ul className="text-white ml-4">
+        <ul className="text-white ml-4 font-hyperlegible">
           <LinkEl
             href="https://codepen.io/nbjorling/pen/abGaQpK"
             text="Horizontal Scrollable 2 Row Grid in Tailwind CSS"

@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         convergence: ["convergence", "sans-serif"],
+        hyperlegible: ["Hyperlegible", "sans-serif"],
       },
       keyframes: {
         rotate: {

@@ -13,7 +13,7 @@ const StartPageItems = [
 const MenuItem = ({ href, title, description, icon }) => {
   return (
     <Link href={href} passHref>
-      <div className="relative overflow-hidden   aspect-video md:aspect-square max-h-96 shadow-xl cursor-pointer">
+      <div className="relative overflow-hidden aspect-video md:aspect-square max-h-96 shadow-xl cursor-pointer">
         <div
           className="absolute z-0  -left-[100%] -top-[100%] w-[300%] h-[300%] animate-rotate"
           style={{
@@ -28,9 +28,7 @@ const MenuItem = ({ href, title, description, icon }) => {
             <h3 className="text-4xl text-center mb-2 select-none">{icon}</h3>
             <h3 className="text-2xl text-center font-convergence text-white mb-2 select-none">{title}</h3>
             {description && (
-              <p className="text-sm text-center font-convergence font-bold text-cyan-300 leading-4 select-none">
-                {description}
-              </p>
+              <p className="text-sm text-center font-bold text-cyan-300 leading-4 select-none">{description}</p>
             )}
           </div>
         </div>
@@ -59,13 +57,13 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col w-full min-h-screen bg-gradient-to-t from-[#060b15] to-slate-900 pt-4">
+    <main className="flex flex-col w-full min-h-screen bg-gradient-to-t from-[#060b15] to-slate-900 pt-4 font-hyperlegible">
       <div className="px-8 flex flex-col">
         <h1 className="text-9xl self-center mt-4 cursor-pointer mb-4" onClick={(e) => copy(e)}>
           {emoji}
         </h1>
         <h1 className="text-2xl font-convergence self-center mb-2 text-white">Your spirit emoji</h1>
-        <p className="text-xs text-slate-500 font-convergence self-center ">{emojiText}</p>
+        <p className="text-xs text-slate-500 font-hyperlegible self-center ">{emojiText}</p>
       </div>
       <div className="flex justify-center pt-8">
         <div

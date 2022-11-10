@@ -214,7 +214,7 @@ export const Yahtzee = () => {
   }
 
   return (
-    <div className="w-full p-4 flex-row bg-slate-800 font-convergence">
+    <div className="w-full p-4 flex-row bg-slate-900 font-convergence">
       <div className="flex mb-2">
         <button className="bg-orange-300 shrink-0 py-2 px-4 rounded" onClick={() => toggleIcons()}>
           Toggle Icons

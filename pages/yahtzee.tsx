@@ -4,7 +4,7 @@ import { Yahtzee } from "../components/Yahtzee/Yahtzee";
 
 export default function StartPage() {
   return (
-    <main className="w-full min-h-screen bg-slate-800 pt-4">
+    <main className="w-full min-h-screen bg-slate-900 pt-4">
       <Link href="/">
         <div className="text-white ml-4 mr-4 cursor-pointer bg-slate-700 rounded py-2 px-4 w-fit">Back</div>
       </Link>
