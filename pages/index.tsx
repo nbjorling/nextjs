@@ -5,6 +5,7 @@ import { getRandomEmoji } from "../utils/getRandomEmoji";
 const StartPageItems = [
   { icon: "🎲", title: "Yahtzee", description: "Play the original Yahtzee game", href: "/yahtzee" },
   { icon: "🎲", title: "Yahtzee Maxi", description: "The extreme version with 6 dice", href: "/yahtzee" },
+  { icon: "🧩", title: "Scrum Poker", description: "Cards for scrum poker", href: "/scrumpoker" },
   { icon: "🏌️‍♂️", title: "Golf ScoreCard", description: "Keep track on the gold course", href: "/golfscorecard" },
   { icon: "💾", title: "Projects", description: "Small projects or concepts", href: "/projects" },
   { icon: "🔮", title: "Code Pens", description: "Link to useful codepens", href: "/codepens" },

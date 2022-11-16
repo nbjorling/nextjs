@@ -34,6 +34,7 @@ export const Menu = () => {
           <div className="p-10">
             <LinkElement toggleMenu={toggleMenu} href="/" title="🏠 Start page" />
             <LinkElement toggleMenu={toggleMenu} href="/yahtzee" title="🎲 Yahtzee" />
+            <LinkElement toggleMenu={toggleMenu} href="/scrumpoker" title="🧩 Scrum Poker" />
             <LinkElement toggleMenu={toggleMenu} href="/projects" title="🔮  Projects" />
             <LinkElement toggleMenu={toggleMenu} href="/codepens" title="💾 Code Pens" />
           </div>
