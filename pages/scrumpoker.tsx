@@ -1,7 +1,7 @@
 import Link from "next/link";
 import * as React from "react";
 
-const CHOICES = [0, "0.5", 1, 2, 3, 5, 8, 13, 20, 50, 100, "infinite"];
+const CHOICES = [0, "1/2", 1, 2, 3, 5, 8, 13, 20, 40, 100, "?", "∞"];
 
 export default function ScrumPower() {
   const [choice, setChoice] = React.useState(undefined);
