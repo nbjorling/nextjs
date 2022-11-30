@@ -3,7 +3,7 @@ import * as React from "react";
 
 const CHOICES = [0, "1/2", 1, 2, 3, 5, 8, 13, 20, 40, 100, "?", "∞"];
 
-export default function ScrumPower() {
+export default function ScrumPoker() {
   const [choice, setChoice] = React.useState(undefined);
   const [show, setShow] = React.useState(false);
 
