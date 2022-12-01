@@ -9,7 +9,7 @@ type Class =
   | "Death Knight"
   | "Paladin"
   | "Druid"
-  | Warrior
+  | "Warrior"
   | "Priest"
   | "Rouge"
   | "Mage"
@@ -17,7 +17,15 @@ type Class =
   | "Shaman"
   | "Warlock";
 type Role = "Tank" | "Dps" | "Healer";
-type Race = "Human" | "Night Elf" | "Dwarf" | "Gnome" | "Undead" | "Tauren" | "Orc" | "Blood Elf";
+type Race =
+  | "Human"
+  | "Night Elf"
+  | "Dwarf"
+  | "Gnome"
+  | "Undead"
+  | "Tauren"
+  | "Orc"
+  | "Blood Elf";
 
 type Character = {
   id: string;
