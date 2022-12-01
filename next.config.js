@@ -9,9 +9,8 @@ const nextConfig = {
         extensions: [".js", ".jsx", ".ts", ".tsx"],
       },
     });
-
     return config;
   },
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;

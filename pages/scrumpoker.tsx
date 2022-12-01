@@ -1,4 +1,3 @@
-import Link from "next/link";
 import * as React from "react";
 
 const CHOICES = [0, "1/2", 1, 2, 3, 5, 8, 13, 20, 40, 100, "?", "∞"];
@@ -30,16 +29,21 @@ export default function ScrumPoker() {
             {choice && show && (
               <div>
                 <p className="text-center text-[128px]">{choice}</p>
-                <p className="text-center text-lg text-slate-200">Click again to close</p>
+                <p className="text-center text-lg text-slate-200">
+                  Click again to close
+                </p>
               </div>
             )}
-            {choice && !show && <p className="text-center text-5xl">Click to reveal</p>}
+            {choice && !show && (
+              <p className="text-center text-5xl">Click to reveal</p>
+            )}
           </div>
         </div>
       )}
       <div className="grid grid-cols-3 p-8 gap-2">
         {CHOICES.map((choice, index) => {
-          const string = typeof choice === "string" ? choice : choice.toString();
+          const string =
+            typeof choice === "string" ? choice : choice.toString();
 
           return (
             <div

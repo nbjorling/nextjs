@@ -9,7 +9,7 @@ type Class =
   | "Death Knight"
   | "Paladin"
   | "Druid"
-  | "Warrior"
+  | Warrior
   | "Priest"
   | "Rouge"
   | "Mage"
