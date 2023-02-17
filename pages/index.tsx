@@ -39,6 +39,12 @@ const StartPageItems = [
     description: "Link to useful codepens",
     href: "/codepens",
   },
+  {
+    icon: "👨🏼‍🏫",
+    title: "Jeopardy",
+    description: "Jeopardy board",
+    href: "/jeopardy",
+  },
 ];
 
 function MenuItem({ href, title, description, icon }) {

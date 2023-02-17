@@ -59,6 +59,11 @@ export function Menu() {
               href="/codepens"
               title="💾 Code Pens"
             />
+            <LinkElement
+              toggleMenu={toggleMenu}
+              href="/jeopardy"
+              title="👨🏼‍🏫 Jeopardy"
+            />
           </div>
           <div className="absolute bottom-8 w-full h-12 bg-slate-900 flex shadow-lg">
             <div className="text-center items-center w-full p-2">

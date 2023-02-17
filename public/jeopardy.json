@@ -1,0 +1,52 @@
+[
+  {
+    "name": "test category",
+    "questions": [
+      "test text 1",
+      "test text 2",
+      "test text 3",
+      "test text 4",
+      "test text 5"
+    ]
+  },
+  {
+    "name": "next category",
+    "questions": [
+      "next text 1",
+      "next text 2",
+      "next text 3",
+      "next text 4",
+      "next text 5"
+    ]
+  },
+  {
+    "name": "other category",
+    "questions": [
+      "other text 1",
+      "other text 2",
+      "other text 3",
+      "other text 4",
+      "other text 5"
+    ]
+  },
+  {
+    "name": "another category",
+    "questions": [
+      "another text 1",
+      "another text 2",
+      "another text 3",
+      "another text 4",
+      "another text 5"
+    ]
+  },
+  {
+    "name": "final category",
+    "questions": [
+      "final text 1",
+      "final text 2",
+      "final text 3",
+      "final text 4",
+      "final text 5"
+    ]
+  }
+]
