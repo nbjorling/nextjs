@@ -22,6 +22,11 @@ const ScoreBoard: React.FC = () => {
           value={newTeam}
           onChange={(e) => setNewTeam(e.target.value)}
           placeholder='Team name'
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              addTeam();
+            }
+          }}
         />
         <button type='button' onClick={addTeam}>
           <p className='m-2 w-24 rounded bg-blue-300 text-yellow-300 active:bg-blue-600'>
