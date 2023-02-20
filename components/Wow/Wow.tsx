@@ -1,31 +1,32 @@
-import * as React from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import * as React from 'react';
 
 type Warrior = {
-  color: "#23d5ab";
-  name: "Warrior";
+  color: '#23d5ab';
+  name: 'Warrior';
 };
 
 type Class =
-  | "Death Knight"
-  | "Paladin"
-  | "Druid"
+  | 'Death Knight'
+  | 'Paladin'
+  | 'Druid'
   | Warrior
-  | "Priest"
-  | "Rouge"
-  | "Mage"
-  | "Hunter"
-  | "Shaman"
-  | "Warlock";
-type Role = "Tank" | "Dps" | "Healer";
+  | 'Priest'
+  | 'Rouge'
+  | 'Mage'
+  | 'Hunter'
+  | 'Shaman'
+  | 'Warlock';
+type Role = 'Tank' | 'Dps' | 'Healer';
 type Race =
-  | "Human"
-  | "Night Elf"
-  | "Dwarf"
-  | "Gnome"
-  | "Undead"
-  | "Tauren"
-  | "Orc"
-  | "Blood Elf";
+  | 'Human'
+  | 'Night Elf'
+  | 'Dwarf'
+  | 'Gnome'
+  | 'Undead'
+  | 'Tauren'
+  | 'Orc'
+  | 'Blood Elf';
 
 type Character = {
   id: string;
@@ -42,10 +43,10 @@ type Guild = {
   roster: Character[];
 };
 
-type Raid = {};
+// type Raid = {};
 
-type ScheduledRaid = {
-  raids: Raid[];
-  startTime: Date;
-  attendance: {};
-};
+// type ScheduledRaid = {
+//   raids: Raid[];
+//   startTime: Date;
+//   attendance: {};
+// };

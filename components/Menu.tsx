@@ -1,18 +1,18 @@
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import Link from 'next/link';
+import * as React from 'react';
 
 function LinkElement({ href, title, toggleMenu }) {
   return (
     <Link href={href} passHref>
-      <a onClick={() => toggleMenu()} className="text-xl cursor-pointer mb-2">
-        <div className="hover:text-cyan-200 mb-2 select-none">{title}</div>
+      <a onClick={() => toggleMenu()} className='mb-2 cursor-pointer text-xl'>
+        <div className='mb-2 select-none hover:text-cyan-200'>{title}</div>
       </a>
     </Link>
   );
 }
 
 export function Menu() {
-  const [isMenuOpen, setMenu] = useState(false);
+  const [isMenuOpen, setMenu] = React.useState(false);
 
   const toggleMenu = () => {
     setMenu((prevState) => !prevState);
@@ -20,53 +20,53 @@ export function Menu() {
 
   return (
     <div
-      className={`app-menu font-convergence  ${isMenuOpen ? "menu-open" : ""}`}
+      className={`app-menu font-convergence  ${isMenuOpen ? 'menu-open' : ''}`}
     >
-      <div className="" onClick={() => toggleMenu()}>
-        <div className="flex bg-slate-900 text-white border-slate-900 shadow-lg border-b pl-8 p-2 cursor-pointer select-none">
-          {isMenuOpen ? "🍔 Close Menu" : "🍔 Menu"}
+      <div className='' onClick={() => toggleMenu()}>
+        <div className='flex cursor-pointer select-none border-b border-slate-900 bg-slate-900 p-2 pl-8 text-white shadow-lg'>
+          {isMenuOpen ? '🍔 Close Menu' : '🍔 Menu'}
         </div>
       </div>
       <div
-        className={`fixed z-50 w-[300px] h-screen transition-all ease-in-out ${
-          isMenuOpen ? "-translate-x-[calc(100%-300px)]" : "-translate-x-full"
+        className={`fixed z-50 h-screen w-[300px] transition-all ease-in-out ${
+          isMenuOpen ? '-translate-x-[calc(100%-300px)]' : '-translate-x-full'
         }`}
       >
-        <div className="bg-slate-900 border-t-slate-600 border-t h-full  text-white flex-row relative">
-          <div className="p-10">
+        <div className='relative h-full flex-row border-t  border-t-slate-600 bg-slate-900 text-white'>
+          <div className='p-10'>
             <LinkElement
               toggleMenu={toggleMenu}
-              href="/"
-              title="🏠 Start page"
+              href='/'
+              title='🏠 Start page'
             />
             <LinkElement
               toggleMenu={toggleMenu}
-              href="/yahtzee"
-              title="🎲 Yahtzee"
+              href='/yahtzee'
+              title='🎲 Yahtzee'
             />
             <LinkElement
               toggleMenu={toggleMenu}
-              href="/scrumpoker"
-              title="🧩 Scrum Poker"
+              href='/scrumpoker'
+              title='🧩 Scrum Poker'
             />
             <LinkElement
               toggleMenu={toggleMenu}
-              href="/projects"
-              title="🔮  Projects"
+              href='/projects'
+              title='🔮  Projects'
             />
             <LinkElement
               toggleMenu={toggleMenu}
-              href="/codepens"
-              title="💾 Code Pens"
+              href='/codepens'
+              title='💾 Code Pens'
             />
             <LinkElement
               toggleMenu={toggleMenu}
-              href="/jeopardy"
-              title="👨🏼‍🏫 Jeopardy"
+              href='/jeopardy'
+              title='👨🏼‍🏫 Jeopardy'
             />
           </div>
-          <div className="absolute bottom-8 w-full h-12 bg-slate-900 flex shadow-lg">
-            <div className="text-center items-center w-full p-2">
+          <div className='absolute bottom-8 flex h-12 w-full bg-slate-900 shadow-lg'>
+            <div className='w-full items-center p-2 text-center'>
               Made By Björling
             </div>
           </div>

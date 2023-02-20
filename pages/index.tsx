@@ -1,74 +1,74 @@
-import * as React from "react";
-import Link from "next/link";
-import { getRandomEmoji } from "../utils/getRandomEmoji";
+import * as React from 'react';
+import Link from 'next/link';
+import { getRandomEmoji } from '../utils/getRandomEmoji';
 
 const StartPageItems = [
   {
-    icon: "🎲",
-    title: "Yahtzee",
-    description: "Play the original Yahtzee game",
-    href: "/yahtzee",
+    icon: '🎲',
+    title: 'Yahtzee',
+    description: 'Play the original Yahtzee game',
+    href: '/yahtzee',
   },
   {
-    icon: "🎲",
-    title: "Yahtzee Maxi",
-    description: "The extreme version with 6 dice",
-    href: "/yahtzee",
+    icon: '🎲',
+    title: 'Yahtzee Maxi',
+    description: 'The extreme version with 6 dice',
+    href: '/yahtzee',
   },
   {
-    icon: "🧩",
-    title: "Scrum Poker",
-    description: "Cards for scrum poker",
-    href: "/scrumpoker",
+    icon: '🧩',
+    title: 'Scrum Poker',
+    description: 'Cards for scrum poker',
+    href: '/scrumpoker',
   },
   {
-    icon: "🏌️‍♂️",
-    title: "Golf ScoreCard",
-    description: "Keep track on the gold course",
-    href: "/golfscorecard",
+    icon: '🏌️‍♂️',
+    title: 'Golf ScoreCard',
+    description: 'Keep track on the gold course',
+    href: '/golfscorecard',
   },
   {
-    icon: "💾",
-    title: "Projects",
-    description: "Small projects or concepts",
-    href: "/projects",
+    icon: '💾',
+    title: 'Projects',
+    description: 'Small projects or concepts',
+    href: '/projects',
   },
   {
-    icon: "🔮",
-    title: "Code Pens",
-    description: "Link to useful codepens",
-    href: "/codepens",
+    icon: '🔮',
+    title: 'Code Pens',
+    description: 'Link to useful codepens',
+    href: '/codepens',
   },
   {
-    icon: "👨🏼‍🏫",
-    title: "Jeopardy",
-    description: "Jeopardy board",
-    href: "/jeopardy",
+    icon: '👨🏼‍🏫',
+    title: 'Jeopardy',
+    description: 'Jeopardy board',
+    href: '/jeopardy',
   },
 ];
 
 function MenuItem({ href, title, description, icon }) {
   return (
     <Link href={href} passHref>
-      <div className="relative overflow-hidden aspect-video md:aspect-square max-h-96 shadow-xl cursor-pointer">
+      <div className='relative aspect-video max-h-96 cursor-pointer overflow-hidden shadow-xl md:aspect-square'>
         <div
-          className="absolute z-0  -left-[100%] -top-[100%] w-[300%] h-[300%] animate-rotate"
+          className='absolute -left-[100%]  -top-[100%] z-0 h-[300%] w-[300%] animate-rotate'
           style={{
             background:
-              "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
-            backgroundSize: "100% 100%",
-            transform: "translateY(0)",
-            transformOrigin: "0, 0",
+              'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
+            backgroundSize: '100% 100%',
+            transform: 'translateY(0)',
+            transformOrigin: '0, 0',
           }}
         />
-        <div className="absolute z-10 left-[2px] top-[2px] w-[calc(100%-4px)] h-[calc(100%-4px)] bg-slate-800  p-4 transition-color duration-300 hover:bg-slate-800 cursor-pointer max-h-96  md:aspect-square">
-          <div className="flex flex-col h-full">
-            <h3 className="text-4xl text-center mb-2 select-none">{icon}</h3>
-            <h3 className="text-2xl text-center font-convergence text-white mb-2 select-none">
+        <div className='transition-color absolute left-[2px] top-[2px] z-10 h-[calc(100%-4px)] max-h-96  w-[calc(100%-4px)] cursor-pointer bg-slate-800 p-4 duration-300 hover:bg-slate-800  md:aspect-square'>
+          <div className='flex h-full flex-col'>
+            <h3 className='mb-2 select-none text-center text-4xl'>{icon}</h3>
+            <h3 className='mb-2 select-none text-center font-convergence text-2xl text-white'>
               {title}
             </h3>
             {description && (
-              <p className="text-sm text-center font-bold text-cyan-300 leading-4 select-none">
+              <p className='select-none text-center text-sm font-bold leading-4 text-cyan-300'>
                 {description}
               </p>
             )}
@@ -80,19 +80,19 @@ function MenuItem({ href, title, description, icon }) {
 }
 
 export default function Home() {
-  const [emoji, setEmoji] = React.useState("");
+  const [emoji, setEmoji] = React.useState('');
   const [emojiText, setEmojiText] = React.useState<string>(
-    "Click on the emoji to copy it"
+    'Click on the emoji to copy it'
   );
 
   async function copy(e) {
     try {
       await navigator.clipboard.writeText(e.target.innerHTML);
-      setEmojiText("Emoji copied to clipboard");
-      console.log("Emoji copied to clipboard");
-      setTimeout(() => setEmojiText("Click on the emoji to copy it"), 2000);
+      setEmojiText('Emoji copied to clipboard');
+      console.log('Emoji copied to clipboard');
+      setTimeout(() => setEmojiText('Click on the emoji to copy it'), 2000);
     } catch (err) {
-      console.error("Failed to copy: ", err);
+      console.error('Failed to copy: ', err);
     }
   }
 
@@ -101,26 +101,26 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col w-full min-h-screen bg-gradient-to-t from-[#060b15] to-slate-900 pt-4 font-hyperlegible">
-      <div className="px-8 flex flex-col">
+    <main className='flex min-h-screen w-full flex-col bg-gradient-to-t from-[#060b15] to-slate-900 pt-4 font-hyperlegible'>
+      <div className='flex flex-col px-8'>
         <h1
-          className="text-9xl self-center mt-4 cursor-pointer mb-4"
+          className='mt-4 mb-4 cursor-pointer self-center text-9xl'
           onClick={(e) => copy(e)}
         >
           {emoji}
         </h1>
-        <h1 className="text-2xl font-convergence self-center mb-2 text-white">
+        <h1 className='mb-2 self-center font-convergence text-2xl text-white'>
           Your spirit emoji
         </h1>
-        <p className="text-xs text-slate-500 font-hyperlegible self-center ">
+        <p className='self-center font-hyperlegible text-xs text-slate-500 '>
           {emojiText}
         </p>
       </div>
-      <div className="flex justify-center pt-8">
+      <div className='flex justify-center pt-8'>
         <div
-          className="w-full max-w-7xl grid gap-4 px-8 h-fit min-h-40"
+          className='min-h-40 grid h-fit w-full max-w-7xl gap-4 px-8'
           style={{
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
           }}
         >
           {StartPageItems.map((item, index) => (
