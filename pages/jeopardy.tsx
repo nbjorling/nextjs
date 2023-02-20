@@ -1,5 +1,6 @@
 import * as React from 'react';
-import JeopardyCard from '../components/JeopardyCard/JeopardyCard';
+import FlippableCard from '../components/FlippableCard/FlippableCard';
+import ScoreBoard from '../components/ScoreBoard/ScoreBoard';
 import categories from '../public/jeopardy.json';
 
 const Jeopardy: React.FC = () => {
@@ -7,19 +8,20 @@ const Jeopardy: React.FC = () => {
     <div className='flex h-full w-full flex-row bg-black'>
       {categories.map((category) => (
         <div key={category.name} className='flex-col'>
-          <JeopardyCard caption={category.name} />
+          <FlippableCard frontText={category.name} />
           {category.questions.map((question, index) => {
-            const caption = `${(index + 1) * 100}`;
+            const frontText = `${(index + 1) * 100}`;
             return (
-              <JeopardyCard
+              <FlippableCard
                 key={question}
-                caption={caption}
-                question={question}
+                frontText={frontText}
+                backText={question}
               />
             );
           })}
         </div>
       ))}
+      <ScoreBoard />
     </div>
   );
 };

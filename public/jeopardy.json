@@ -40,13 +40,13 @@
     ]
   },
   {
-    "name": "final category",
+    "name": "last category",
     "questions": [
-      "final text 1",
-      "final text 2",
-      "final text 3",
-      "final text 4",
-      "final text 5"
+      "last text 1",
+      "last text 2",
+      "last text 3",
+      "last text 4",
+      "last text 5"
     ]
   }
 ]
