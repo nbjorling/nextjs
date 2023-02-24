@@ -19,7 +19,7 @@ const Jeopardy: React.FC = () => {
   }, []);
 
   return (
-    <div className='flex h-screen w-full flex-col bg-black'>
+    <main className='flex h-full w-full flex-col overflow-y-hidden bg-black'>
       <div className='flex flex-row'>
         {finale ? (
           <FlippableCard
@@ -60,7 +60,7 @@ const Jeopardy: React.FC = () => {
           <p className='text-yellow-300'>Jingle!</p>
         </button>
       </div>
-    </div>
+    </main>
   );
 };
 

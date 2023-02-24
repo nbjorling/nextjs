@@ -13,7 +13,7 @@ const ScoreBoard: React.FC = () => {
   };
 
   return (
-    <div className='h-full w-full flex-col bg-black'>
+    <div className='h-full w-full min-w-fit flex-col bg-black'>
       {teams.map((team) => (
         <TeamScore key={team} name={team} />
       ))}
