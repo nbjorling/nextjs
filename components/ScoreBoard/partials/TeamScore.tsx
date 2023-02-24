@@ -5,7 +5,9 @@ type TeamScoreProps = {
 };
 
 const TeamScore: React.FC<TeamScoreProps> = ({ name }) => {
-  const [score, setScore] = React.useState(0);
+  const [score, setScore] = React.useState(
+    parseInt(localStorage.getItem(name)) || 0
+  );
 
   const add100 = () => {
     setScore(score + 100);
@@ -14,6 +16,10 @@ const TeamScore: React.FC<TeamScoreProps> = ({ name }) => {
   const subtract100 = () => {
     setScore(score - 100);
   };
+
+  React.useEffect(() => {
+    localStorage.setItem(name, `${score}`);
+  }, [score]);
 
   return (
     <div className='m-1 flex w-full flex-col items-center justify-center bg-blue-500 p-6 text-yellow-300'>
