@@ -3,15 +3,23 @@ import * as React from 'react';
 type FlippableCardProps = {
   frontText: string;
   backText?: string;
+  frontTextSize?: string;
+  backTextSize?: string;
   textColor?: string;
   bgColor?: string;
+  height?: string;
+  width?: string;
 };
 
 const FlippableCard: React.FC<FlippableCardProps> = ({
   frontText,
   backText,
+  frontTextSize = 'text-4xl',
+  backTextSize = 'text-sm',
   textColor = 'text-yellow-300',
   bgColor = 'bg-blue-500',
+  height = 'h-32',
+  width = 'w-48',
 }) => {
   const [showBack, setShowBack] = React.useState(false);
 
@@ -21,7 +29,7 @@ const FlippableCard: React.FC<FlippableCardProps> = ({
 
   return (
     <div
-      className='m-1 flex h-32 w-48 cursor-pointer select-none bg-transparent [perspective:1000px]'
+      className={`m-1 flex ${height} ${width} cursor-pointer select-none bg-transparent [perspective:1000px]`}
       onClick={flipCard}
     >
       <div
@@ -33,14 +41,18 @@ const FlippableCard: React.FC<FlippableCardProps> = ({
           <div
             className={`flex h-full w-full flex-col items-center justify-center ${bgColor}`}
           >
-            <p className={`text-center text-4xl ${textColor}`}>{frontText}</p>
+            <p className={`text-center ${frontTextSize} ${textColor}`}>
+              {frontText}
+            </p>
           </div>
         </div>
         <div className='absolute inset-0 h-full w-full [transform:rotateY(180deg)] [backface-visibility:hidden]'>
           <div
-            className={`flex h-full w-full flex-col items-center justify-center ${bgColor}`}
+            className={`flex h-full w-full flex-col items-center justify-center p-1 ${bgColor}`}
           >
-            <p className={`text-center text-xl ${textColor}`}>{backText}</p>
+            <p className={`text-center ${backTextSize} ${textColor}`}>
+              {backText}
+            </p>
           </div>
         </div>
       </div>

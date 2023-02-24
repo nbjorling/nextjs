@@ -11,6 +11,7 @@ const ScoreBoard: React.FC = () => {
       setNewTeam('');
     }
   };
+
   return (
     <div className='h-full w-full flex-col bg-black'>
       {teams.map((team) => (
