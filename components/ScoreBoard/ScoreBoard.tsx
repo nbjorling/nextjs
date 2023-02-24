@@ -17,9 +17,9 @@ const ScoreBoard: React.FC = () => {
       {teams.map((team) => (
         <TeamScore key={team} name={team} />
       ))}
-      <div className='m-1 flex w-full flex-row items-center justify-between bg-blue-500 p-2'>
+      <div className='m-1 flex w-full flex-row items-center justify-between bg-[rgba(254,80,0,1)] p-2'>
         <input
-          className='w-full'
+          className='w-full p-1'
           value={newTeam}
           onChange={(e) => setNewTeam(e.target.value)}
           placeholder='Team name'
@@ -30,7 +30,7 @@ const ScoreBoard: React.FC = () => {
           }}
         />
         <button type='button' onClick={addTeam}>
-          <p className='m-2 w-24 rounded bg-blue-300 text-yellow-300 active:bg-blue-600'>
+          <p className='m-2 w-24 rounded border border-black bg-white p-1 text-black active:bg-slate-600'>
             Add team
           </p>
         </button>

@@ -14,12 +14,12 @@ type FlippableCardProps = {
 const FlippableCard: React.FC<FlippableCardProps> = ({
   frontText,
   backText,
-  frontTextSize = 'text-4xl',
-  backTextSize = 'text-sm',
-  textColor = 'text-yellow-300',
-  bgColor = 'bg-blue-500',
-  height = 'h-32',
-  width = 'w-48',
+  frontTextSize = 'text-8xl',
+  backTextSize = 'text-2xl',
+  textColor = 'text-white',
+  bgColor = 'bg-[rgba(254,80,0,1)]',
+  height = 'h-48',
+  width = 'w-60',
 }) => {
   const [showBack, setShowBack] = React.useState(false);
 

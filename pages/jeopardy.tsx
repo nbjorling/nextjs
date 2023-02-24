@@ -19,7 +19,7 @@ const Jeopardy: React.FC = () => {
   }, []);
 
   return (
-    <main className='flex h-full w-full flex-col overflow-y-hidden bg-black'>
+    <main className='flex h-[100vh] w-screen flex-col bg-black'>
       <div className='flex flex-row'>
         {finale ? (
           <FlippableCard
@@ -35,7 +35,7 @@ const Jeopardy: React.FC = () => {
             <div key={category.name} className='flex-col'>
               <FlippableCard
                 frontText={category.name}
-                frontTextSize='text-2xl'
+                frontTextSize='text-4xl'
               />
               {category.questions.map((question, index) => {
                 const frontText = `${(index + 1) * 100}`;

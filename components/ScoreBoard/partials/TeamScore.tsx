@@ -22,18 +22,18 @@ const TeamScore: React.FC<TeamScoreProps> = ({ name }) => {
   }, [score]);
 
   return (
-    <div className='m-1 flex w-full flex-col items-center justify-center bg-blue-500 p-6 text-yellow-300'>
-      <p className='text-3xl'>
+    <div className='m-1 flex w-full flex-col items-center justify-center bg-[rgba(164,43,1,1)] p-6 text-white'>
+      <p className='text-5xl'>
         {name}: {score}p
       </p>
-      <div className='flex flex-row'>
+      <div className='m-2 flex flex-row'>
         <button onClick={add100} type='button'>
-          <p className='m-1 w-24 rounded bg-blue-300 text-yellow-300 active:bg-blue-600'>
+          <p className='m-1 w-24 rounded border border-black bg-white p-1 text-black active:bg-slate-600'>
             + 100p
           </p>
         </button>
         <button onClick={subtract100} type='button'>
-          <p className='m-1 w-24 rounded bg-blue-300 text-yellow-300 active:bg-blue-600'>
+          <p className='m-1 w-24 rounded border border-black bg-white p-1 text-black active:bg-slate-600'>
             - 100p
           </p>
         </button>
