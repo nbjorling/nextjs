@@ -1,6 +1,6 @@
-import React from "react";
-import { players } from "./helpers/players";
-import { course } from "./helpers/course";
+import React from 'react';
+import { players } from './helpers/players';
+import { course } from './helpers/course';
 
 function mapHandicap(player) {
   if (!player) return;
@@ -36,7 +36,7 @@ function mapHandicap(player) {
     ...player,
   };
 
-  console.log("Koca: updatedPlayer ", updatedPlayer);
+  console.log('Koca: updatedPlayer ', updatedPlayer);
   return updatedPlayer;
 }
 
@@ -45,21 +45,21 @@ function ScoreCard({ player }) {
 
   return (
     <tr>
-      <td className="text-left">{player.name}</td>
+      <td className='text-left'>{player.name}</td>
       {player.scoreCard.out.holes.map((hole, index) => {
         const scoreBalance = hole.score - (hole.par + hole.extraShots);
-        let bgColor = " bg-white";
+        let bgColor = ' bg-white';
         if (scoreBalance < 0)
-          bgColor = " bg-[#77dd77] bg-opacity-100 text-red-600";
-        if (scoreBalance > 0) bgColor = " bg-blue-400 bg-opacity-100";
+          bgColor = ' bg-[#77dd77] bg-opacity-100 text-red-600';
+        if (scoreBalance > 0) bgColor = ' bg-blue-400 bg-opacity-100';
         return (
           <td key={index}>
             <div
-              className={`min-w-20 mt-4 bg-white bg-opacity-50 border-black border ${bgColor}`}
+              className={`min-w-20 mt-4 border border-black bg-white bg-opacity-50 ${bgColor}`}
             >
               {hole.score !== 0 && hole.score}
               {hole.score !== 0 &&
-                typeof scoreBalance === "number" &&
+                typeof scoreBalance === 'number' &&
                 ` (${scoreBalance})`}
             </div>
           </td>
@@ -68,25 +68,25 @@ function ScoreCard({ player }) {
       <td />
       {player.scoreCard.in.holes.map((hole, index) => {
         const scoreBalance = hole.score - (hole.par + hole.extraShots);
-        let bgColor = " bg-white";
+        let bgColor = ' bg-white';
         if (scoreBalance < 0)
-          bgColor = " bg-[#77dd77] bg-opacity-100 text-red-600";
-        if (scoreBalance > 0) bgColor = " bg-blue-400 bg-opacity-100";
+          bgColor = ' bg-[#77dd77] bg-opacity-100 text-red-600';
+        if (scoreBalance > 0) bgColor = ' bg-blue-400 bg-opacity-100';
         return (
           <td key={index}>
             <div
-              className={`min-w-20 mt-4 bg-white bg-opacity-50 border-black border ${bgColor}`}
+              className={`min-w-20 mt-4 border border-black bg-white bg-opacity-50 ${bgColor}`}
             >
               {hole.score !== 0 && hole.score}
               {hole.score !== 0 &&
-                typeof scoreBalance === "number" &&
+                typeof scoreBalance === 'number' &&
                 ` (${scoreBalance})`}
             </div>
           </td>
         );
       })}
       <td>{player.result}</td>
-      <td className={player.toPar > 0 ? "" : "text-red-500"}>
+      <td className={player.toPar > 0 ? '' : 'text-red-500'}>
         {player.toPar > 0 ? `+${player.toPar}` : player.toPar}
       </td>
       <td>{player.holesPlayed}</td>
@@ -137,29 +137,29 @@ export function GolfScoreCard() {
   );
 
   return (
-    <div className="w-full p-4 flex-row bg-gradient-to-tr from-emerald-900 to-emerald-400 font-convergence min-h-screen">
-      <div className="w-full flex  p-2 rounded bg-white bg-opacity-40 ">
-        <table className="w-full text-center">
+    <div className='min-h-screen w-full flex-row bg-gradient-to-tr from-emerald-900 to-emerald-400 p-4 font-convergence'>
+      <div className='flex w-full  rounded bg-white bg-opacity-40 p-2 '>
+        <table className='w-full text-center'>
           <tbody>
-            <tr className="h-4 text-center">
-              <th className="text-left w-80">Hole</th>
+            <tr className='h-4 text-center'>
+              <th className='w-80 text-left'>Hole</th>
 
               {course.out.holes.map((hole, index) => (
-                <th key={index} className="min-w-40">
+                <th key={index} className='min-w-40'>
                   {hole.label}
                 </th>
               ))}
               <th>--</th>
               {course.in.holes.map((hole, index) => (
-                <th key={index} className="min-w-40">
+                <th key={index} className='min-w-40'>
                   {hole.label}
                 </th>
               ))}
             </tr>
-            <tr className="border-b-2 h-10 text-center">
-              <th className="text-left">Par</th>
+            <tr className='h-10 border-b-2 text-center'>
+              <th className='text-left'>Par</th>
               {course.out.holes.map((hole, index) => (
-                <th key={index} className="min-w-40">
+                <th key={index} className='min-w-40'>
                   {hole.par}
                 </th>
               ))}
@@ -167,7 +167,7 @@ export function GolfScoreCard() {
               <th />
 
               {course.in.holes.map((hole, index) => (
-                <th key={index} className="min-w-40">
+                <th key={index} className='min-w-40'>
                   {hole.par}
                 </th>
               ))}

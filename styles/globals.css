@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Hyperlegible";
-  src: url("../src/fonts/AtkinsonHyperlegible-Regular.ttf");
+  font-family: 'Hyperlegible';
+  src: url('../src/fonts/AtkinsonHyperlegible-Regular.ttf');
 }
 
 html,
@@ -13,6 +13,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: black;
 }
 
 a {
