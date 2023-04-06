@@ -62,6 +62,16 @@ const concerts = [
   },
 ];
 
+const upcomingConcerts = [
+  {
+    name: 'Roger Waters',
+    date: '2023-04-15',
+    time: '19:00',
+    place: 'Tele 2 Arena',
+    city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Roger_Waters_Newport_Folk_Festival_2015.jpg',
+  },
+];
 const ArtistCard = ({ concertData }: { concertData: ConcertProps }) => {
   return (
     <figure className='relative mb-4 aspect-video w-full cursor-pointer overflow-hidden rounded-lg bg-black shadow-md filter transition-all duration-300 hover:grayscale'>
@@ -97,6 +107,12 @@ export default function Concerts() {
         <Title>Concerts</Title>
         <div className='flex w-full flex-col px-4 md:grid md:grid-cols-3 md:gap-4'>
           {concerts.map((concert, index) => {
+            return <ArtistCard key={index} concertData={concert} />;
+          })}
+        </div>
+        <Title>Upcoming</Title>
+        <div className='flex w-full flex-col px-4 md:grid md:grid-cols-3 md:gap-4'>
+          {upcomingConcerts.map((concert, index) => {
             return <ArtistCard key={index} concertData={concert} />;
           })}
         </div>
