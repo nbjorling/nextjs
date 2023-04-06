@@ -29,6 +29,14 @@ const concerts = [
     img: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Dermot_Kennedy_performing_at_2019_Lowlands_Festival.png',
   },
   {
+    name: 'Michael Bublé',
+    date: '2023-03-10',
+    time: '20:00',
+    place: 'Globen',
+    city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/MichaelBubleDanceFeb2011.jpg',
+  },
+  {
     name: 'Loreen',
     date: '2023-03-11',
     time: '22:00',
@@ -47,7 +55,7 @@ const concerts = [
   {
     name: 'Planetos',
     date: '2023-03-11',
-    time: '22:00',
+    time: '23:00',
     place: 'Berns',
     city: 'Stockholm',
     img: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Panetoz_p%C3%A5_presentationen_Mello_2023_Link%C3%B6ping_1.jpg',
