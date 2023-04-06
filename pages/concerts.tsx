@@ -56,7 +56,7 @@ const concerts = [
 
 const ArtistCard = ({ concertData }: { concertData: ConcertProps }) => {
   return (
-    <figure className='relative mb-4 aspect-video w-full cursor-pointer overflow-hidden rounded-lg bg-black shadow-md outline filter transition-all duration-300 hover:grayscale'>
+    <figure className='relative mb-4 aspect-video w-full cursor-pointer overflow-hidden rounded-lg bg-black shadow-md filter transition-all duration-300 hover:grayscale'>
       <div className=''>
         {concertData.img && (
           <Image
