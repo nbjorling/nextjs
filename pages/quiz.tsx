@@ -209,6 +209,19 @@ export default function Quiz() {
           </button>
         </div>
       </div>
+      <div className='text-center w-full'>
+        {choices.length === nQuestions &&
+          choices.every((value) => {
+            return typeof value === 'number';
+          }) && (
+            <button
+              className='border-2 border-green-400 text-green-400 py-2 px-4 mt-4 rounded'
+              onClick={() => submit()}
+            >
+              Rätta
+            </button>
+          )}
+      </div>
       {showAnswers && (
         <div
           className='curspor-pointer absolute top-1/2 z-20 w-full bg-yellow-400 text-center text-2xl'
