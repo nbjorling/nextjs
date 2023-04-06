@@ -217,6 +217,7 @@ export default function Quiz() {
             <button
               className='mt-4 rounded border-2 border-green-400 py-2 px-4 text-green-400'
               onClick={() => submit()}
+              type='button'
             >
               Rätta
             </button>

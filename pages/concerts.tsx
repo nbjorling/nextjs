@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import * as React from 'react';
 import Title from '../components/Title';
 
@@ -17,7 +18,7 @@ const concerts = [
     time: '20:00',
     place: 'Annexet',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Infected_Mushroom_-_Shuni_2015_01_%28cropped%29.JPG',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/6/61/Infected_Mushroom_in_Russia.jpg',
   },
   {
     name: 'Dermot Kennedy',
@@ -58,7 +59,13 @@ const ArtistCard = ({ concertData }: { concertData: ConcertProps }) => {
     <figure className='relative mb-4 aspect-video w-full cursor-pointer overflow-hidden rounded-lg bg-black shadow-md outline filter transition-all duration-300 hover:grayscale'>
       <div className=''>
         {concertData.img && (
-          <img src={concertData.img} alt={concertData.name} />
+          <Image
+            width={1000}
+            height={1000}
+            className='w-full'
+            src={concertData.img}
+            alt={concertData.name}
+          />
         )}
       </div>
       <figcaption className='absolute top-0 w-full bg-black bg-opacity-60 px-4 py-2 text-lg font-bold text-white'>
@@ -81,8 +88,8 @@ export default function Concerts() {
       <>
         <Title>Concerts</Title>
         <div className='mx-4 flex flex-col'>
-          {concerts.map((concert) => {
-            return <ArtistCard concertData={concert} />;
+          {concerts.map((concert, index) => {
+            return <ArtistCard key={index} concertData={concert} />;
           })}
         </div>
       </>

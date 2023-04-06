@@ -4,9 +4,9 @@ import * as React from 'react';
 function LinkElement({ href, title, toggleMenu }) {
   return (
     <Link href={href} passHref>
-      <a onClick={() => toggleMenu()} className='mb-2 cursor-pointer text-xl'>
+      <div onClick={() => toggleMenu()} className='mb-2 cursor-pointer text-xl'>
         <div className='mb-2 select-none hover:text-cyan-200'>{title}</div>
-      </a>
+      </div>
     </Link>
   );
 }
