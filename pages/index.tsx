@@ -45,6 +45,12 @@ const StartPageItems = [
     description: 'Jeopardy board',
     href: '/jeopardy',
   },
+  {
+    icon: '🎸',
+    title: 'Concerts',
+    description: `Concerts I've been to`,
+    href: '/concerts',
+  },
 ];
 
 function MenuItem({ href, title, description, icon }) {

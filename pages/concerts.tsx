@@ -87,7 +87,7 @@ export default function Concerts() {
     <main className='min-h-screen w-full bg-slate-800 pt-4 font-hyperlegible'>
       <>
         <Title>Concerts</Title>
-        <div className='mx-4 flex flex-col'>
+        <div className='flex w-full flex-col px-4 md:grid md:grid-cols-3 md:gap-4'>
           {concerts.map((concert, index) => {
             return <ArtistCard key={index} concertData={concert} />;
           })}
