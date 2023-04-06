@@ -55,15 +55,15 @@ const concerts = [
 
 const ArtistCard = ({ concertData }: { concertData: ConcertProps }) => {
   return (
-    <figure className='relative bg-black mb-4 shadow-md outline rounded-lg w-full aspect-video overflow-hidden transition-all duration-300 cursor-pointer filter hover:grayscale'>
+    <figure className='relative mb-4 aspect-video w-full cursor-pointer overflow-hidden rounded-lg bg-black shadow-md outline filter transition-all duration-300 hover:grayscale'>
       <div className=''>
         {concertData.img && (
           <img src={concertData.img} alt={concertData.name} />
         )}
       </div>
-      <figcaption className=' absolute px-4 py-2 text-lg text-white font-bold top-0 bg-black bg-opacity-60 w-full'>
+      <figcaption className='absolute top-0 w-full bg-black bg-opacity-60 px-4 py-2 text-lg font-bold text-white'>
         <div className='flex'>
-          <p className='grow font-bold text-lg'>{concertData.name}</p>
+          <p className='grow text-lg font-bold'>{concertData.name}</p>
           <p>{concertData.date}</p>
         </div>
         <div className='flex text-sm'>

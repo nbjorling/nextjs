@@ -209,13 +209,13 @@ export default function Quiz() {
           </button>
         </div>
       </div>
-      <div className='text-center w-full'>
+      <div className='w-full text-center'>
         {choices.length === nQuestions &&
           choices.every((value) => {
             return typeof value === 'number';
           }) && (
             <button
-              className='border-2 border-green-400 text-green-400 py-2 px-4 mt-4 rounded'
+              className='mt-4 rounded border-2 border-green-400 py-2 px-4 text-green-400'
               onClick={() => submit()}
             >
               Rätta
