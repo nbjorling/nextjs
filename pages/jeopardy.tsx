@@ -1,6 +1,6 @@
 import * as React from 'react';
 import FlippableCard from '../components/FlippableCard/FlippableCard';
-import ScoreBoard from '../components/ScoreBoard/ScoreBoard';
+// import ScoreBoard from '../components/ScoreBoard/ScoreBoard';
 import categories from '../public/assets/jeopardy.json';
 
 const Jeopardy: React.FC = () => {
@@ -20,7 +20,7 @@ const Jeopardy: React.FC = () => {
 
   return (
     <main className='flex h-[100vh] w-screen flex-col bg-black'>
-      <div className='flex flex-row'>
+      <div className='flex w-full flex-row gap-2 p-4'>
         {finale ? (
           <FlippableCard
             frontText='Final frågan!'
@@ -32,10 +32,13 @@ const Jeopardy: React.FC = () => {
           />
         ) : (
           categories.map((category) => (
-            <div key={category.name} className='flex-col'>
+            <div
+              key={category.name}
+              className='flex h-full grow flex-col gap-2'
+            >
               <FlippableCard
                 frontText={category.name}
-                frontTextSize='text-4xl'
+                frontTextSize='lg:text-4xl text-md'
               />
               {category.questions.map((question, index) => {
                 const frontText = `${(index + 1) * 100}`;
@@ -50,7 +53,7 @@ const Jeopardy: React.FC = () => {
             </div>
           ))
         )}
-        <ScoreBoard />
+        {/* <ScoreBoard /> */}
       </div>
       <div className='flex flex-row justify-evenly'>
         <button type='button' onClick={toggleFinale}>

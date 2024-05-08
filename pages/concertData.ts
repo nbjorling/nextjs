@@ -287,6 +287,14 @@ const concerts = [
     city: 'Stockholm',
     img: 'https://upload.wikimedia.org/wikipedia/commons/2/20/MS2015.jpg',
   },
+  {
+    name: 'Tenacious D',
+    date: '2023-04-29',
+    time: '19.00',
+    place: 'Hovet',
+    city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Tenacious_D_-_Rock_am_Ring_2016_-2016155215305_2016-06-03_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_0802_-_AK8I0813_mod.jpg/2880px-Tenacious_D_-_Rock_am_Ring_2016_-2016155215305_2016-06-03_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_0802_-_AK8I0813_mod.jpg',
+  },
 ];
 
 const upcomingConcerts = [];
