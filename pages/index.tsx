@@ -46,6 +46,12 @@ const StartPageItems = [
     href: '/jeopardy',
   },
   {
+    icon: '👨🏼',
+    title: 'Jeopardy Answers',
+    description: 'Jeopardy Answers',
+    href: '/jeopardyAnswers',
+  },
+  {
     icon: '🎸',
     title: 'Concerts',
     description: `Concerts I've been to`,
@@ -124,10 +130,10 @@ export default function Home() {
       </div>
       <div className='flex justify-center pt-8'>
         <div
-          className='min-h-40 grid h-fit w-full max-w-7xl gap-4 px-8'
-          style={{
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          }}
+          className='min-h-40 grid h-fit w-full max-w-7xl gap-4 px-8 md:grid-cols-4'
+          // style={{
+          //   gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          // }}
         >
           {StartPageItems.map((item, index) => (
             <MenuItem

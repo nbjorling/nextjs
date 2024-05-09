@@ -1,165 +1,11 @@
 import Image from 'next/image';
 import * as React from 'react';
 import Title from '../components/Title';
-
-type ConcertProps = {
-  name: string;
-  date: string;
-  time: string;
-  place: string;
-  city: string;
-  img: string;
-};
-
-const concerts = [
-  {
-    name: 'Infected Mushroom',
-    date: '2023-02-25',
-    time: '20:00',
-    place: 'Annexet',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/6/61/Infected_Mushroom_in_Russia.jpg',
-  },
-  {
-    name: 'Dermot Kennedy',
-    date: '2023-03-11',
-    time: '19:00',
-    place: 'Annexet',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Dermot_Kennedy_performing_at_2019_Lowlands_Festival.png',
-  },
-  {
-    name: 'Michael Bublé',
-    date: '2023-03-10',
-    time: '20:00',
-    place: 'Globen',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/MichaelBubleDanceFeb2011.jpg',
-  },
-  {
-    name: 'Loreen',
-    date: '2023-03-11',
-    time: '22:00',
-    place: 'Berns',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/1/17/Loreen_-_Melodifestivalen_2023%2C_Malm%C3%B6_118_%28cropped%29.jpg',
-  },
-  {
-    name: 'Nordman',
-    date: '2023-03-11',
-    time: '22:00',
-    place: 'Berns',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Nordman_2013-10-04_001.jpg',
-  },
-  {
-    name: 'Planetos',
-    date: '2023-03-11',
-    time: '23:00',
-    place: 'Berns',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Panetoz_p%C3%A5_presentationen_Mello_2023_Link%C3%B6ping_1.jpg',
-  },
-  {
-    name: 'Roger Waters',
-    date: '2023-04-15',
-    time: '19:00',
-    place: 'Tele 2 Arena',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Roger_Waters_Newport_Folk_Festival_2015.jpg',
-  },
-  {
-    name: 'Post Malone',
-    date: '2023-04-26',
-    time: '19:30',
-    place: 'Avicii Arena',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/6/63/CHRISALLMEID_CHRISALLMEID_POSTMALONE-3.jpg',
-  },
-  {
-    name: 'Wutang Clan',
-    date: '2023-06-02',
-    time: '20:00',
-    place: 'Avicii Arena',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Wu_Tang_Clan_on_Stage.jpg',
-  },
-  {
-    name: 'Nas',
-    date: '2023-06-02',
-    time: '20:00',
-    place: 'Avicii Arena',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Nas-01-mika.jpg',
-  },
-  {
-    name: 'Jalazzi',
-    date: '2023-04-26',
-    time: '22:00',
-    place: 'Slakthusområdet - Mästerbotten',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Punctus_interrogativus_from_Bern%2C_B%C3%BCrgerbibliothek_Cod._162%2C_f._15r.jpg',
-  },
-  {
-    name: 'Broder John',
-    date: '2023-04-26',
-    time: '23:00',
-    place: 'Slakthusområdet - Mästerbotten',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Punctus_interrogativus_from_Bern%2C_B%C3%BCrgerbibliothek_Cod._162%2C_f._15r.jpg',
-  },
-  {
-    name: 'Hoopdiggas Club',
-    date: '2023-04-26',
-    time: '23:00',
-    place: 'Slakthusområdet - Mästerbotten',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Punctus_interrogativus_from_Bern%2C_B%C3%BCrgerbibliothek_Cod._162%2C_f._15r.jpg',
-  },
-  {
-    name: 'Cleo',
-    date: '2023-04-26',
-    time: '23:30',
-    place: 'Slakthusområdet - Mästerbotten',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Valborg_Cleo_0785_120430_MPN_Original.jpg',
-  },
-  {
-    name: 'Trainspotters',
-    date: '2023-04-26',
-    time: '00:30',
-    place: 'Slakthusområdet - Mästerbotten',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Trainspotters-Live_At_Umea_Jazz_Festival-Photo_by_Jonatan_Nylander.jpg',
-  },
-  {
-    name: 'Fridlyst',
-    date: '2023-04-26',
-    time: '00:30',
-    place: 'Slakthusområdet - Mästerbotten',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Punctus_interrogativus_from_Bern%2C_B%C3%BCrgerbibliothek_Cod._162%2C_f._15r.jpg',
-  },
-];
-
-const upcomingConcerts = [
-  {
-    name: 'Kygo',
-    date: '2023-06-31',
-    time: '??',
-    place: 'Lollapalooza',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/d/dd/Kygo_%2828481718120%29_%282%29.jpg',
-  },
-  {
-    name: 'Mumford and Sons',
-    date: '2023-07-01',
-    time: '??',
-    place: 'Lollapalooza',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/2/20/MS2015.jpg',
-  },
-];
+import {
+  concerts,
+  upcomingConcerts,
+  ConcertProps,
+} from '../public/assets/concertData';
 
 const ArtistCard = ({ concertData }: { concertData: ConcertProps }) => {
   return (
@@ -190,14 +36,54 @@ const ArtistCard = ({ concertData }: { concertData: ConcertProps }) => {
 };
 
 export default function Concerts() {
+  const noFestival = [];
+  const masterBotten = [];
+  const lolla = [];
+
+  const hex = '#323FFe';
+
+  concerts.forEach((concert) => {
+    if (concert.festival === 'Mästerbotten') {
+      masterBotten.push(concert);
+    }
+    if (concert.festival === 'Lollapalooza') {
+      lolla.push(concert);
+    } else {
+      noFestival.push(concert);
+    }
+    return concert;
+  });
+
   return (
     <main className='min-h-screen w-full bg-slate-800 pt-4 font-hyperlegible'>
       <>
         <Title>Concerts</Title>
         <div className='flex w-full flex-col px-4 md:grid md:grid-cols-3 md:gap-4'>
-          {concerts.map((concert, index) => {
+          {noFestival.map((concert, index) => {
             return <ArtistCard key={index} concertData={concert} />;
           })}
+          <div
+            className='relative col-span-3 mt-8 w-full rounded-xl border-2 p-4 md:grid md:grid-cols-3 md:gap-4'
+            style={{ border: `2px solid ${hex}`, background: `${hex}10` }}
+          >
+            <div className='absolute -top-12 flex items-center justify-center rounded-xl py-2 font-bold text-white'>
+              <h2 className='text-4xl'>Mästerbotten</h2>
+            </div>
+            {masterBotten.map((concert, index) => {
+              return <ArtistCard key={index} concertData={concert} />;
+            })}
+          </div>{' '}
+          <div
+            className='relative col-span-3 mt-8 w-full rounded-xl border-2 p-4 md:grid md:grid-cols-3 md:gap-4'
+            style={{ border: `2px solid ${hex}`, background: `${hex}10` }}
+          >
+            <div className='absolute -top-12 flex items-center justify-center rounded-xl py-2 font-bold text-white'>
+              <h2 className='text-4xl'>Lollapalooza</h2>
+            </div>
+            {lolla.map((concert, index) => {
+              return <ArtistCard key={index} concertData={concert} />;
+            })}
+          </div>
         </div>
         <Title>Upcoming</Title>
         <div className='flex w-full flex-col px-4 md:grid md:grid-cols-3 md:gap-4'>
