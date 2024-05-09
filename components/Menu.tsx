@@ -66,6 +66,11 @@ export function Menu() {
             />
             <LinkElement
               toggleMenu={toggleMenu}
+              href='/jeopardyAnswers'
+              title='👨🏼 JeopardyAnswers'
+            />
+            <LinkElement
+              toggleMenu={toggleMenu}
               href='/concerts'
               title='🎸 Concerts'
             />

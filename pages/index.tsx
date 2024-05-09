@@ -46,6 +46,12 @@ const StartPageItems = [
     href: '/jeopardy',
   },
   {
+    icon: '👨🏼',
+    title: 'Jeopardy Answers',
+    description: 'Jeopardy Answers',
+    href: '/jeopardyAnswers',
+  },
+  {
     icon: '🎸',
     title: 'Concerts',
     description: `Concerts I've been to`,
