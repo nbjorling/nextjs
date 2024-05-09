@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 type ChoiceProps = {
   text: string;
@@ -32,35 +32,35 @@ type QuizDataProps = {
 };
 
 const QUIZ_DATA: QuizDataProps = {
-  title: "Quiz Title",
-  description: "Quiz description goes here for as good as I know",
+  title: 'Quiz Title',
+  description: 'Quiz description goes here for as good as I know',
   questions: [
     {
-      question: "Vad är 1+1?",
+      question: 'Vad är 1+1?',
       choices: [
-        { text: "2", correct: true },
-        { text: "3", correct: false },
-        { text: "4", correct: false },
+        { text: '2', correct: true },
+        { text: '3', correct: false },
+        { text: '4', correct: false },
       ],
       correctAnswer: 0,
     },
     {
-      question: "Rätt svar borde vara tre?",
+      question: 'Rätt svar borde vara tre?',
       choices: [
-        { text: "Ett", correct: false },
-        { text: "Två", correct: false },
-        { text: "Tre", correct: true },
+        { text: 'Ett', correct: false },
+        { text: 'Två', correct: false },
+        { text: 'Tre', correct: true },
       ],
       correctAnswer: 2,
     },
     {
       question:
-        "Saying the name of what dried fruit used to be used to encourage people to smile before a photo in the 1800s, before the phrase “cheese?”",
+        'Saying the name of what dried fruit used to be used to encourage people to smile before a photo in the 1800s, before the phrase “cheese?”',
       choices: [
-        { text: "Prunes", correct: false },
-        { text: "Kiwis", correct: false },
+        { text: 'Prunes', correct: false },
+        { text: 'Kiwis', correct: false },
         {
-          text: "En låååååååång text för att se hur ett långt svar skulle kunna se ut i denna quiz",
+          text: 'En låååååååång text för att se hur ett långt svar skulle kunna se ut i denna quiz',
           correct: true,
         },
       ],
@@ -73,18 +73,18 @@ const AnimatedBorderContainer: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   return (
-    <div className="relative overflow-hidden w-full min-h-[200px] h-[70vh] shadow-xl rounded-lg">
+    <div className='relative h-[70vh] min-h-[200px] w-full overflow-hidden rounded-lg shadow-xl'>
       <div
-        className="absolute z-0 -left-[100%] -top-[100%] w-[300%] h-[300%] animate-rotate"
+        className='absolute -left-[100%] -top-[100%] z-0 h-[300%] w-[300%] animate-rotate'
         style={{
           background:
-            "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
-          backgroundSize: "100% 100%",
-          transform: "translateY(0)",
-          transformOrigin: "0, 0",
+            'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
+          backgroundSize: '100% 100%',
+          transform: 'translateY(0)',
+          transformOrigin: '0, 0',
         }}
       ></div>
-      <div className="absolute z-10 left-[2px] top-[2px] w-[calc(100%-4px)] h-[calc(100%-4px)] rounded-lg bg-slate-700 p-4 transition-color duration-300 ">
+      <div className='transition-color absolute left-[2px] top-[2px] z-10 h-[calc(100%-4px)] w-[calc(100%-4px)] rounded-lg bg-slate-700 p-4 duration-300 '>
         {children}
       </div>
     </div>
@@ -96,14 +96,14 @@ const Choice: React.FC<ChoiceElementProps> = ({
   selected,
   onClick,
 }) => {
-  const bgStyle = selected && "outline-2 outline-slate-300";
+  const bgStyle = selected && 'outline-2 outline-slate-300';
   const styles =
-    "p-2 my-4 cursor-pointer bg-slate-600  hover:bg-slate-500 rounded";
+    'p-2 my-4 cursor-pointer bg-slate-600  hover:bg-slate-500 rounded';
   return (
-    <div className={[bgStyle, styles].join(" ")} onClick={onClick}>
-      <div className="flex justify-between">
+    <div className={[bgStyle, styles].join(' ')} onClick={onClick}>
+      <div className='flex justify-between'>
         <p>{choice.text}</p>
-        {selected && <p className="text-yellow-400">Selected</p>}
+        {selected && <p className='text-yellow-400'>Selected</p>}
       </div>
     </div>
   );
@@ -116,7 +116,7 @@ const Question: React.FC<QuestionComponentProps> = ({
   questionIndex,
 }) => {
   return (
-    <div className="text-white p-4">
+    <div className='p-4 text-white'>
       <div>{question?.question}</div>
       {question?.choices?.map((choice, index) => {
         const clickHandler = () => {
@@ -159,13 +159,13 @@ export default function Quiz() {
   }
 
   return (
-    <main className="w-full min-h-screen bg-slate-800 pt-4 font-hyperlegible">
+    <main className='min-h-screen w-full bg-slate-800 pt-4 font-hyperlegible'>
       {/* <div className="fixed bottom-0 p-4 w-40 h-auto bg-white ">
         JSON DATA: <br></br>
         {JSON.stringify(choices, null, 2)}
       </div> */}
-      <div className="p-4">
-        <h2 className="text-white mb-4">
+      <div className='p-4'>
+        <h2 className='mb-4 text-white'>
           Question {currentQuestion + 1} of {nQuestions}
         </h2>
         <AnimatedBorderContainer>
@@ -177,12 +177,13 @@ export default function Quiz() {
             question={QUIZ_DATA.questions[currentQuestion]}
           />
         </AnimatedBorderContainer>
-        <div className="flex w-full justify-center">
-          <div className="flex-grow">
+        <div className='flex w-full justify-center'>
+          <div className='flex-grow'>
             {currentQuestion !== 0 && (
               <button
-                className="bg-slate-200 py-2 px-4 mt-4 mr-2 rounded"
+                className='mt-4 mr-2 rounded bg-slate-200 py-2 px-4'
                 onClick={() => setCurrentQuestion((prev) => prev - 1)}
+                type='button'
               >
                 Previous
               </button>
@@ -190,8 +191,9 @@ export default function Quiz() {
 
             {currentQuestion + 1 < nQuestions && (
               <button
-                className="bg-slate-200 py-2 px-4 mr-2 mt-4 rounded"
+                className='mr-2 mt-4 rounded bg-slate-200 py-2 px-4'
                 onClick={() => setCurrentQuestion((prev) => prev + 1)}
+                type='button'
               >
                 Next
               </button>
@@ -199,16 +201,31 @@ export default function Quiz() {
           </div>
 
           <button
-            className="bg-slate-200 py-2 px-4 mr-2 mt-4 rounded"
+            className='mr-2 mt-4 rounded bg-slate-200 py-2 px-4'
             onClick={() => submit()}
+            type='button'
           >
             Rätta
           </button>
         </div>
       </div>
+      <div className='w-full text-center'>
+        {choices.length === nQuestions &&
+          choices.every((value) => {
+            return typeof value === 'number';
+          }) && (
+            <button
+              className='mt-4 rounded border-2 border-green-400 py-2 px-4 text-green-400'
+              onClick={() => submit()}
+              type='button'
+            >
+              Rätta
+            </button>
+          )}
+      </div>
       {showAnswers && (
         <div
-          className="absolute text-center z-20 w-full top-1/2 text-2xl bg-yellow-400 curspor-pointer"
+          className='curspor-pointer absolute top-1/2 z-20 w-full bg-yellow-400 text-center text-2xl'
           onClick={() => setShowAnswers(false)}
         >
           {points.toString()} Correct Answers
