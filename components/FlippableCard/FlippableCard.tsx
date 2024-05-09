@@ -15,8 +15,8 @@ type FlippableCardProps = {
 const FlippableCard: React.FC<FlippableCardProps> = ({
   frontText,
   backText,
-  frontTextSize = 'text-2xl md:text-5xl lg:text-8xl text-yellow-300 drop-shadow-[0_2.2px_1.2px_rgba(0,0,0,0.8)]',
-  backTextSize = 'text-md md:text-xl lg:text-2xl',
+  frontTextSize = 'text-2xl md:text-5xl lg:text-8xl text-yellow-300 drop-shadow-[0_3.2px_2.2px_rgba(0,0,0,0.8)]',
+  backTextSize = 'text-md md:text-xl lg:text-xl xl:text-2xl drop-shadow-[0_3.2px_2.2px_rgba(0,0,0,0.8)]',
   textColor = 'text-white',
   bgColor = 'bg-gradient-to-b from-[#2193b0] to-[#6dd5ed]',
   bgBackColor = 'bg-gradient-to-b to-[#2193b0] from-[#6dd5ed]',
@@ -31,7 +31,7 @@ const FlippableCard: React.FC<FlippableCardProps> = ({
 
   return (
     <div
-      className={`flex ${height} ${width} cursor-pointer select-none  bg-transparent [perspective:1000px]`}
+      className={`flex ${height} ${width} grow cursor-pointer  select-none bg-transparent [perspective:1000px]`}
       onClick={flipCard}
     >
       <div
@@ -55,7 +55,7 @@ const FlippableCard: React.FC<FlippableCardProps> = ({
           <div
             className={`flex h-full w-full flex-col items-center justify-center ${bgBackColor} rounded-2xl`}
           >
-            <p className={`text-center  ${backTextSize} ${textColor}`}>
+            <p className={`p-1 text-center ${backTextSize} ${textColor}`}>
               {backText}
             </p>
           </div>
