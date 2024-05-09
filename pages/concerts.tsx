@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import * as React from 'react';
 import Title from '../components/Title';
-import { concerts, upcomingConcerts, ConcertProps } from './concertData';
+import {
+  concerts,
+  upcomingConcerts,
+  ConcertProps,
+} from '../public/assets/concertData';
 
 const ArtistCard = ({ concertData }: { concertData: ConcertProps }) => {
   return (

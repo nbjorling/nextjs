@@ -204,7 +204,7 @@ const concerts = [
     place: 'Stockholm',
     festival: 'Lollapalooza',
     city: 'Stockholm',
-    img: '',
+    img: 'https://sv.wikipedia.org/wiki/Lil_Nas_X#/media/Fil:Glasto2023_(348_of_468)_(53009419903)_(cropped).jpg',
   },
   {
     name: 'Fatboy Slim',
@@ -213,7 +213,7 @@ const concerts = [
     place: 'Stockholm',
     festival: 'Lollapalooza',
     city: 'Stockholm',
-    img: '',
+    img: 'https://sv.wikipedia.org/wiki/Fatboy_Slim#/media/Fil:Fatboy_Slim_in_2004.jpg',
   },
   {
     name: 'Sofi Tukker',
@@ -240,7 +240,7 @@ const concerts = [
     place: 'Stockholm',
     festival: 'Lollapalooza',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/2/20/MS2015.jpg',
+    img: 'https://sv.wikipedia.org/wiki/Mumford_%26_Sons#/media/Fil:MS2015.jpg',
   },
   {
     name: 'Olivia Lobato',
@@ -249,7 +249,7 @@ const concerts = [
     place: 'Stockholm',
     festival: 'Way Out West',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/2/20/MS2015.jpg',
+    img: 'https://sv.wikipedia.org/wiki/Olivia_Lobato#/media/Fil:Olivia_Lobato_Mix_Megapol_concert.jpg',
   },
   {
     name: 'Aurora',
@@ -258,7 +258,7 @@ const concerts = [
     place: 'Stockholm',
     festival: 'Way Out West',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/2/20/MS2015.jpg',
+    img: 'https://sv.wikipedia.org/wiki/Aurora_Aksnes#/media/Fil:Aurora_Stavernfestivalen_2018_(192156).jpg',
   },
   {
     name: 'Tove Lo',
@@ -267,7 +267,7 @@ const concerts = [
     place: 'Stockholm',
     festival: 'Way Out West',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/2/20/MS2015.jpg',
+    img: 'https://sv.wikipedia.org/wiki/Tove_Lo#/media/Fil:Tove_Lo_at_Lollapalooza_Chicago_2017.jpg',
   },
   {
     name: 'Blur',
@@ -276,20 +276,11 @@ const concerts = [
     place: 'Stockholm',
     festival: 'Way Out West',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/2/20/MS2015.jpg',
-  },
-  {
-    name: 'Blur',
-    date: '2023-07-11',
-    time: '??',
-    place: 'Stockholm',
-    festival: 'Way Out West',
-    city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/2/20/MS2015.jpg',
+    img: 'https://sv.wikipedia.org/wiki/Blur#/media/Fil:Blur_live_29.07.2013_in_Rome.jpg',
   },
   {
     name: 'Tenacious D',
-    date: '2023-04-29',
+    date: '2024-04-29',
     time: '19.00',
     place: 'Hovet',
     city: 'Stockholm',
