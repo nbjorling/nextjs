@@ -1,0 +1,152 @@
+[
+  {
+    "name": "I spelvärlden",
+    "questions": [
+      {
+        "question": "Vem är Sonic?",
+        "answer": "Han är en blå snabb igelkott som utvecklades av Sega"
+      },
+      {
+        "question": "Vad är FIFA?",
+        "answer": "Detta populära fotbollsspel ska snart rebrandas som 'EA Sports FC'"
+      },
+      {
+        "question": "Vem är Notch?",
+        "answer": "Detta är smeknamnet på Markus Persson, skaparen av Minecraft"
+      },
+      {
+        "question": "Vad är Capcom?",
+        "answer": "Street Fighter och Mega Man är två av de enormt populära spelserier som släppts av denna spel-studio"
+      },
+      {
+        "question": "Vad är Nintendo?",
+        "answer": "Detta välkända japanska spelföretag grundades år 1889 och ligger bakom ett stort antal klassiker"
+      }
+    ]
+  },
+  {
+    "name": "På vita duken",
+    "questions": [
+      {
+        "question": "Vad är The Shining`",
+        "answer": "Denna Hitchcock-film är förmodligen mest känd för sin scen med ett duschdraperi"
+      },
+      {
+        "question": "Vem är Edward Shore?",
+        "answer": "Denna kompositör har skapat musiken åt sagan om ringen"
+      },
+      {
+        "question": "Vem är Frances Houseman?",
+        "answer": "Hon kallas 'Baby', men detta är karaktärens fulla namn i filmen Dirty Dancing från 1987"
+      },
+      {
+        "question": "Vad är Snövit och de sju dvärgarna?",
+        "answer": "Detta var den första animerade långfilm som släpptes redan 1937"
+      },
+      {
+        "question": "Vad är rosebud?",
+        "answer": "Dessa är Charles Kanes sista ord i drama-klassikern från 1941"
+      }
+    ]
+  },
+  {
+    "name": "Nerd alert!",
+    "questions": [
+      {
+        "question": "Vad är 140 tecken?",
+        "answer": "Så många tecken tecken tilläts vid lanseringen av Twitter och har idag dubblerats"
+      },
+      {
+        "question": "Vad är Harvard University?",
+        "answer": "Bill Gates hoppade av detta prestigefyllda universitet för att starta Microsoft"
+      },
+      {
+        "question": "Vad är Bluetooth?",
+        "answer": "Denna teknologi namngavs efter den norsk- och danskregerande kung Harald"
+      },
+      {
+        "question": "Vad är 3,5mm audio jack 'AUX'?",
+        "answer": "Denna teknologi valde Apple att frångå vid lanseringen av Iphone 7"
+      },
+      {
+        "question": "Vad är QWERTY?",
+        "answer": "Detta är namnet på den tangentsbords-layout som de flesta av oss använder dagligen"
+      }
+    ]
+  },
+  {
+    "name": "Ljud och oljud",
+    "questions": [
+      {
+        "question": "Vad är Ludwig van Beethoven?",
+        "answer": "Denna kompositör är känd för bangers som 'Für Elise'"
+      },
+      {
+        "question": "Vem är 50 cent?",
+        "answer": "Curtis James Jackson III är mer känd under detta artistnamn"
+      },
+      {
+        "question": "Vad är Farrokh Bulsara?",
+        "answer": "Detta är hans riktiga namn, han är dock mer känd som Freddie Mercury"
+      },
+      {
+        "question": "Vad är Muzak?",
+        "answer": "Detta är namnet på musikstilen som i vardagsspråk ofta kallas 'hissmusik'"
+      },
+      {
+        "question": "Vem är Antonio Vivaldi?",
+        "answer": "Denna italienska kompositör, född 1678, skrev den berömda samlingen 'De fyra årstiderna'"
+      }
+    ]
+  },
+  {
+    "name": "Det borde man kunna",
+    "questions": [
+      {
+        "question": "Vad är Japan?",
+        "answer": "Sushi kommer från detta land"
+      },
+      {
+        "question": "Vem är Marie Curie?",
+        "answer": "Hon var den första kvinnan att vinna ett Nobelpris"
+      },
+      {
+        "question": "Vad är 193 länder (2024)?",
+        "answer": "Så många länder är medlemmar i Förenta Nationerna"
+      },
+      {
+        "question": "Vem är Gustav Vasa?",
+        "answer": "Vilken svensk kung var den första att officiellt använda titeln 'Sveriges, Götes och Vendes konung'"
+      },
+      {
+        "question": "Vad är 11 tidszoner?",
+        "answer": "Så många tidszoner har Ryssland"
+      }
+    ]
+  },
+  {
+    "name": "Fyrtal",
+    "questions": [
+      {
+        "question": "Vad är en fyrklöver?",
+        "answer": "Denna växt sägs bringa tur och är en populär symbol hos irländare"
+      },
+      {
+        "question": "Vem är D'Artagnan?",
+        "answer": "Han var den fjärde musketören efter Athos, Aramis och Porthos"
+      },
+      {
+        "question": "Vilka är Louis, Meg, Chris och Stewie?",
+        "answer": "Peter Griffin heter pappan i Family Guy och detta är namnen på de fyra andra (människorna)"
+      },
+      {
+        "question": "Vilka är Leonardo da Vinci, Michelangelo Buonarroti, Donatello och Raphael?",
+        "answer": "Dessa renässanskonstnärer gav inspiration till namnen på fyra sköldpaddor med kampsportskunskaper"
+      },
+      {
+        "question": "Vem är Dali?",
+        "answer": "Salvador Domingo Felipe Jacinto är mer känd under detta namn på fyra bokstäver"
+      }
+    ]
+  }
+]
