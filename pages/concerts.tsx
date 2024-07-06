@@ -32,16 +32,24 @@ import { ConcertProps, concerts } from '../public/assets/concertData';
 // };
 
 const ArtistListItem = ({ concertData }: { concertData: ConcertProps }) => {
+  function getColorValue() {
+    return Math.floor(Math.random() * 255);
+  }
+
+  const backgroundColor = `rgb(${getColorValue()},${getColorValue()},${getColorValue()})`;
+  console.log('Koca: backgroundColor ', backgroundColor);
+
   return (
     <figure
       style={{
         boxShadow:
           '3px 3px 6px #000, -3px -3px 6px rgb(30 41 59 / var(--tw-bg-opacity))',
         border: '1px solid rgba(0,0,0,0.25)',
+        backgroundColor: !concertData.img && backgroundColor,
       }}
-      className='relative h-[42px] w-full cursor-pointer overflow-hidden rounded-lg bg-black filter transition-all duration-300 hover:aspect-video'
+      className='relative h-12 w-full cursor-pointer overflow-hidden rounded-lg  filter transition-all duration-300 hover:aspect-video hover:h-60'
     >
-      <div className=''>
+      <div>
         {concertData.img && (
           <Image
             width={1000}
@@ -52,10 +60,10 @@ const ArtistListItem = ({ concertData }: { concertData: ConcertProps }) => {
           />
         )}
       </div>
-      <figcaption className='absolute top-0 w-full bg-black bg-opacity-60 px-4 py-2 text-lg font-bold text-white'>
-        <div className='flex'>
+      <figcaption className='absolute inset-0 w-full bg-black bg-opacity-60 px-4 py-2 text-lg font-bold text-white'>
+        <div className='flex items-end'>
           <p className='grow text-lg font-bold'>{concertData.name}</p>
-          <p>
+          <p className='text-sm'>
             {concertData.date} @ {concertData.place}
           </p>
         </div>
@@ -70,8 +78,16 @@ export default function Concerts() {
   const pastConcerts = [];
 
   const todaysDate = dayjs().format('YYYY-MM-DD');
-  console.log('Koca: todaysDate ', todaysDate);
-  concerts.forEach((concert) => {
+
+  function orderByDate(a, b) {
+    if (dayjs(a) > dayjs(b)) return -1;
+    else if (dayjs(a) < dayjs(b)) return 1;
+    else return 0;
+  }
+
+  const sortedConcerts = concerts.sort((a, b) => orderByDate(a.date, b.date));
+
+  sortedConcerts.forEach((concert) => {
     if (todaysDate === concert.date) {
       todayConcert.push(concert);
     } else if (dayjs(todaysDate).isBefore(concert.date)) {

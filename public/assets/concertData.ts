@@ -111,7 +111,6 @@ const concerts = [
     time: '19:30',
     place: 'Avicii Arena',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/6/63/CHRISALLMEID_CHRISALLMEID_POSTMALONE-3.jpg',
   },
   {
     name: 'Wutang Clan',
@@ -190,7 +189,6 @@ const concerts = [
     place: 'Gärdet',
     festival: 'Lollapalooza',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Punctus_interrogativus_from_Bern%2C_B%C3%BCrgerbibliothek_Cod._162%2C_f._15r.jpg',
   },
   {
     name: 'Thomas Stenström',
@@ -217,7 +215,6 @@ const concerts = [
     place: 'Gärdet',
     festival: 'Lollapalooza',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Punctus_interrogativus_from_Bern%2C_B%C3%BCrgerbibliothek_Cod._162%2C_f._15r.jpg',
   },
   {
     name: 'Afrojack',
@@ -244,7 +241,6 @@ const concerts = [
     place: 'Stockholm',
     festival: 'Lollapalooza',
     city: 'Stockholm',
-    img: 'https://sv.wikipedia.org/wiki/Lil_Nas_X#/media/Fil:Glasto2023_(348_of_468)_(53009419903)_(cropped).jpg',
   },
   {
     name: 'Fatboy Slim',
@@ -253,7 +249,6 @@ const concerts = [
     place: 'Stockholm',
     festival: 'Lollapalooza',
     city: 'Stockholm',
-    img: 'https://sv.wikipedia.org/wiki/Fatboy_Slim#/media/Fil:Fatboy_Slim_in_2004.jpg',
   },
   {
     name: 'Sofi Tukker',
@@ -280,7 +275,6 @@ const concerts = [
     place: 'Stockholm',
     festival: 'Lollapalooza',
     city: 'Stockholm',
-    img: 'https://sv.wikipedia.org/wiki/Mumford_%26_Sons#/media/Fil:MS2015.jpg',
   },
   {
     name: 'Olivia Lobato',
@@ -289,7 +283,6 @@ const concerts = [
     place: 'Stockholm',
     festival: 'Way Out West',
     city: 'Stockholm',
-    img: 'https://sv.wikipedia.org/wiki/Olivia_Lobato#/media/Fil:Olivia_Lobato_Mix_Megapol_concert.jpg',
   },
   {
     name: 'Aurora',
@@ -298,7 +291,6 @@ const concerts = [
     place: 'Stockholm',
     festival: 'Way Out West',
     city: 'Stockholm',
-    img: 'https://sv.wikipedia.org/wiki/Aurora_Aksnes#/media/Fil:Aurora_Stavernfestivalen_2018_(192156).jpg',
   },
   {
     name: 'Tove Lo',
@@ -307,7 +299,6 @@ const concerts = [
     place: 'Stockholm',
     festival: 'Way Out West',
     city: 'Stockholm',
-    img: 'https://sv.wikipedia.org/wiki/Tove_Lo#/media/Fil:Tove_Lo_at_Lollapalooza_Chicago_2017.jpg',
   },
   {
     name: 'Blur',
@@ -316,7 +307,6 @@ const concerts = [
     place: 'Stockholm',
     festival: 'Way Out West',
     city: 'Stockholm',
-    img: 'https://sv.wikipedia.org/wiki/Blur#/media/Fil:Blur_live_29.07.2013_in_Rome.jpg',
   },
   {
     name: 'Tenacious D',
