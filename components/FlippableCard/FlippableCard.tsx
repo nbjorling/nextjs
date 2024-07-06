@@ -53,11 +53,11 @@ const FlippableCard: React.FC<FlippableCardProps> = ({
         {/* BACKSIDE */}
         <div className='absolute  h-full w-full [backface-visibility:hidden] [transform:rotateY(180deg)]'>
           <div
-            className={`flex h-full w-full flex-col items-center justify-center ${bgBackColor} rounded-2xl`}
+            className={`flex h-full w-full flex-col items-center justify-center ${'bg-orange'} rounded-2xl`}
           >
-            <p className={`p-1 text-center ${backTextSize} ${textColor}`}>
+            {/* <p className={`p-1 text-center ${backTextSize} ${textColor}`}>
               {backText}
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
