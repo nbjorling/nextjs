@@ -37,7 +37,6 @@ const ArtistListItem = ({ concertData }: { concertData: ConcertProps }) => {
   }
 
   const backgroundColor = `rgb(${getColorValue()},${getColorValue()},${getColorValue()})`;
-  console.log('Koca: backgroundColor ', backgroundColor);
 
   return (
     <figure
@@ -60,12 +59,15 @@ const ArtistListItem = ({ concertData }: { concertData: ConcertProps }) => {
           />
         )}
       </div>
-      <figcaption className='absolute inset-0 w-full bg-black bg-opacity-60 px-4 py-2 text-lg font-bold text-white'>
-        <div className='flex items-end'>
-          <p className='grow text-lg font-bold'>{concertData.name}</p>
-          <p className='text-sm'>
-            {concertData.date} @ {concertData.place}
+      <figcaption className='absolute inset-0 flex w-full  bg-black bg-opacity-60 px-2 py-1 text-lg font-bold text-white'>
+        <div className='flex h-10 w-full justify-between'>
+          <p className='shrink-0 grow self-center text-lg font-bold'>
+            {concertData.name}
           </p>
+          <div className='flex flex-col items-end'>
+            <p className='ml-2 flex text-sm'>{concertData.date}</p>
+            <p className='ml-2 flex text-sm'>@ {concertData.place}</p>
+          </div>
         </div>
       </figcaption>
     </figure>
