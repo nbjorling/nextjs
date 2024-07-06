@@ -1,11 +1,7 @@
+import dayjs from 'dayjs';
 import Image from 'next/image';
-import * as React from 'react';
 import Title from '../components/Title';
-import {
-  concerts,
-  upcomingConcerts,
-  ConcertProps,
-} from '../public/assets/concertData';
+import { ConcertProps, concerts } from '../public/assets/concertData';
 
 const ArtistCard = ({ concertData }: { concertData: ConcertProps }) => {
   return (
@@ -35,60 +31,81 @@ const ArtistCard = ({ concertData }: { concertData: ConcertProps }) => {
   );
 };
 
+const ArtistListItem = ({ concertData }: { concertData: ConcertProps }) => {
+  return (
+    <figure
+      style={{
+        boxShadow:
+          '3px 3px 6px #000, -3px -3px 6px rgb(30 41 59 / var(--tw-bg-opacity))',
+        border: '1px solid rgba(0,0,0,0.25)',
+      }}
+      className='relative h-[42px] w-full cursor-pointer overflow-hidden rounded-lg bg-black filter transition-all duration-300 hover:aspect-video'
+    >
+      <div className=''>
+        {concertData.img && (
+          <Image
+            width={1000}
+            height={1000}
+            className='w-full'
+            src={concertData.img}
+            alt={concertData.name}
+          />
+        )}
+      </div>
+      <figcaption className='absolute top-0 w-full bg-black bg-opacity-60 px-4 py-2 text-lg font-bold text-white'>
+        <div className='flex'>
+          <p className='grow text-lg font-bold'>{concertData.name}</p>
+          <p>
+            {concertData.date} @ {concertData.place}
+          </p>
+        </div>
+      </figcaption>
+    </figure>
+  );
+};
+
 export default function Concerts() {
-  const noFestival = [];
-  const masterBotten = [];
-  const lolla = [];
+  const upcomingConcerts = [];
+  const todayConcert = [];
+  const pastConcerts = [];
 
-  const hex = '#323FFe';
-
+  const todaysDate = dayjs().format('YYYY-MM-DD');
+  console.log('Koca: todaysDate ', todaysDate);
   concerts.forEach((concert) => {
-    if (concert.festival === 'Mästerbotten') {
-      masterBotten.push(concert);
-    }
-    if (concert.festival === 'Lollapalooza') {
-      lolla.push(concert);
+    if (todaysDate === concert.date) {
+      todayConcert.push(concert);
+    } else if (dayjs(todaysDate).isBefore(concert.date)) {
+      upcomingConcerts.push(concert);
     } else {
-      noFestival.push(concert);
+      pastConcerts.push(concert);
     }
     return concert;
   });
 
+  const classes =
+    'flex w-full flex-col gap-4 pb-4 mb-4 border-b border-black border-opacity-[0.2]';
+
   return (
-    <main className='min-h-screen w-full bg-slate-800 pt-4 font-hyperlegible'>
+    <main className='w-full bg-slate-800 p-4 font-hyperlegible'>
       <>
         <Title>Concerts</Title>
-        <div className='flex w-full flex-col px-4 md:grid md:grid-cols-3 md:gap-4'>
-          {noFestival.map((concert, index) => {
-            return <ArtistCard key={index} concertData={concert} />;
-          })}
-          <div
-            className='relative col-span-3 mt-8 w-full rounded-xl border-2 p-4 md:grid md:grid-cols-3 md:gap-4'
-            style={{ border: `2px solid ${hex}`, background: `${hex}10` }}
-          >
-            <div className='absolute -top-12 flex items-center justify-center rounded-xl py-2 font-bold text-white'>
-              <h2 className='text-4xl'>Mästerbotten</h2>
-            </div>
-            {masterBotten.map((concert, index) => {
-              return <ArtistCard key={index} concertData={concert} />;
-            })}
-          </div>{' '}
-          <div
-            className='relative col-span-3 mt-8 w-full rounded-xl border-2 p-4 md:grid md:grid-cols-3 md:gap-4'
-            style={{ border: `2px solid ${hex}`, background: `${hex}10` }}
-          >
-            <div className='absolute -top-12 flex items-center justify-center rounded-xl py-2 font-bold text-white'>
-              <h2 className='text-4xl'>Lollapalooza</h2>
-            </div>
-            {lolla.map((concert, index) => {
-              return <ArtistCard key={index} concertData={concert} />;
-            })}
-          </div>
-        </div>
-        <Title>Upcoming</Title>
-        <div className='flex w-full flex-col px-4 md:grid md:grid-cols-3 md:gap-4'>
+        <Title size='sm'>Upcoming</Title>
+        <div className={classes}>
           {upcomingConcerts.map((concert, index) => {
-            return <ArtistCard key={index} concertData={concert} />;
+            return <ArtistListItem key={index} concertData={concert} />;
+          })}
+        </div>
+        <Title size='sm'>Today Concerts</Title>
+        <div className={classes}>
+          {todayConcert.map((concert, index) => {
+            return <ArtistListItem key={index} concertData={concert} />;
+          })}
+        </div>
+
+        <Title size='sm'>Past Concerts</Title>
+        <div className={classes}>
+          {pastConcerts.map((concert, index) => {
+            return <ArtistListItem key={index} concertData={concert} />;
           })}
         </div>
       </>

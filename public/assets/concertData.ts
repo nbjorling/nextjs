@@ -10,6 +10,46 @@ type ConcertProps = {
 
 const concerts = [
   {
+    name: 'Hooja',
+    date: '2024-07-25',
+    time: '20:00',
+    place: 'Dalhalla',
+    city: 'Rättvik',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Hoojaa.png',
+  },
+  {
+    name: 'The Hives',
+    date: '2024-07-06',
+    time: '20:00',
+    place: 'Gärdet',
+    city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Deichbrand2018-TheHives-58.jpg/1280px-Deichbrand2018-TheHives-58.jpg',
+  },
+  {
+    name: 'Toto',
+    date: '2024-07-05',
+    time: '20:00',
+    place: 'Gärdet',
+    city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/TOTO_live_2010_in_Copenhagen_in_KB_Hallen.JPG/1280px-TOTO_live_2010_in_Copenhagen_in_KB_Hallen.JPG',
+  },
+  {
+    name: 'Bring me the Horizon',
+    date: '2024-07-01',
+    time: '20:00',
+    place: 'Gärdet',
+    city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/2023_Rock_im_Park_-_Bring_Me_The_Horizon_-_by_2eight_-_7DS4804.jpg/1280px-2023_Rock_im_Park_-_Bring_Me_The_Horizon_-_by_2eight_-_7DS4804.jpg',
+  },
+  {
+    name: 'The Offspring',
+    date: '2024-06-18',
+    time: '20:00',
+    place: 'Gröna Lund',
+    city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/The_Offspring_2024.jpg/1280px-The_Offspring_2024.jpg',
+  },
+  {
     name: 'Infected Mushroom',
     date: '2023-02-25',
     time: '20:00',
@@ -50,7 +90,7 @@ const concerts = [
     img: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Nordman_2013-10-04_001.jpg',
   },
   {
-    name: 'Planetos',
+    name: 'Panetoz',
     date: '2023-03-11',
     time: '23:00',
     place: 'Berns',
@@ -90,7 +130,7 @@ const concerts = [
     img: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Nas-01-mika.jpg',
   },
   {
-    name: 'Jalazzi',
+    name: 'Jelassi',
     date: '2023-04-26',
     time: '22:00',
     place: 'Slakthusområdet',
