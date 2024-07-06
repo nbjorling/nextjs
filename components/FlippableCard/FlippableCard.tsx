@@ -16,10 +16,10 @@ const FlippableCard: React.FC<FlippableCardProps> = ({
   frontText,
   backText,
   frontTextSize = 'text-2xl md:text-5xl lg:text-8xl text-yellow-300 drop-shadow-[0_3.2px_2.2px_rgba(0,0,0,0.8)]',
-  backTextSize = 'text-md md:text-xl lg:text-xl xl:text-2xl drop-shadow-[0_3.2px_2.2px_rgba(0,0,0,0.8)]',
+  // backTextSize = 'text-md md:text-xl lg:text-xl xl:text-2xl drop-shadow-[0_3.2px_2.2px_rgba(0,0,0,0.8)]',
   textColor = 'text-white',
   bgColor = 'bg-gradient-to-b from-[#2193b0] to-[#6dd5ed]',
-  bgBackColor = 'bg-gradient-to-b to-[#2193b0] from-[#6dd5ed]',
+  // bgBackColor = 'bg-gradient-to-b to-[#2193b0] from-[#6dd5ed]',
   height = 'h-[160px]',
   width = 'w-full',
 }) => {
