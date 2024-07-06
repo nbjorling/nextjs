@@ -1,6 +1,5 @@
-import React from 'react';
-import { players } from './helpers/players';
 import { course } from './helpers/course';
+import { players } from './helpers/players';
 
 function mapHandicap(player) {
   if (!player) return;

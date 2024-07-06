@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import Link from 'next/link';
-import * as React from 'react';
-import { Yahtzee } from '../components/Yahtzee/Yahtzee';
 
 export default function StartPage() {
   return (

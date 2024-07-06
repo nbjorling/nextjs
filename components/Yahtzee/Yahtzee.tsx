@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Dice1Color from '/icons/dice_1_color.svg';
 import Dice2Color from '/icons/dice_2_color.svg';
 import Dice3Color from '/icons/dice_3_color.svg';

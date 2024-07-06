@@ -3,33 +3,33 @@ import Image from 'next/image';
 import Title from '../components/Title';
 import { ConcertProps, concerts } from '../public/assets/concertData';
 
-const ArtistCard = ({ concertData }: { concertData: ConcertProps }) => {
-  return (
-    <figure className='relative mb-4 aspect-video w-full cursor-pointer overflow-hidden rounded-lg bg-black shadow-md filter transition-all duration-300 hover:grayscale'>
-      <div className=''>
-        {concertData.img && (
-          <Image
-            width={1000}
-            height={1000}
-            className='w-full'
-            src={concertData.img}
-            alt={concertData.name}
-          />
-        )}
-      </div>
-      <figcaption className='absolute top-0 w-full bg-black bg-opacity-60 px-4 py-2 text-lg font-bold text-white'>
-        <div className='flex'>
-          <p className='grow text-lg font-bold'>{concertData.name}</p>
-          <p>{concertData.date}</p>
-        </div>
-        <div className='flex text-sm'>
-          <p className='grow font-thin'>@ {concertData.place}</p>
-          <p>{concertData.time}</p>
-        </div>
-      </figcaption>
-    </figure>
-  );
-};
+// const ArtistCard = ({ concertData }: { concertData: ConcertProps }) => {
+//   return (
+//     <figure className='relative mb-4 aspect-video w-full cursor-pointer overflow-hidden rounded-lg bg-black shadow-md filter transition-all duration-300 hover:grayscale'>
+//       <div className=''>
+//         {concertData.img && (
+//           <Image
+//             width={1000}
+//             height={1000}
+//             className='w-full'
+//             src={concertData.img}
+//             alt={concertData.name}
+//           />
+//         )}
+//       </div>
+//       <figcaption className='absolute top-0 w-full bg-black bg-opacity-60 px-4 py-2 text-lg font-bold text-white'>
+//         <div className='flex'>
+//           <p className='grow text-lg font-bold'>{concertData.name}</p>
+//           <p>{concertData.date}</p>
+//         </div>
+//         <div className='flex text-sm'>
+//           <p className='grow font-thin'>@ {concertData.place}</p>
+//           <p>{concertData.time}</p>
+//         </div>
+//       </figcaption>
+//     </figure>
+//   );
+// };
 
 const ArtistListItem = ({ concertData }: { concertData: ConcertProps }) => {
   return (

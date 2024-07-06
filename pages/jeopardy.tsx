@@ -2,8 +2,8 @@ import * as React from 'react';
 import FlippableCard from '../components/FlippableCard/FlippableCard';
 // import ScoreBoard from '../components/ScoreBoard/ScoreBoard';
 // import categories from '../public/assets/jeopardy.json';
+import { Axe, FrameCorners, MusicNotes } from '@phosphor-icons/react';
 import answers2 from '../public/assets/answers2.json';
-import { FrameCorners, MusicNotes, Axe } from '@phosphor-icons/react';
 
 const Jeopardy: React.FC = () => {
   const [finale, setFinale] = React.useState(false);

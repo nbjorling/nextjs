@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import * as React from 'react';
 import { Yahtzee } from '../components/Yahtzee/Yahtzee';
 
 export default function StartPage() {

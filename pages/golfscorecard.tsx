@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import * as React from 'react';
 import { GolfScoreCard } from '../components/Golf/GolfScoreCard';
 
 export default function StartPage() {
