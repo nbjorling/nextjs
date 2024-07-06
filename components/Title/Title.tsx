@@ -2,7 +2,7 @@ import * as React from 'react';
 
 type TitleProps = {
   size?: 'lg' | 'sm';
-  children: string;
+  children: React.ReactNode;
 };
 
 const Title: React.FC<TitleProps> = ({ children, size = 'lg' }) => {

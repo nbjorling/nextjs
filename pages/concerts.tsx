@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import Image from 'next/image';
+import { useState } from 'react';
 import Title from '../components/Title';
 import { ConcertProps, concerts } from '../public/assets/concertData';
 
@@ -31,7 +32,15 @@ import { ConcertProps, concerts } from '../public/assets/concertData';
 //   );
 // };
 
-const ArtistListItem = ({ concertData }: { concertData: ConcertProps }) => {
+const ArtistListItem = ({
+  concertData,
+  onClick,
+  active,
+}: {
+  concertData: ConcertProps;
+  onClick: () => void;
+  active: boolean;
+}) => {
   function getColorValue() {
     return Math.floor(Math.random() * 255);
   }
@@ -46,7 +55,10 @@ const ArtistListItem = ({ concertData }: { concertData: ConcertProps }) => {
         border: '1px solid rgba(0,0,0,0.25)',
         backgroundColor: !concertData.img && backgroundColor,
       }}
-      className='relative h-12 w-full cursor-pointer overflow-hidden rounded-lg  filter transition-all duration-300 hover:aspect-video hover:h-60'
+      className={`${
+        active ? 'h-60' : 'h-12'
+      } relative w-full cursor-pointer overflow-hidden rounded-lg filter transition-all duration-300 hover:aspect-video`}
+      onClick={onClick}
     >
       <div>
         {concertData.img && (
@@ -75,6 +87,8 @@ const ArtistListItem = ({ concertData }: { concertData: ConcertProps }) => {
 };
 
 export default function Concerts() {
+  const [active, setActive] = useState<number | undefined>(undefined);
+
   const upcomingConcerts = [];
   const todayConcert = [];
   const pastConcerts = [];
@@ -101,29 +115,64 @@ export default function Concerts() {
   });
 
   const classes =
-    'flex w-full flex-col gap-4 pb-4 mb-4 border-b border-black border-opacity-[0.2]';
+    'flex w-full flex-col gap-4 pb-4 mb-4 border-b border-black border-opacity-[0.2] lg:grid lg:grid-cols-3';
 
   return (
-    <main className='w-full bg-slate-800 p-4 font-hyperlegible'>
+    <main className='w-full bg-slate-800 p-4 font-hyperlegible '>
       <>
         <Title>Concerts</Title>
-        <Title size='sm'>Upcoming</Title>
+        <Title size='sm'>Upcoming ({upcomingConcerts.length.toString()})</Title>
         <div className={classes}>
           {upcomingConcerts.map((concert, index) => {
-            return <ArtistListItem key={index} concertData={concert} />;
+            return (
+              <ArtistListItem
+                active={active === index}
+                key={index}
+                concertData={concert}
+                onClick={() =>
+                  setActive((prev) => (prev === index ? undefined : index))
+                }
+              />
+            );
           })}
         </div>
-        <Title size='sm'>Today Concerts</Title>
+        <Title size='sm'>
+          Today Concerts ({todayConcert.length.toString()})
+        </Title>
         <div className={classes}>
           {todayConcert.map((concert, index) => {
-            return <ArtistListItem key={index} concertData={concert} />;
+            return (
+              <ArtistListItem
+                active={active === index + 1000}
+                key={index + 1000}
+                concertData={concert}
+                onClick={() =>
+                  setActive((prev) =>
+                    prev === index + 1000 ? undefined : index + 1000
+                  )
+                }
+              />
+            );
           })}
         </div>
 
-        <Title size='sm'>Past Concerts</Title>
+        <Title size='sm'>
+          Past Concerts ({pastConcerts.length.toString()})
+        </Title>
         <div className={classes}>
           {pastConcerts.map((concert, index) => {
-            return <ArtistListItem key={index} concertData={concert} />;
+            return (
+              <ArtistListItem
+                active={active === index + 10000}
+                key={index + 10000}
+                concertData={concert}
+                onClick={() =>
+                  setActive((prev) =>
+                    prev === index + 10000 ? undefined : index + 10000
+                  )
+                }
+              />
+            );
           })}
         </div>
       </>
