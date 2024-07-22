@@ -18,6 +18,14 @@ const concerts = [
     img: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Hoojaa.png',
   },
   {
+    name: 'Bruce Springsteen',
+    date: '2024-07-15',
+    time: '20:00',
+    place: 'Strawberry Arena',
+    city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Bruce_Springsteen_-_Roskilde_Festival_2012.jpg/800px-Bruce_Springsteen_-_Roskilde_Festival_2012.jpg',
+  },
+  {
     name: 'The Hives',
     date: '2024-07-06',
     time: '20:00',
