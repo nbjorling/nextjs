@@ -57,6 +57,12 @@ const StartPageItems = [
     description: `Concerts I've been to`,
     href: '/concerts',
   },
+  {
+    icon: '💳',
+    title: 'Sl Card Calculator',
+    description: `Calculate if it is worth to buy monthly card`,
+    href: '/slcardcalculator',
+  },
 ];
 
 function MenuItem({ href, title, description, icon }) {

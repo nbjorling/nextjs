@@ -74,6 +74,11 @@ export function Menu() {
               href='/concerts'
               title='🎸 Concerts'
             />
+            <LinkElement
+              toggleMenu={toggleMenu}
+              href='/slcardcalculator'
+              title='💳 Sl Card Calculator'
+            />
           </div>
           <div className='absolute bottom-8 flex h-12 w-full bg-slate-900 shadow-lg'>
             <div className='w-full items-center p-2 text-center'>
