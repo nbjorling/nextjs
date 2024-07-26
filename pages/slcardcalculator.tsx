@@ -78,15 +78,10 @@ export default function SlCardCalculator() {
   const [travelDays, setTravelDays] = useState<number[]>([]);
   const [boxes, setBoxes] = useState([]);
   const [count, setCount] = useState(0);
-  const todaysDate = dayjs().format('YYYY-MM-DD');
   const todaysDay = dayjs().date();
   const month = dayjs().month();
-  const daysThisMonth = dayjs().daysInMonth();
   const firstDayInWeek = dayjs().startOf('month').day();
-
-  const firstDayOfMonth = dayjs().startOf('month').day();
   const DAILY_COST = 42;
-  const MONTHLY_COST = 1020;
 
   useEffect(() => {
     setBoxes(setupDays());
