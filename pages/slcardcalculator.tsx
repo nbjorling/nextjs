@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
+import { twJoin } from 'tailwind-merge';
 
 const MONTHS = {
   0: 'Januari',
@@ -26,46 +27,79 @@ const DAYS = {
   6: 'Lördag',
 };
 
+const prices = [
+  {
+    label: 'Enkelbiljett',
+    price: 42,
+  },
+  {
+    label: '24-timmarsbiljett',
+    price: 175,
+  },
+  {
+    label: '7-dagarsbiljett',
+    price: 455,
+  },
+  {
+    label: '30-dagarsbiljett',
+    price: 1020,
+  },
+];
+
 const FIRST_DAY_OF_WEEK = 1;
 
 function countOccurrences(arr: number[], value: number) {
   return arr.reduce((acc, curr) => (curr === value ? acc + 1 : acc), 0);
 }
 
-function setupDays() {
-  const daysThisMonth = dayjs().daysInMonth();
-  const firstDayInWeek = dayjs().startOf('month').day();
+function setupDays({ date }: { date: Date }) {
+  const daysThisMonth = dayjs(date).daysInMonth();
+  const daysLastMonth = dayjs(date).subtract(1, 'month').daysInMonth();
+  const firstDayInMonth = dayjs(date).startOf('month').day();
 
   const days = [];
   for (let i = 1; i < daysThisMonth; i++) {
+    // first day of month
     if (i === 1) {
-      // first day of month
-      if (firstDayInWeek !== FIRST_DAY_OF_WEEK) {
-        for (let j = 0; j < firstDayInWeek; j++) {
-          days.push({ day: '?', dayNumber: i - j, isCurrentMonth: false });
+      // If it is not the first day of the week
+      if (firstDayInMonth !== FIRST_DAY_OF_WEEK) {
+        // Add the days from the previous month
+        const nMissingDayColumnsOnRow =
+          firstDayInMonth === 0 ? 6 : firstDayInMonth - 1;
+        for (let j = 1; j <= nMissingDayColumnsOnRow; j++) {
+          days.push({
+            day: '?',
+            dayNumber: daysLastMonth - nMissingDayColumnsOnRow + j,
+            isCurrentMonth: false,
+          });
         }
-      } else {
-        days.push({
-          index: i,
-          dayNumber: i,
-          day: DAYS[i],
-          isCurrentMonth: true,
-        });
       }
+      // Add the first day
+      days.push({
+        index: i,
+        dayNumber: i,
+        day: DAYS[i],
+        isCurrentMonth: true,
+      });
     }
+
     days.push({
       index: i,
       dayNumber: i + 1,
       day: DAYS[(i + 1) % 7],
       isCurrentMonth: true,
     });
+
     if (i + 1 === daysThisMonth) {
-      // last day of month
-      for (let j = 1; j <= 7 - ((i + 1) % 7); j++) {
+      // after last day of month
+      // Fill out the last row with the next month
+      const missingDays = days.length % 7 === 0 ? 0 : 7 - (days.length % 7);
+
+      for (let j = 1; j <= missingDays; j++) {
         days.push({
           index: i + j,
           day: DAYS[(i + j + 1) % 7],
-          dayNumber: (i + j + 1) % daysThisMonth,
+          dayNumber: j,
           isCurrentMonth: false,
         });
       }
@@ -75,20 +109,19 @@ function setupDays() {
 }
 
 export default function SlCardCalculator() {
+  const date = new Date('2024-05-04');
   const [travelDays, setTravelDays] = useState<number[]>([]);
   const [boxes, setBoxes] = useState([]);
   const [count, setCount] = useState(0);
-  const todaysDay = dayjs().date();
-  const month = dayjs().month();
-  const firstDayInWeek = dayjs().startOf('month').day();
+  const todaysDay = dayjs(date).date();
+  const month = dayjs(date).month();
   const DAILY_COST = 42;
 
   useEffect(() => {
-    setBoxes(setupDays());
+    setBoxes(setupDays({ date: date }));
   }, [travelDays]);
 
   function addRemoveTravel(e, index) {
-    console.log('Koca: e ', e);
     setCount(count + 1);
     const days = travelDays;
     days.push(index);
@@ -97,27 +130,17 @@ export default function SlCardCalculator() {
 
   const daysOrder = [];
   for (let i = 0; i <= 6; i++) {
-    daysOrder.push((i + firstDayInWeek) % 7);
+    daysOrder.push((i + FIRST_DAY_OF_WEEK) % 7);
   }
 
   return (
-    <main className='min-h-screen w-full bg-slate-800 pt-4'>
-      <div className='mb-5 flex gap-4 text-white'>
-        {/* <p>Todays Date: {todaysDate}</p>
-        <p>
-          Todays Day: {DAYS[todaysDay % 7]} {todaysDay}
-        </p> */}
-        <p className='text-bold w-full text-center text-xl'>{MONTHS[month]}</p>
-        {/* <p>Days in moth: {daysThisMonth}</p>
-        <p>
-          First day: {DAYS[firstDayInWeek]} {firstDayOfMonth}
-        </p> */}
-      </div>
-      {/* {count} */}
-      <div className='grid grid-cols-7 gap-1 p-2 text-xs text-white'>
+    <main className='flex min-h-screen w-full flex-col gap-4 bg-slate-800 p-4 text-white'>
+      <p className='text-bold  w-full text-center text-xl'>{MONTHS[month]}</p>
+
+      <div className='grid grid-cols-7 gap-1 rounded-lg text-xs'>
         {daysOrder.map((day) => {
           return (
-            <p className='text-center font-bold' key={day}>
+            <p className='mb-1 text-center font-bold' key={day}>
               {DAYS[day]}
             </p>
           );
@@ -133,13 +156,17 @@ export default function SlCardCalculator() {
             <div
               onClick={(e) => addRemoveTravel(e, index)}
               key={index}
-              className={`flex h-16 w-auto cursor-pointer flex-col  ${
-                box.dayNumber === todaysDay
+              className={twJoin(
+                'flex h-16 w-auto cursor-pointer flex-col  px-1 text-sm',
+                box.index + 1 === todaysDay
                   ? 'border border-cyan-900 bg-cyan-600 text-cyan-900 hover:bg-cyan-700'
-                  : bgColor
-              } px-1 text-sm ${
-                box.isCurrentMonth ? 'text-white' : 'text-gray-300 opacity-60'
-              }`}
+                  : bgColor,
+                box.isCurrentMonth ? '' : 'text-gray-300 opacity-60',
+                index === 0 ? 'rounded-tl-md' : '',
+                index === 6 ? 'rounded-tr-md' : '',
+                index === boxes.length - 7 ? 'rounded-bl-md' : '',
+                index === boxes.length - 1 ? 'rounded-br-md' : ''
+              )}
             >
               <p>{box.dayNumber}</p>
               <p>{occurrences > 0 && tickets}</p>
@@ -147,9 +174,32 @@ export default function SlCardCalculator() {
           );
         })}
       </div>
-      <p className='pl-2 text-white'>
-        Kostnad: {DAILY_COST * travelDays.length} kr
-      </p>
+
+      <div className='text-md flex justify-between rounded-md bg-slate-600 p-4'>
+        <p className='text-green-400'>Total kostnad:</p>
+        <p className='font-bold text-green-400'>
+          {DAILY_COST * travelDays.length} kr
+        </p>
+      </div>
+
+      <div className=' rounded-md bg-slate-600 p-4 text-sm '>
+        <p className='mb-2 font-bold'>Prislista</p>
+        {prices.map((price) => {
+          return (
+            <div key={price.label} className='flex justify-between'>
+              <p>{price.label}</p>
+              <p>{price.price} kr</p>
+            </div>
+          );
+        })}
+      </div>
+      <button
+        onClick={() => setTravelDays([])}
+        className='rounded-md bg-orange-400 p-2 hover:bg-orange-500 active:bg-orange-600'
+        type='button'
+      >
+        Rensa kalendern
+      </button>
     </main>
   );
 }

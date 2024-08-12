@@ -10,6 +10,14 @@ type ConcertProps = {
 
 const concerts = [
   {
+    name: 'Benjamin Ingrosso',
+    date: '2024-08-09',
+    time: '21:00',
+    place: 'Stadion',
+    city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Benjamin_Ingrosso_Lollapalooza_2022_Stockholm_%28cropped%29.jpg/1280px-Benjamin_Ingrosso_Lollapalooza_2022_Stockholm_%28cropped%29.jpg',
+  },
+  {
     name: 'Hooja',
     date: '2024-07-25',
     time: '20:00',
