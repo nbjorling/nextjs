@@ -109,17 +109,19 @@ function setupDays({ date }: { date: Date }) {
 }
 
 export default function SlCardCalculator() {
-  const date = new Date('2024-05-04');
+  const [monthToLookAt, setMonthToLookAt] = useState(0);
   const [travelDays, setTravelDays] = useState<number[]>([]);
   const [boxes, setBoxes] = useState([]);
   const [count, setCount] = useState(0);
+
+  const date = dayjs().add(monthToLookAt, 'month').toDate();
   const todaysDay = dayjs(date).date();
   const month = dayjs(date).month();
   const DAILY_COST = 42;
 
   useEffect(() => {
     setBoxes(setupDays({ date: date }));
-  }, [travelDays]);
+  }, [travelDays, monthToLookAt]);
 
   function addRemoveTravel(e, index) {
     setCount(count + 1);
@@ -135,7 +137,19 @@ export default function SlCardCalculator() {
 
   return (
     <main className='flex min-h-screen w-full flex-col gap-4 bg-slate-800 p-4 text-white'>
-      <p className='text-bold  w-full text-center text-xl'>{MONTHS[month]}</p>
+      <div className='flex'>
+        <button
+          className='h-10 w-12 rounded-lg bg-slate-700'
+          type='button'
+          onClick={() => setMonthToLookAt(monthToLookAt - 1)}
+        >{`<`}</button>
+        <p className='text-bold  w-full text-center text-xl'>{MONTHS[month]}</p>
+        <button
+          className='h-10 w-12 rounded-lg bg-slate-700'
+          type='button'
+          onClick={() => setMonthToLookAt(monthToLookAt + 1)}
+        >{`>`}</button>
+      </div>
 
       <div className='grid grid-cols-7 gap-1 rounded-lg text-xs'>
         {daysOrder.map((day) => {
@@ -158,7 +172,7 @@ export default function SlCardCalculator() {
               key={index}
               className={twJoin(
                 'flex h-16 w-auto cursor-pointer flex-col  px-1 text-sm',
-                box.index + 1 === todaysDay
+                box.index + 1 === todaysDay && monthToLookAt === 0
                   ? 'border border-cyan-900 bg-cyan-600 text-cyan-900 hover:bg-cyan-700'
                   : bgColor,
                 box.isCurrentMonth ? '' : 'text-gray-300 opacity-60',
