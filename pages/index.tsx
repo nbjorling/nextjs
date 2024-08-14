@@ -9,12 +9,12 @@ const StartPageItems = [
     description: 'Play the original Yahtzee game',
     href: '/yahtzee',
   },
-  {
-    icon: '🎲',
-    title: 'Yahtzee Maxi',
-    description: 'The extreme version with 6 dice',
-    href: '/yahtzee',
-  },
+  // {
+  //   icon: '🎲',
+  //   title: 'Yahtzee Maxi',
+  //   description: 'The extreme version with 6 dice',
+  //   href: '/yahtzee',
+  // },
   {
     icon: '🧩',
     title: 'Scrum Poker',
@@ -65,22 +65,23 @@ const StartPageItems = [
   },
 ];
 
-function MenuItem({ href, title, description, icon }) {
+function MenuItem({ href, title, description, icon, index }) {
   return (
     <Link href={href} passHref>
       <div className='relative aspect-video max-h-96 cursor-pointer overflow-hidden shadow-xl md:aspect-square'>
         <div
-          className='absolute -left-[100%]  -top-[100%] z-0 h-[300%] w-[300%] animate-rotate'
+          className='absolute -left-[100%] -top-[100%] z-0 h-[300%] w-[300%] animate-rotate'
           style={{
-            background:
-              'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
+            background: `linear-gradient(${
+              index * 25
+            }deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)`,
             backgroundSize: '100% 100%',
             transform: 'translateY(0)',
             transformOrigin: '0, 0',
           }}
         />
         <div className='transition-color absolute left-[2px] top-[2px] z-10 h-[calc(100%-4px)] max-h-96  w-[calc(100%-4px)] cursor-pointer bg-slate-800 p-4 duration-300 hover:bg-slate-800  md:aspect-square'>
-          <div className='flex h-full flex-col'>
+          <div className='flex h-full flex-col justify-center'>
             <h3 className='mb-2 select-none text-center text-4xl'>{icon}</h3>
             <h3 className='mb-2 select-none text-center font-convergence text-2xl text-white'>
               {title}
@@ -145,6 +146,7 @@ export default function Home() {
             <MenuItem
               href={item.href}
               key={index}
+              index={index}
               title={item.title}
               description={item.description}
               icon={item.icon}
