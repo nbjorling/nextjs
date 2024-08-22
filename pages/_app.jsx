@@ -10,8 +10,14 @@ function MyApp({ Component, pageProps }) {
       <link href='http://fonts.cdnfonts.com/css/convergence' rel='stylesheet' />
       <link rel='icon' href='/favicon.ico' />
     </Head>,
-    <Menu key='menu' />,
-    <Component key='component' {...pageProps} />,
+    <div className='relative h-full min-h-screen font-convergence' key='render'>
+      <div className='h-10'>
+        <Menu key='menu' />
+      </div>
+      <div className={`min-h-[calc(100vh_-_40px)]`}>
+        <Component key='component' {...pageProps} />,
+      </div>
+    </div>,
   ];
 }
 

@@ -5,16 +5,16 @@ import { getRandomEmoji } from '../utils/getRandomEmoji';
 const StartPageItems = [
   {
     icon: '🎲',
-    title: 'Yahtzee',
-    description: 'Play the original Yahtzee game',
+    title: 'Yahtzee Scorecard',
+    description: 'Just the scorecard',
     href: '/yahtzee',
   },
-  // {
-  //   icon: '🎲',
-  //   title: 'Yahtzee Maxi',
-  //   description: 'The extreme version with 6 dice',
-  //   href: '/yahtzee',
-  // },
+  {
+    icon: '🎲',
+    title: 'Yahtzee',
+    description: 'The extreme version with 6 dice',
+    href: '/yahtzeeGame',
+  },
   {
     icon: '🧩',
     title: 'Scrum Poker',

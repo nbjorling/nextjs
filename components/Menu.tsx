@@ -19,9 +19,7 @@ export function Menu() {
   };
 
   return (
-    <div
-      className={`app-menu font-convergence  ${isMenuOpen ? 'menu-open' : ''}`}
-    >
+    <div className={`app-menu ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className='' onClick={() => toggleMenu()}>
         <div className='flex cursor-pointer select-none border-b border-slate-900 bg-slate-900 p-2 pl-8 text-white shadow-lg'>
           {isMenuOpen ? '🍔 Close Menu' : '🍔 Menu'}
