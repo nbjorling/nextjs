@@ -15,8 +15,48 @@ const initialGameState = {
 
 const categories = ['ones', 'twos', 'threes', 'fours', 'fives', 'sixes']; // Add more as needed
 
+// const Modal = ({ openModal, closeModal, resetGame }) => {
+//   const ref = useRef<MutableRefObject<HTMLDialogElement>>(undefined);
+
+//   useEffect(() => {
+//     if (openModal) {
+//       ref.current?.showModal();
+//     } else {
+//       ref.current?.close();
+//     }
+//   }, [openModal]);
+
+//   return (
+//     <dialog
+//       ref={ref}
+//       onCancel={closeModal}
+//       className='m-4 mx-auto flex w-4/5 flex-col gap-2 bg-red-700 text-center text-white'
+//       open={false}
+//     >
+//       <p className='mb-4'>Are you sure?</p>
+//       <div className='flex justify-center gap-4'>
+//         <button
+//           type='button'
+//           className='my-2  rounded bg-white py-2 px-4 text-black'
+//           onClick={resetGame}
+//         >
+//           Reset Game
+//         </button>
+//         <button
+//           type='button'
+//           onClick={closeModal}
+//           className='my-2 rounded border-2 border-white py-2 px-4'
+//         >
+//           Close
+//         </button>
+//       </div>
+//     </dialog>
+//   );
+// };
+
 function YahtzeeGame() {
   const [gameState, setGameState] = useState(initialGameState);
+  // const [resetModalOpen, setResetModalOpen] = useState(false);
 
   // Load game state from localStorage on component mount
   useEffect(() => {
@@ -99,6 +139,7 @@ function YahtzeeGame() {
     switch (category) {
       case 'ones':
         return dice.filter((die) => die === 1).length * 1;
+      case 'twos':
         return dice.filter((die) => die === 2).length * 2;
       case 'threes':
         return dice.filter((die) => die === 3).length * 3;
@@ -114,11 +155,12 @@ function YahtzeeGame() {
     }
   };
 
-  // // Reset the game
-  // const resetGame = () => {
-  //   setGameState(initialGameState);
-  //   localStorage.removeItem('yahtzeeGameState');
-  // };
+  // Reset the game
+  const resetGame = () => {
+    setGameState(initialGameState);
+    localStorage.removeItem('yahtzeeGameState');
+    // setResetModalOpen(false);
+  };
 
   return (
     <div className='flex flex-col gap-2 pt-4 text-white'>
@@ -150,6 +192,20 @@ function YahtzeeGame() {
           </div>
         ))}
       </div>
+
+      <button
+        type='button'
+        className='my-12 mx-12 rounded bg-red-800 py-2 px-4'
+        onClick={resetGame}
+      >
+        Reset Game
+      </button>
+
+      {/* <Modal
+        closeModal={() => setResetModalOpen(false)}
+        openModal={resetModalOpen}
+        resetGame={resetGame}
+      /> */}
 
       <DiceRoller
         player={gameState.players[gameState.currentPlayer].name}
