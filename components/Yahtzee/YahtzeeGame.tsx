@@ -140,7 +140,7 @@ function YahtzeeGame() {
               <li key='bonus'>
                 <div className='rounded bg-green-700 p-1'>
                   Total:{' '}
-                  {Object.values(player.scores).reduce(
+                  {Object.values<number>(player.scores).reduce(
                     (acc, score) => acc + score,
                     0
                   )}

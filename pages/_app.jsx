@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
 import { Menu } from '../components/Menu';
 import '../styles/globals.css';
@@ -10,6 +11,7 @@ function MyApp({ Component, pageProps }) {
       <link href='http://fonts.cdnfonts.com/css/convergence' rel='stylesheet' />
       <link rel='icon' href='/favicon.ico' />
     </Head>,
+    <Analytics />,
     <div className='relative h-full min-h-screen font-convergence' key='render'>
       <div className='h-10'>
         <Menu key='menu' />
