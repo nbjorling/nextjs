@@ -1,34 +1,27 @@
-import { useState } from 'react';
 import YahtzeeGame from '../components/Yahtzee/YahtzeeGame';
 
-type Screens = 'StartScreen' | 'GameView';
+// type Screens = 'StartScreen' | 'GameView';
 
-const screenOrder: Screens[] = ['StartScreen', 'GameView'];
+// const screenOrder: Screens[] = ['StartScreen', 'GameView'];
 
 export type Modes = 'topDown' | 'topFirst' | 'freeForAll';
 
-type State = {
-  players: number;
-  rolls: number;
-  mode: Modes;
-};
+// type State = {
+//   players: number;
+//   rolls: number;
+//   mode: Modes;
+// };
 
 export default function StartPage() {
-  const [showDiceRoller, setShowDiceRoller] = useState<boolean>(true);
-  const [state, setState] = useState<State>({
-    players: 1,
-    rolls: 3,
-    mode: 'topDown',
-  });
-  const [view, setView] = useState<Screens>('StartScreen');
+  // const [view, setView] = useState<Screens>('StartScreen');
 
-  function nextScreen() {
-    const currentIndex = screenOrder.indexOf(view);
-    if (currentIndex === screenOrder.length - 1) {
-      return;
-    }
-    setView(screenOrder[currentIndex + 1]);
-  }
+  // function nextScreen() {
+  //   const currentIndex = screenOrder.indexOf(view);
+  //   if (currentIndex === screenOrder.length - 1) {
+  //     return;
+  //   }
+  //   setView(screenOrder[currentIndex + 1]);
+  // }
 
   return (
     <main className='flex h-full w-full flex-col justify-end bg-slate-700'>

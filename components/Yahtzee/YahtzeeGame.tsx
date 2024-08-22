@@ -114,18 +114,18 @@ function YahtzeeGame() {
     }
   };
 
-  // Reset the game
-  const resetGame = () => {
-    setGameState(initialGameState);
-    localStorage.removeItem('yahtzeeGameState');
-  };
+  // // Reset the game
+  // const resetGame = () => {
+  //   setGameState(initialGameState);
+  //   localStorage.removeItem('yahtzeeGameState');
+  // };
 
   return (
     <div className='flex flex-col gap-2 pt-4 text-white'>
       <div className='after: flex gap-4 px-2 pb-4'>
         {gameState.players.map((player, index) => (
           <div key={index} className='grow'>
-            <h3>{player.name}'s Scores</h3>
+            <h3>{player.name}`s Scores</h3>
             <ul className='flex flex-col gap-4'>
               {categories.map((category) => (
                 <li key={category}>

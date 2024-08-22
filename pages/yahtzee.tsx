@@ -1,9 +1,7 @@
 import Link from 'next/link';
-import { useState } from 'react';
 import { Yahtzee } from '../components/Yahtzee/Yahtzee';
 
 export default function StartPage() {
-  const [showDiceRoller, setShowDiceRoller] = useState(true);
   return (
     <main className='min-h-screen w-full bg-slate-900 pt-4'>
       <div className='flex'>

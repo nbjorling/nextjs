@@ -113,7 +113,7 @@ const NumberOfRollsView = ({ state, setState, nextView }) => {
   );
 };
 
-const ModeView = ({ state, setState, nextView, nextScreen }) => {
+const ModeView = ({ state, setState, nextScreen }) => {
   function setMode(mode: Modes) {
     setState((prev) => {
       return { ...prev, mode };
@@ -204,7 +204,7 @@ const StartScreen = ({ state, setState, nextScreen }) => {
           <ModeView
             state={state}
             setState={setState}
-            nextView={nextView}
+            // nextView={nextView}
             nextScreen={nextScreen}
           />
         )}

@@ -36,7 +36,7 @@ const DiceRoller = ({
   const diceClass = 'w-12 h-12 rounded-md flex items-center justify-center';
   return (
     <div className='fixed bottom-0 flex w-full flex-col gap-2 rounded-t-md bg-cyan-900 p-2'>
-      <div className='w-full text-center'>{player}'s Turn</div>
+      <div className='w-full text-center'>{player}`s Turn</div>
       <div className='flex grow justify-center gap-2'>
         {diceValue.map((die, index) => {
           return (
