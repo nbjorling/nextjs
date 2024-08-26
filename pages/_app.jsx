@@ -1,4 +1,6 @@
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 import Head from 'next/head';
 import { Menu } from '../components/Menu';
 import '../styles/globals.css';
@@ -13,6 +15,7 @@ function MyApp({ Component, pageProps }) {
     </Head>,
     <div className='relative h-full min-h-screen font-convergence' key='render'>
       <Analytics />,
+      <SpeedInsights />,
       <div className='h-10'>
         <Menu key='menu' />
       </div>
