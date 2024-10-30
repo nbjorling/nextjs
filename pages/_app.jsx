@@ -14,8 +14,8 @@ function MyApp({ Component, pageProps }) {
       <link rel='icon' href='/favicon.ico' />
     </Head>,
     <div className='relative h-full min-h-screen font-convergence' key='render'>
-      <Analytics />,
-      <SpeedInsights />,
+      <Analytics />
+      <SpeedInsights />
       <div className='h-10'>
         <Menu key='menu' />
       </div>
