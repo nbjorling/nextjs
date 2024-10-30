@@ -4,8 +4,11 @@ import { menuItems } from '../pages';
 function LinkElement({ href, title, toggleMenu, icon }) {
   return (
     <Link href={href} passHref>
-      <div onClick={() => toggleMenu()} className='mb-2 cursor-pointer text-md'>
-        <div className='mb-2 select-none hover:text-cyan-200'><span className='mr-2'>{icon}</span>{title}</div>
+      <div onClick={() => toggleMenu()} className='text-md mb-2 cursor-pointer'>
+        <div className='mb-2 select-none hover:text-cyan-200'>
+          <span className='mr-2'>{icon}</span>
+          {title}
+        </div>
       </div>
     </Link>
   );
@@ -32,17 +35,17 @@ export function Menu() {
       >
         <div className='relative h-full flex-row border-t  border-t-slate-600 bg-slate-900 text-white'>
           <div className='p-10'>
-
-          {menuItems.map((menuItem) => {
-            return (
-             <LinkElement
-              toggleMenu={toggleMenu}
-              href={menuItem.href}
-              icon={menuItem.icon}
-              title={menuItem.title}
-              />
-            )
-          })}
+            {menuItems.map((menuItem) => {
+              return (
+                <LinkElement
+                  key={menuItem.href}
+                  toggleMenu={toggleMenu}
+                  href={menuItem.href}
+                  icon={menuItem.icon}
+                  title={menuItem.title}
+                />
+              );
+            })}
           </div>
           <div className='absolute bottom-8 flex h-12 w-full bg-slate-900 shadow-lg'>
             <div className='w-full items-center p-2 text-center'>

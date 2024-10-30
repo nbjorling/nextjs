@@ -17,15 +17,15 @@ function LinkEl({ href, text }) {
 
 export default function StartPage() {
   return (
-    <main className='min-h-screen w-full bg-slate-800 pt-4 font-convergence'>
+    <main className='font-convergence min-h-screen w-full bg-slate-800 pt-4'>
       <Link href='/'>
         <div className='ml-4 mr-4 w-fit cursor-pointer rounded bg-slate-700 py-2 px-4 text-white'>
           Back
         </div>
       </Link>
       <div className='p-8'>
-        <h1 className='mb-4 font-convergence text-6xl text-white'>Code Pens</h1>
-        <ul className='ml-4 font-hyperlegible text-white'>
+        <h1 className='font-convergence mb-4 text-6xl text-white'>Code Pens</h1>
+        <ul className='font-hyperlegible ml-4 text-white'>
           <LinkEl
             href='https://codepen.io/nbjorling/pen/abGaQpK'
             text='Horizontal Scrollable 2 Row Grid in Tailwind CSS'

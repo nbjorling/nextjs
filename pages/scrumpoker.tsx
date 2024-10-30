@@ -17,7 +17,7 @@ export default function ScrumPoker() {
   };
 
   return (
-    <main className='min-h-screen w-full bg-slate-800 pt-4 font-hyperlegible'>
+    <main className='font-hyperlegible min-h-screen w-full bg-slate-800 pt-4'>
       {choice && (
         <div className='fixed top-0 flex h-full w-full backdrop-blur-sm'>
           <div

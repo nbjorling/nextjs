@@ -75,7 +75,7 @@ const AnimatedBorderContainer: React.FC<{ children: React.ReactNode }> = ({
   return (
     <div className='relative h-[70vh] min-h-[200px] w-full overflow-hidden rounded-lg shadow-xl'>
       <div
-        className='absolute -left-[100%] -top-[100%] z-0 h-[300%] w-[300%] animate-rotate'
+        className='animate-rotate absolute -left-[100%] -top-[100%] z-0 h-[300%] w-[300%]'
         style={{
           background:
             'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
@@ -159,7 +159,7 @@ export default function Quiz() {
   }
 
   return (
-    <main className='min-h-screen w-full bg-slate-800 pt-4 font-hyperlegible'>
+    <main className='font-hyperlegible min-h-screen w-full bg-slate-800 pt-4'>
       {/* <div className="fixed bottom-0 p-4 w-40 h-auto bg-white ">
         JSON DATA: <br></br>
         {JSON.stringify(choices, null, 2)}

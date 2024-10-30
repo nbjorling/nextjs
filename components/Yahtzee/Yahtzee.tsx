@@ -282,7 +282,7 @@ export const Yahtzee = () => {
   }
 
   return (
-    <div className='w-full flex-row bg-slate-900 p-4 font-convergence'>
+    <div className='font-convergence w-full flex-row bg-slate-900 p-4'>
       <div className='mb-2 flex'>
         <button
           className='shrink-0 rounded bg-orange-300 py-2 px-4'
@@ -291,7 +291,7 @@ export const Yahtzee = () => {
         >
           Toggle Icons
         </button>
-        <h1 className='w-full pb-2 text-center font-convergence text-2xl text-white'>
+        <h1 className='font-convergence w-full pb-2 text-center text-2xl text-white'>
           Yahtzee
         </h1>
         <button
