@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './foundation/foundation.css';
+@import './tokens/token.css';
+
 @font-face {
   font-family: 'Hyperlegible';
   src: url('../src/fonts/AtkinsonHyperlegible-Regular.ttf');

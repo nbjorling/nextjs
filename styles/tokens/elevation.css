@@ -1,0 +1,85 @@
+@layer base {
+	:root {
+		--elevation-surface-sunken: var(--neutral-100);
+
+		--elevation-surface-default: var(--neutral-0);
+		--elevation-surface-default-hovered: var(--blue-25A);
+		--elevation-surface-default-pressed: var(--neutral-200);
+
+		--elevation-elevation-raised: var(--neutral-0);
+		--elevation-elevation-raised-hovered: var(--blue-25A);
+		--elevation-elevation-raised-pressed: var(--neutral-200);
+
+		--elevation-elevation-overlay: var(--neutral-0);
+		--elevation-elevation-overlay-hovered: var(--blue-25A);
+		--elevation-elevation-overlay-pressed: var(--neutral-200);
+
+		--elevation-surface-primary: var(--blue-500);
+		--elevation-surface-primary-hovered: var(--blue-600);
+		--elevation-surface-primary-pressed: var(--blue-700);
+
+		--elevation-surface-superior: var(--yellow-500);
+		--elevation-surface-superior-hovered: var(--yellow-600);
+		--elevation-surface-superior-pressed: var(--yellow-700);
+
+		--elevation-surface-error: var(--red-100);
+		--elevation-surface-error-hovered: var(--red-200);
+		--elevation-surface-error-pressed: var(--red-300);
+
+		--elevation-surface-warning: var(--yellow-100);
+		--elevation-surface-warning-hovered: var(--yellow-200);
+		--elevation-surface-warning-pressed: var(--yellow-300);
+
+		--elevation-surface-success: var(--green-100);
+		--elevation-surface-success-hovered: var(--green-200);
+		--elevation-surface-success-pressed: var(--green-300);
+
+		--elevation-surface-information: var(--blue-100);
+		--elevation-surface-information-hovered: var(--blue-200);
+		--elevation-surface-information-pressed: var(--blue-300);
+
+		--elevation-surface-inverse: var(--neutral-1100);
+
+		--elevation-surface-input: var(--neutral-0);
+
+		--elevation-shadow-overflow: 0px 0px 8px hsla(var(--neutral-1100) / 0.16),
+			0px 0px 1px hsla(var(--neutral-1100) / 0.12);
+		--elevation-shadow-overlay: 0px 8px 12px hsla(var(--neutral-1100) / 0.15),
+			0px 0px 1px hsla(var(--neutral-1100) / 0.31);
+		--elevation-shadow-raised: 0px 2px 8px hsla(var(--neutral-1100) / 0.06),
+			0px 0px 1px hsla(var(--neutral-1100) / 0.31);
+		--elevation-shadow-input: inset 0 2px 2px 0 hsla(var(--neutral-1100) / 0.06);
+	}
+	.dark {
+		--elevation-surface-sunken: var(--neutral-dark-0);
+
+		--elevation-surface-default: var(--neutral-dark-100);
+		--elevation-surface-default-hovered: var(--blue-25A);
+		--elevation-surface-default-pressed: var(--neutral-dark-200);
+
+		--elevation-elevation-raised: var(--neutral-dark-200);
+		--elevation-elevation-raised-hovered: var(--blue-25A);
+		--elevation-elevation-raised-pressed: var(--neutral-dark-250);
+
+		--elevation-elevation-overlay: var(--neutral-dark-250);
+		--elevation-elevation-overlay-hovered: var(--blue-25A);
+		--elevation-elevation-overlay-pressed: var(--neutral-dark-300);
+
+		--elevation-surface-input: var(--neutral-dark-100);
+
+		--elevation-surface-superior: var(--yellow-400);
+		--elevation-surface-superior-hovered: var(--yellow-500);
+		--elevation-surface-superior-pressed: var(--yellow-600);
+
+		--elevation-surface-primary: var(--blue-400);
+		--elevation-surface-primary-hovered: var(--blue-500);
+		--elevation-surface-primary-pressed: var(--blue-600);
+
+		--elevation-surface-inverse: var(--neutral-dark-1100);
+
+		--elevation-shadow-overflow: 0px 0px 12px hsla(180 14% 1% / 0.56), 0px 0px 1px hsla(180 14% 1% / 0.5);
+		--elevation-shadow-overlay: 0px 8px 12px hsla(180 14% 1% / 0.36), 0px 0px 1px hsla(180 14% 1% / 0.5);
+		--elevation-shadow-raised: 0px 1px 1px hsla(180 14% 1% 0.5), 0px 0px 1px hsla(180 14% 1% / 0.5);
+		--elevation-shadow-input: inset 0 2px 2px 0 hsla(180 14% 1% / 0.06);
+	}
+}

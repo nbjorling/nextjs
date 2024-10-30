@@ -2,12 +2,12 @@ import Link from 'next/link';
 import * as React from 'react';
 import { getRandomEmoji } from '../utils/getRandomEmoji';
 
-const StartPageItems = [
+export const menuItems = [
   {
-    icon: '🎲',
-    title: 'Yahtzee Scorecard',
-    description: 'Just the scorecard',
-    href: '/yahtzee',
+    icon: '🎸',
+    title: 'Concerts',
+    description: `Concerts I've been to`,
+    href: '/concerts',
   },
   {
     icon: '🎲',
@@ -16,23 +16,35 @@ const StartPageItems = [
     href: '/yahtzeeGame',
   },
   {
+    icon: '🎲',
+    title: 'Yahtzee Scorecard',
+    description: 'Just the scorecard',
+    href: '/yahtzee',
+  },
+  {
     icon: '🧩',
     title: 'Scrum Poker',
     description: 'Cards for scrum poker',
     href: '/scrumpoker',
   },
   {
-    icon: '🏌️‍♂️',
-    title: 'Golf ScoreCard',
-    description: 'Keep track on the gold course',
-    href: '/golfscorecard',
+    icon: '💳',
+    title: 'Sl Card Calculator',
+    description: `Calculate if it is worth to buy monthly card`,
+    href: '/slcardcalculator',
   },
-  {
-    icon: '💾',
-    title: 'Projects',
-    description: 'Small projects or concepts',
-    href: '/projects',
-  },
+  // {
+  //   icon: '🏌️‍♂️',
+  //   title: 'Golf ScoreCard',
+  //   description: 'Keep track on the gold course',
+  //   href: '/golfscorecard',
+  // },
+  // {
+  //   icon: '💾',
+  //   title: 'Projects',
+  //   description: 'Small projects or concepts',
+  //   href: '/projects',
+  // },
   {
     icon: '🔮',
     title: 'Code Pens',
@@ -51,37 +63,25 @@ const StartPageItems = [
     description: 'Jeopardy Answers',
     href: '/jeopardyAnswers',
   },
-  {
-    icon: '🎸',
-    title: 'Concerts',
-    description: `Concerts I've been to`,
-    href: '/concerts',
-  },
-  {
-    icon: '💳',
-    title: 'Sl Card Calculator',
-    description: `Calculate if it is worth to buy monthly card`,
-    href: '/slcardcalculator',
-  },
+
 ];
 
 function MenuItem({ href, title, description, icon }) {
   return (
     <Link href={href} passHref>
       <div
-        className='relative max-h-12 cursor-pointer overflow-hidden rounded-lg p-1 shadow-xl hover:bg-slate-700'
-        title={description}
+        className='relative cursor-pointer overflow-hidden shadow-xl'
+        title={icon + ' - ' + title + ' - ' + description}
       >
-        <div className='flex h-full flex-col'>
-          <h3 className='select-none font-convergence text-sm text-white'>
-            <span className='mr-2'>{icon}</span>
-            {title}
+        <div className='p-1 ml-4 flex flex-col hover:bg-slate-800 w-fit'>
+          <h3 className='select-none font-convergence text-xs text-[#ddd]'>
+            <span className='text-[#BBB]'>{`<`}</span>
+            <span className='text-[#97CAB5]'>Link </span>
+            <span className='text-[#FCCA65] italic'> href</span>
+            <span className='text-[#D0646D] italic'>=</span>
+            "{href}"
+            <span className='text-[#D0646D]'>...</span>
           </h3>
-          {/* {description && (
-            <p className='select-none text-center text-sm font-bold leading-4 text-cyan-300'>
-              {description}
-            </p>
-          )} */}
         </div>
       </div>
     </Link>
@@ -110,34 +110,47 @@ export default function Home() {
   }, []);
 
   return (
-    <main className='flex min-h-screen w-full flex-col bg-gradient-to-t from-[#060b15] to-slate-900 pt-4 font-hyperlegible md:flex-row'>
-      <div className='flex w-full flex-col px-8'>
-        <h1
-          className='mt-4 mb-4 cursor-pointer self-center text-9xl'
-          onClick={(e) => copy(e)}
-        >
-          {emoji}
-        </h1>
-        <h1 className='text-md mb-2 self-center font-convergence text-white'>
-          Your spirit emoji
-        </h1>
-        <p className='self-center font-hyperlegible text-xs text-slate-500 '>
-          {emojiText}
-        </p>
-      </div>
+    <main className='min-h-screen p-8 w-full bg-gradient-to-t from-[#060b15] to-slate-900 font-hyperlegible'>
+      <div className='grid grid-flow-row md:grid-flow-col gap-8 justify-center'>
 
-      <div className='flex w-full justify-center pt-8'>
-        <div className=''>
-          {StartPageItems.map((item, index) => (
-            <MenuItem
+        <div className='flex h-full w-full p-8 flex-col bg-[#141824] border-[#392A5D] border'>
+          <h1
+            className='mb-4 cursor-pointer self-center text-9xl'
+            onClick={(e) => copy(e)}
+          >
+            {emoji}
+          </h1>
+          <h1 className='text-md mb-2 self-center font-convergence text-white'>
+            Your spirit emoji
+          </h1>
+          <p className='self-center font-hyperlegible text-xs text-slate-500 '>
+            {emojiText}
+          </p>
+        </div>
+
+        <div className='flex w-full bg-primary font-mono text-sm h-full'>
+          <div className='bg-[#141824] p-8 border-[#392A5D] border h-fit'>
+            <span className='text-[#EF9D56]'>const </span>
+            <span className='text-[#FCCA65]'>Menu</span>
+            <span className='text-[#D0646D]'>: </span>
+            <span className='text-[#EF863F]'>React.FC </span>
+            <span className='text-[#D0646D]'>{`= `} </span>
+            <span className='text-[#BBB]'>() </span>
+            <span className='text-[#D0646D]'>{`=> `} </span>
+            <span className='text-[#BBB]'>{`{`}</span>
+            {menuItems.map((item, index) => (
+              <MenuItem
               href={item.href}
               key={index}
               title={item.title}
               description={item.description}
               icon={item.icon}
-            />
-          ))}
+              />
+            ))}
+            <span className='text-[#BBB]'>{`}`}</span>
+          </div>
         </div>
+
       </div>
     </main>
   );

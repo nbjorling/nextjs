@@ -1,0 +1,16 @@
+@layer base {
+	:root {
+		--ring-default: 0 0 0 4px hsla(var(--neutral-200A));
+		--ring-bold: 0 0 0 4px hsla(var(--neutral-300A));
+		--ring-superior: 0 0 0 4px hsla(var(--yellow-500) / 0.15);
+		--ring-primary: 0 0 0 4px hsla(var(--blue-500) / 0.15);
+		--ring-error: 0 0 0 4px hsla(var(--red-500) / 0.15);
+	}
+	.dark {
+		--ring-default: 0 0 0 4px hsla(var(--neutral-dark-250A));
+		--ring-bold: 0 0 0 4px hsla(var(--neutral-dark-350A));
+		--ring-superior: 0 0 0 4px hsla(var(--yellow-500) / 0.15);
+		--ring-primary: 0 0 0 4px hsla(var(--blue-500) / 0.15);
+		--ring-error: 0 0 0 4px hsla(var(--red-500) / 0.15);
+	}
+}

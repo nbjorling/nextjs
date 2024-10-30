@@ -1,4 +1,12 @@
 /** @type {import('tailwindcss').Config} */
+const { createThemes } = require('tw-colors');
+
+const backgroundColor = {
+  primary: 'hsl(var(--elevation-surface-primary))',
+  'primary-hovered': 'hsl(var(--elevation-surface-primary-hovered))',
+  'primary-pressed': 'hsl(var(--elevation-surface-primary-pressed))',
+};
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -6,24 +14,29 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        convergence: ['convergence', 'sans-serif'],
-        hyperlegible: ['Hyperlegible', 'sans-serif'],
-      },
-      keyframes: {
-        rotate: {
-          '0%': {
-            transform: 'rotate(0deg)',
-          },
-          '100%': {
-            transform: 'rotate(360deg)',
-          },
+      backgroundColor,
+    }
+  },
+  plugins: [
+    createThemes(
+      {
+        defaultTheme: 'dark',
+        light: {
+          'primary': 'steelblue',
+          'secondary': 'darkblue',
+          'brand': '#F3F3F3',
+        },
+        dark: {
+          'primary': 'turquoise',
+          'secondary': 'tomato',
+          'brand': '#4A4A4A',
+        },
+        forest: {
+          'primary': '#2A9D8F',
+          'secondary': '#E9C46A',
+          'brand': '#264653',
         },
       },
-      animation: {
-        rotate: 'rotate 8s linear infinite',
-      },
-    },
-  },
-  plugins: [],
+    ),
+  ],
 };
