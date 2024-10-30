@@ -13,7 +13,11 @@ function MyApp({ Component, pageProps }) {
       <link href='http://fonts.cdnfonts.com/css/convergence' rel='stylesheet' />
       <link rel='icon' href='/favicon.ico' />
     </Head>,
-    <div className='relative h-full min-h-screen font-convergence' data-theme='dark' key='render'>
+    <div
+      className='font-convergence relative h-full min-h-screen'
+      data-theme='dark'
+      key='render'
+    >
       <Analytics />
       <SpeedInsights />
       <div className='h-10'>

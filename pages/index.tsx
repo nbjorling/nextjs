@@ -63,7 +63,6 @@ export const menuItems = [
     description: 'Jeopardy Answers',
     href: '/jeopardyAnswers',
   },
-
 ];
 
 function MenuItem({ href, title, description, icon }) {
@@ -73,13 +72,13 @@ function MenuItem({ href, title, description, icon }) {
         className='relative cursor-pointer overflow-hidden shadow-xl'
         title={icon + ' - ' + title + ' - ' + description}
       >
-        <div className='p-1 ml-4 flex flex-col hover:bg-slate-800 w-fit'>
-          <h3 className='select-none font-convergence text-xs text-[#ddd]'>
+        <div className='ml-4 flex w-fit flex-col p-1 hover:bg-slate-800'>
+          <h3 className='font-convergence select-none text-xs text-[#ddd]'>
             <span className='text-[#BBB]'>{`<`}</span>
             <span className='text-[#97CAB5]'>Link </span>
-            <span className='text-[#FCCA65] italic'> href</span>
-            <span className='text-[#D0646D] italic'>=</span>
-            "{href}"
+            <span className='italic text-[#FCCA65]'> href</span>
+            <span className='italic text-[#D0646D]'>=</span>
+            <span>{`${href}`}</span>
             <span className='text-[#D0646D]'>...</span>
           </h3>
         </div>
@@ -110,26 +109,25 @@ export default function Home() {
   }, []);
 
   return (
-    <main className='min-h-screen p-8 w-full bg-gradient-to-t from-[#060b15] to-slate-900 font-hyperlegible'>
-      <div className='grid grid-flow-row md:grid-flow-col gap-8 justify-center'>
-
-        <div className='flex h-full w-full p-8 flex-col bg-[#141824] border-[#392A5D] border'>
+    <main className='font-hyperlegible min-h-screen w-full bg-gradient-to-t from-[#060b15] to-slate-900 p-8'>
+      <div className='grid grid-flow-row justify-center gap-8 md:grid-flow-col'>
+        <div className='flex h-full w-full flex-col border border-[#392A5D] bg-[#141824] p-8'>
           <h1
             className='mb-4 cursor-pointer self-center text-9xl'
             onClick={(e) => copy(e)}
           >
             {emoji}
           </h1>
-          <h1 className='text-md mb-2 self-center font-convergence text-white'>
+          <h1 className='text-md font-convergence mb-2 self-center text-white'>
             Your spirit emoji
           </h1>
-          <p className='self-center font-hyperlegible text-xs text-slate-500 '>
+          <p className='font-hyperlegible self-center text-xs text-slate-500 '>
             {emojiText}
           </p>
         </div>
 
-        <div className='flex w-full bg-primary font-mono text-sm h-full'>
-          <div className='bg-[#141824] p-8 border-[#392A5D] border h-fit'>
+        <div className='flex h-full w-full bg-primary font-mono text-sm'>
+          <div className='h-fit border border-[#392A5D] bg-[#141824] p-8'>
             <span className='text-[#EF9D56]'>const </span>
             <span className='text-[#FCCA65]'>Menu</span>
             <span className='text-[#D0646D]'>: </span>
@@ -140,17 +138,16 @@ export default function Home() {
             <span className='text-[#BBB]'>{`{`}</span>
             {menuItems.map((item, index) => (
               <MenuItem
-              href={item.href}
-              key={index}
-              title={item.title}
-              description={item.description}
-              icon={item.icon}
+                href={item.href}
+                key={index}
+                title={item.title}
+                description={item.description}
+                icon={item.icon}
               />
             ))}
             <span className='text-[#BBB]'>{`}`}</span>
           </div>
         </div>
-
       </div>
     </main>
   );

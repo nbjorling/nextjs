@@ -70,7 +70,7 @@ function MenuItem({ href, title, description, icon, index }) {
     <Link href={href} passHref>
       <div className='relative aspect-video max-h-96 cursor-pointer overflow-hidden shadow-xl md:aspect-square'>
         <div
-          className='absolute -left-[100%] -top-[100%] z-0 h-[300%] w-[300%] animate-rotate'
+          className='animate-rotate absolute -left-[100%] -top-[100%] z-0 h-[300%] w-[300%]'
           style={{
             background: `linear-gradient(${
               index * 25
@@ -83,7 +83,7 @@ function MenuItem({ href, title, description, icon, index }) {
         <div className='transition-color absolute left-[2px] top-[2px] z-10 h-[calc(100%-4px)] max-h-96  w-[calc(100%-4px)] cursor-pointer bg-slate-800 p-4 duration-300 hover:bg-slate-800  md:aspect-square'>
           <div className='flex h-full flex-col justify-center'>
             <h3 className='mb-2 select-none text-center text-4xl'>{icon}</h3>
-            <h3 className='mb-2 select-none text-center font-convergence text-2xl text-white'>
+            <h3 className='font-convergence mb-2 select-none text-center text-2xl text-white'>
               {title}
             </h3>
             {description && (
@@ -120,7 +120,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className='flex min-h-screen w-full flex-col bg-gradient-to-t from-[#060b15] to-slate-900 pt-4 font-hyperlegible'>
+    <main className='font-hyperlegible flex min-h-screen w-full flex-col bg-gradient-to-t from-[#060b15] to-slate-900 pt-4'>
       <div className='flex flex-col px-8'>
         <h1
           className='mt-4 mb-4 cursor-pointer self-center text-9xl'
@@ -128,10 +128,10 @@ export default function Home() {
         >
           {emoji}
         </h1>
-        <h1 className='mb-2 self-center font-convergence text-2xl text-white'>
+        <h1 className='font-convergence mb-2 self-center text-2xl text-white'>
           Your spirit emoji
         </h1>
-        <p className='self-center font-hyperlegible text-xs text-slate-500 '>
+        <p className='font-hyperlegible self-center text-xs text-slate-500 '>
           {emojiText}
         </p>
       </div>
