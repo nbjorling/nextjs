@@ -12,7 +12,7 @@ const StartPageItems = [
   {
     icon: '🎲',
     title: 'Yahtzee',
-    description: 'The extreme version with 6 dice',
+    description: 'Play the game',
     href: '/yahtzeeGame',
   },
   {
@@ -65,10 +65,13 @@ const StartPageItems = [
   },
 ];
 
-function MenuItem({ href, title, description, icon, index }) {
+function MenuItem({ href, title, description, icon }) {
   return (
     <Link href={href} passHref>
-      <div className='relative max-h-12 cursor-pointer overflow-hidden rounded-lg p-1 shadow-xl hover:bg-slate-700 '>
+      <div
+        className='relative max-h-12 cursor-pointer overflow-hidden rounded-lg p-1 shadow-xl hover:bg-slate-700'
+        title={description}
+      >
         <div className='flex h-full flex-col'>
           <h3 className='select-none font-convergence text-sm text-white'>
             <span className='mr-2'>{icon}</span>
@@ -129,7 +132,6 @@ export default function Home() {
             <MenuItem
               href={item.href}
               key={index}
-              index={index}
               title={item.title}
               description={item.description}
               icon={item.icon}
