@@ -120,7 +120,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className='font-hyperlegible flex min-h-screen w-full flex-col bg-gradient-to-t from-[#060b15] to-slate-900 pt-4'>
+    <main className='flex min-h-screen w-full flex-col bg-gradient-to-t from-[#060b15] to-slate-900 pt-4 font-hyperlegible'>
       <div className='flex flex-col px-8'>
         <h1
           className='mt-4 mb-4 cursor-pointer self-center text-9xl'
@@ -131,7 +131,7 @@ export default function Home() {
         <h1 className='font-convergence mb-2 self-center text-2xl text-white'>
           Your spirit emoji
         </h1>
-        <p className='font-hyperlegible self-center text-xs text-slate-500 '>
+        <p className='self-center font-hyperlegible text-xs text-slate-500 '>
           {emojiText}
         </p>
       </div>

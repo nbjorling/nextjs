@@ -159,7 +159,7 @@ export default function Quiz() {
   }
 
   return (
-    <main className='font-hyperlegible min-h-screen w-full bg-slate-800 pt-4'>
+    <main className='min-h-screen w-full bg-slate-800 pt-4 font-hyperlegible'>
       {/* <div className="fixed bottom-0 p-4 w-40 h-auto bg-white ">
         JSON DATA: <br></br>
         {JSON.stringify(choices, null, 2)}
