@@ -70,7 +70,7 @@ export default function MindSet() {
             </li>
             <li>
               No challenge will break me; no obstacle will stop me. If i get
-              knocked down, I will get up again, I am a warrior,
+              knocked down, I will get up again.
               <span className='block font-bold text-brand'>
                 I overcome, always.
               </span>

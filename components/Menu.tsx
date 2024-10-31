@@ -41,7 +41,9 @@ export function Menu() {
         }`}
         style={{
           transform: `translateY(${
-            isMenuOpen ? '-40px' : `${menuRef.current?.clientHeight - 40}px`
+            isMenuOpen
+              ? '-40px'
+              : `${menuRef.current?.clientHeight || 1000 - 40}px`
           })`,
         }}
       >
