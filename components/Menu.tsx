@@ -16,24 +16,36 @@ function LinkElement({ href, title, toggleMenu, icon }) {
 
 export function Menu() {
   const [isMenuOpen, setMenu] = React.useState(false);
+  const menuRef = React.useRef(null);
 
   const toggleMenu = () => {
     setMenu((prevState) => !prevState);
   };
 
   return (
-    <div className={`app-menu ${isMenuOpen ? 'menu-open' : ''}`}>
-      <div className='' onClick={() => toggleMenu()}>
-        <div className='flex cursor-pointer select-none border-b border-slate-900 bg-slate-900 p-2 pl-8 text-white shadow-lg'>
+    <div className={`app-menu relative ${isMenuOpen ? 'menu-open' : ''}`}>
+      <div
+        className='relative z-50 cursor-pointer select-none'
+        onClick={() => toggleMenu()}
+      >
+        <div className='flex border-b border-slate-900 bg-slate-900 p-2 pl-8 text-white shadow-lg'>
           {isMenuOpen ? '🍔 Close Menu' : '🍔 Menu'}
         </div>
       </div>
       <div
-        className={`fixed z-50 h-screen w-[300px] transition-all ease-in-out ${
-          isMenuOpen ? '-translate-x-[calc(100%-300px)]' : '-translate-x-full'
+        ref={menuRef}
+        className={`fixed bottom-0 w-full transition-all ease-in-out ${
+          isMenuOpen
+            ? '-translate-y-[40px]'
+            : `-translate-y-[${menuRef.current?.clientHeight}px]`
         }`}
+        style={{
+          transform: `translateY(${
+            isMenuOpen ? '-40px' : `${menuRef.current?.clientHeight - 40}px`
+          })`,
+        }}
       >
-        <div className='relative h-full flex-row border-t  border-t-slate-600 bg-slate-900 text-white'>
+        <div className='relative h-full flex-row border-y border-y-slate-800 bg-slate-900/40 text-white backdrop-blur-md'>
           <div className='p-10'>
             {menuItems.map((menuItem) => {
               return (
@@ -46,11 +58,6 @@ export function Menu() {
                 />
               );
             })}
-          </div>
-          <div className='absolute bottom-8 flex h-12 w-full bg-slate-900 shadow-lg'>
-            <div className='w-full items-center p-2 text-center'>
-              Made By Björling
-            </div>
           </div>
         </div>
       </div>

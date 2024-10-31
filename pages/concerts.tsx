@@ -118,9 +118,8 @@ export default function Concerts() {
     'flex w-full flex-col gap-4 pb-4 mb-4 border-b border-black border-opacity-[0.2] lg:grid lg:grid-cols-3';
 
   return (
-    <main className='font-hyperlegible w-full bg-slate-800 p-4 '>
+    <main className='w-full  p-4'>
       <>
-        <Title>Concerts</Title>
         <Title size='sm'>Upcoming ({upcomingConcerts.length.toString()})</Title>
         <div className={classes}>
           {upcomingConcerts.map((concert, index) => {

@@ -16,6 +16,11 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor,
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        hyperlegible: ['Hyperlegible', 'sans-serif'],
+        tiltwarp: ['tiltwarp', 'sans-serif'],
+      },
     },
   },
   plugins: [
@@ -29,7 +34,7 @@ module.exports = {
       dark: {
         primary: 'turquoise',
         secondary: 'tomato',
-        brand: '#4A4A4A',
+        brand: '#E9C46A',
       },
       forest: {
         primary: '#2A9D8F',

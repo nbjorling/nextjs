@@ -172,8 +172,6 @@ const ModeView = ({ state, setState, nextScreen }) => {
 const StartScreen = ({ state, setState, nextScreen }) => {
   const [view, setView] = useState<Screens>('NumberOfPlayersView');
 
-  console.log('Koca: view ', view);
-
   function nextView() {
     const currentIndex = screenOrder.indexOf(view);
     if (currentIndex === screenOrder.length - 1) {

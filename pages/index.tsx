@@ -1,8 +1,15 @@
 import Link from 'next/link';
 import * as React from 'react';
+import PageLayout from '../components/PageLayout/PageLayout';
 import { getRandomEmoji } from '../utils/getRandomEmoji';
 
 export const menuItems = [
+  {
+    icon: '🏡',
+    title: 'Home',
+    description: `Startpage`,
+    href: '/',
+  },
   {
     icon: '🎸',
     title: 'Concerts',
@@ -63,6 +70,12 @@ export const menuItems = [
     description: 'Jeopardy Answers',
     href: '/jeopardyAnswers',
   },
+  {
+    icon: '🤯',
+    title: 'Mindset',
+    description: 'Idno what this is',
+    href: '/mindset',
+  },
 ];
 
 function MenuItem({ href, title, description, icon }) {
@@ -109,7 +122,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className='font-hyperlegible min-h-screen w-full bg-gradient-to-t from-[#060b15] to-slate-900 p-8'>
+    <PageLayout>
       <div className='grid grid-flow-row justify-center gap-8 md:grid-flow-col'>
         <div className='flex h-full w-full flex-col border border-[#392A5D] bg-[#141824] p-8'>
           <h1
@@ -121,7 +134,7 @@ export default function Home() {
           <h1 className='text-md font-convergence mb-2 self-center text-white'>
             Your spirit emoji
           </h1>
-          <p className='font-hyperlegible self-center text-xs text-slate-500 '>
+          <p className='self-center font-hyperlegible text-xs text-slate-500 '>
             {emojiText}
           </p>
         </div>
@@ -149,6 +162,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </main>
+    </PageLayout>
   );
 }

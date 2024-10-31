@@ -20,10 +20,10 @@ function MyApp({ Component, pageProps }) {
     >
       <Analytics />
       <SpeedInsights />
-      <div className='h-10'>
+      <div className='fixed bottom-0 z-50 h-10 w-screen'>
         <Menu key='menu' />
       </div>
-      <div className={`min-h-[calc(100vh_-_40px)]`}>
+      <div className='absolute h-full min-h-screen w-screen pb-10'>
         <Component key='component' {...pageProps} />,
       </div>
     </div>,

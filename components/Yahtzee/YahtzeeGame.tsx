@@ -113,7 +113,6 @@ function YahtzeeGame() {
 
     if (!playerScores[category]) {
       const score = calculateScore(category);
-      console.log('Koca: score ', score);
 
       // Update the score for the current player in the chosen category
       const newPlayers = gameState.players.map((player, index) =>
@@ -134,8 +133,6 @@ function YahtzeeGame() {
   // Calculate the score for a specific category based on dice values
   const calculateScore = (category) => {
     const dice = gameState.dice;
-    console.log('Koca: category ', category);
-    console.log('Koca: dice ', dice);
     switch (category) {
       case 'ones':
         return dice.filter((die) => die === 1).length * 1;

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PageLayout from '../components/PageLayout/PageLayout';
 
 const CHOICES = [0, '1/2', 1, 2, 3, 5, 8, 13, 20, 40, 100, '?', '∞'];
 
@@ -17,19 +18,19 @@ export default function ScrumPoker() {
   };
 
   return (
-    <main className='font-hyperlegible min-h-screen w-full bg-slate-800 pt-4'>
+    <PageLayout fullscreen>
       {choice && (
-        <div className='fixed top-0 flex h-full w-full backdrop-blur-sm'>
+        <div className='fixed inset-x-4 bottom-14 top-4 flex shadow-xl backdrop-blur-sm'>
           <div
             onClick={() => {
               nextAction();
             }}
-            className='mx-8 my-12 flex grow cursor-pointer items-center justify-center rounded bg-slate-400 text-white '
+            className='flex grow cursor-pointer items-center justify-center rounded bg-slate-900 text-white'
           >
             {choice && show && (
               <div>
                 <p className='text-center text-[128px]'>{choice}</p>
-                <p className='text-center text-lg text-slate-200'>
+                <p className='text-center text-lg text-slate-300'>
                   Click again to close
                 </p>
               </div>
@@ -40,7 +41,7 @@ export default function ScrumPoker() {
           </div>
         </div>
       )}
-      <div className='grid grid-cols-3 gap-2 p-8'>
+      <div className='fixed bottom-10 grid w-full grid-cols-3 gap-2 p-4'>
         {CHOICES.map((choice, index) => {
           const string =
             typeof choice === 'string' ? choice : choice.toString();
@@ -58,6 +59,6 @@ export default function ScrumPoker() {
           );
         })}
       </div>
-    </main>
+    </PageLayout>
   );
 }

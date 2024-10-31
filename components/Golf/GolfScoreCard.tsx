@@ -35,7 +35,6 @@ function mapHandicap(player) {
     ...player,
   };
 
-  console.log('Koca: updatedPlayer ', updatedPlayer);
   return updatedPlayer;
 }
 

@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 import { twJoin } from 'tailwind-merge';
+import PageLayout from '../components/PageLayout/PageLayout';
 
 const MONTHS = {
   0: 'Januari',
@@ -136,84 +137,88 @@ export default function SlCardCalculator() {
   }
 
   return (
-    <main className='flex min-h-screen w-full flex-col gap-4 bg-slate-800 p-4 text-white'>
-      <div className='flex'>
+    <PageLayout fullscreen>
+      <div className='flex flex-col gap-4 p-4'>
+        <div className='flex'>
+          <button
+            className='h-10 w-12 rounded-lg bg-slate-700'
+            type='button'
+            onClick={() => setMonthToLookAt(monthToLookAt - 1)}
+          >{`<`}</button>
+          <p className='text-bold  w-full text-center text-xl'>
+            {MONTHS[month]}
+          </p>
+          <button
+            className='h-10 w-12 rounded-lg bg-slate-700'
+            type='button'
+            onClick={() => setMonthToLookAt(monthToLookAt + 1)}
+          >{`>`}</button>
+        </div>
+
+        <div className='grid grid-cols-7 gap-1 rounded-lg text-xs'>
+          {daysOrder.map((day) => {
+            return (
+              <p className='mb-1 text-center font-bold' key={day}>
+                {DAYS[day]}
+              </p>
+            );
+          })}
+          {boxes.map((box, index) => {
+            const occurrences = countOccurrences(travelDays, index);
+            const tickets = `🎟️x${occurrences}`;
+            const bgColor =
+              occurrences > 0
+                ? 'bg-green-600 hover:bg-green-700'
+                : 'bg-slate-500 hover:bg-slate-600';
+            return (
+              <div
+                onClick={(e) => addRemoveTravel(e, index)}
+                key={index}
+                className={twJoin(
+                  'flex h-16 w-auto cursor-pointer flex-col  px-1 text-sm',
+                  box.index + 1 === todaysDay && monthToLookAt === 0
+                    ? 'border border-cyan-900 bg-cyan-600 text-cyan-900 hover:bg-cyan-700'
+                    : bgColor,
+                  box.isCurrentMonth ? '' : 'text-gray-300 opacity-60',
+                  index === 0 ? 'rounded-tl-md' : '',
+                  index === 6 ? 'rounded-tr-md' : '',
+                  index === boxes.length - 7 ? 'rounded-bl-md' : '',
+                  index === boxes.length - 1 ? 'rounded-br-md' : ''
+                )}
+              >
+                <p>{box.dayNumber}</p>
+                <p>{occurrences > 0 && tickets}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className='text-md flex justify-between rounded-md bg-slate-900 p-4'>
+          <p className='text-green-400'>Total kostnad:</p>
+          <p className='font-bold text-green-400'>
+            {DAILY_COST * travelDays.length} kr
+          </p>
+        </div>
+
+        <div className=' rounded-md bg-slate-900 p-4 text-sm '>
+          <p className='mb-2 font-bold'>Prislista</p>
+          {prices.map((price) => {
+            return (
+              <div key={price.label} className='flex justify-between'>
+                <p>{price.label}</p>
+                <p>{price.price} kr</p>
+              </div>
+            );
+          })}
+        </div>
         <button
-          className='h-10 w-12 rounded-lg bg-slate-700'
+          onClick={() => setTravelDays([])}
+          className='rounded-md bg-orange-300 p-2 text-black hover:bg-orange-400 active:bg-orange-500'
           type='button'
-          onClick={() => setMonthToLookAt(monthToLookAt - 1)}
-        >{`<`}</button>
-        <p className='text-bold  w-full text-center text-xl'>{MONTHS[month]}</p>
-        <button
-          className='h-10 w-12 rounded-lg bg-slate-700'
-          type='button'
-          onClick={() => setMonthToLookAt(monthToLookAt + 1)}
-        >{`>`}</button>
+        >
+          Rensa kalendern
+        </button>
       </div>
-
-      <div className='grid grid-cols-7 gap-1 rounded-lg text-xs'>
-        {daysOrder.map((day) => {
-          return (
-            <p className='mb-1 text-center font-bold' key={day}>
-              {DAYS[day]}
-            </p>
-          );
-        })}
-        {boxes.map((box, index) => {
-          const occurrences = countOccurrences(travelDays, index);
-          const tickets = `🎟️x${occurrences}`;
-          const bgColor =
-            occurrences > 0
-              ? 'bg-green-600 hover:bg-green-700'
-              : 'bg-slate-500 hover:bg-slate-600';
-          return (
-            <div
-              onClick={(e) => addRemoveTravel(e, index)}
-              key={index}
-              className={twJoin(
-                'flex h-16 w-auto cursor-pointer flex-col  px-1 text-sm',
-                box.index + 1 === todaysDay && monthToLookAt === 0
-                  ? 'border border-cyan-900 bg-cyan-600 text-cyan-900 hover:bg-cyan-700'
-                  : bgColor,
-                box.isCurrentMonth ? '' : 'text-gray-300 opacity-60',
-                index === 0 ? 'rounded-tl-md' : '',
-                index === 6 ? 'rounded-tr-md' : '',
-                index === boxes.length - 7 ? 'rounded-bl-md' : '',
-                index === boxes.length - 1 ? 'rounded-br-md' : ''
-              )}
-            >
-              <p>{box.dayNumber}</p>
-              <p>{occurrences > 0 && tickets}</p>
-            </div>
-          );
-        })}
-      </div>
-
-      <div className='text-md flex justify-between rounded-md bg-slate-600 p-4'>
-        <p className='text-green-400'>Total kostnad:</p>
-        <p className='font-bold text-green-400'>
-          {DAILY_COST * travelDays.length} kr
-        </p>
-      </div>
-
-      <div className=' rounded-md bg-slate-600 p-4 text-sm '>
-        <p className='mb-2 font-bold'>Prislista</p>
-        {prices.map((price) => {
-          return (
-            <div key={price.label} className='flex justify-between'>
-              <p>{price.label}</p>
-              <p>{price.price} kr</p>
-            </div>
-          );
-        })}
-      </div>
-      <button
-        onClick={() => setTravelDays([])}
-        className='rounded-md bg-orange-400 p-2 hover:bg-orange-500 active:bg-orange-600'
-        type='button'
-      >
-        Rensa kalendern
-      </button>
-    </main>
+    </PageLayout>
   );
 }

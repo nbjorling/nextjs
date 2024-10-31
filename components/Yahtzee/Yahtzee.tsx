@@ -166,32 +166,32 @@ const fields = [
   { id: '17', label: 'Total', value: 0, disabled: true },
 ];
 
-const borderColor = 'border-r border-t border-l border-slate-400';
+const borderColor = 'border border-slate-900/40';
 
 const ScoreCard = ({ player, onUpdate, updateName }) => {
   return (
     <table className={`w-full min-w-[90px] `}>
       <tbody>
         <tr
-          className={`flex h-10 whitespace-nowrap bg-slate-300 ${borderColor} `}
+          className={`flex h-10 whitespace-nowrap bg-slate-900 ${borderColor} `}
         >
           <td className='h-full'>
             <input
               onChange={(event) => updateName(event)}
               value={player.name}
-              className='h-full  w-full bg-slate-300 px-2'
+              className='h-full  w-full bg-slate-900 px-2 text-white'
               type='string'
             />
           </td>
         </tr>
         {player.scoreCard.map((field) => {
-          let backgroundColor = 'bg-slate-200';
-          if (field.value > 0) backgroundColor = 'bg-lime-200';
+          let backgroundColor = 'bg-slate-800';
+          if (field.value > 0) backgroundColor = 'bg-lime-800 text-white';
           if (field.disabled && field.value > 0)
-            backgroundColor = 'bg-lime-500';
+            backgroundColor = 'bg-lime-800 text-white';
 
           if (field.id === '7' && field.value === 0)
-            backgroundColor = 'bg-red-200';
+            backgroundColor = 'bg-red-900 text-white';
           return (
             <tr
               className={`flex h-10 w-full min-w-0 whitespace-nowrap ${backgroundColor} ${borderColor}`}
@@ -282,7 +282,7 @@ export const Yahtzee = () => {
   }
 
   return (
-    <div className='font-convergence w-full flex-row bg-slate-900 p-4'>
+    <div className='font-convergence w-full flex-row bg-slate-900 p-4 text-black'>
       <div className='mb-2 flex'>
         <button
           className='shrink-0 rounded bg-orange-300 py-2 px-4'
@@ -302,12 +302,12 @@ export const Yahtzee = () => {
           Add player
         </button>
       </div>
-      <div className='flex w-full overflow-scroll rounded bg-slate-300 p-2'>
+      <div className='flex w-full overflow-scroll rounded bg-slate-900 p-2'>
         <table className='w-full text-left'>
           <tbody>
             <tr className='h-10 whitespace-nowrap'>
               <td
-                className={`flex h-10 items-center whitespace-nowrap bg-slate-100 px-2 ${borderColor}`}
+                className={`flex h-10 items-center whitespace-nowrap bg-slate-700 px-2 text-white ${borderColor}`}
               >
                 Player
               </td>
@@ -316,8 +316,8 @@ export const Yahtzee = () => {
               const labelElement = useIcons ? field.icon : field.label;
               return (
                 <tr
-                  className={`flex h-10 overflow-hidden whitespace-nowrap bg-slate-300 ${borderColor} ${
-                    field.id === '17' && 'bg-gray-400'
+                  className={`flex h-10 overflow-hidden whitespace-nowrap bg-slate-800 text-white ${borderColor} ${
+                    field.id === '17' && 'bg-gray-900'
                   }
                   `}
                   key={field.id}
