@@ -43,7 +43,7 @@ export default function MindSet() {
         <div className='flex flex-col gap-4 font-hyperlegible text-white/80'>
           {/* <Header>Method</Header>
           <Paragraph>Disciplin over motivation</Paragraph> */}
-          <Header>Warrior Ehtos - Get shit done!</Header>
+          <Header>The Warrior Ethos</Header>
           <ul className='ml-4 flex list-disc flex-col gap-4'>
             <li>
               I am disciplined, focused, and relentless. I am driven by purpose,
