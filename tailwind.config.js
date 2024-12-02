@@ -20,6 +20,7 @@ module.exports = {
         sans: ['Inter', 'sans-serif'],
         hyperlegible: ['Hyperlegible', 'sans-serif'],
         tiltwarp: ['tiltwarp', 'sans-serif'],
+        mono: ['Mono, monospace'],
       },
     },
   },

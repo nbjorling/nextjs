@@ -25,7 +25,7 @@ export function Menu() {
   return (
     <div className={`app-menu relative ${isMenuOpen ? 'menu-open' : ''}`}>
       <div
-        className='relative z-50 cursor-pointer select-none'
+        className='relative z-[5] cursor-pointer select-none'
         onClick={() => toggleMenu()}
       >
         <div className='flex border-b border-slate-900 bg-slate-900 p-2 pl-8 text-white shadow-lg'>
