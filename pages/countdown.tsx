@@ -12,7 +12,7 @@ export default function StartPage() {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    const targetDate = new Date('2024-12-13T13:46:00').getTime();
+    const targetDate = new Date('2024-12-13T15:00:00').getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -74,9 +74,7 @@ export default function StartPage() {
             <div className='flex justify-center gap-32 text-[4rem] font-bold text-white drop-shadow-lg'>
               {done ? (
                 <>
-                  <div className='text-[8rem]'>
-                    it is on 🤩, leeeeets gooo! 🍾{' '}
-                  </div>
+                  <div className='text-[8rem]'>it is on! leeeeets gooo!</div>
                 </>
               ) : (
                 <>
@@ -111,7 +109,7 @@ export default function StartPage() {
               )}
             </div>
           </div>
-          <p className='absolute bottom-0 bg-black'>v1</p>
+          <p className='absolute bottom-0 bg-green-500'>v1</p>
         </div>
       </div>
     </main>
