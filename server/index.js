@@ -4,9 +4,7 @@ import mongoose from 'mongoose';
 import User from './models/user.js';
 
 const MONGO_NAME = process.env.MONGO_NAME;
-console.log('Koca: MONGO_NAME ', MONGO_NAME);
 const MONGO_PASSWORD = process.env.MONGO_PASSWORD;
-console.log('Koca: MONGO_PASSWORD ', MONGO_PASSWORD);
 const SERVER_PORT = 3000;
 
 const dbUri = `mongodb+srv://${MONGO_NAME}:${MONGO_PASSWORD}@cluster0.jdnoq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
@@ -21,6 +19,7 @@ mongoose
   })
   .catch((err) => {
     console.log('Failed to connect to MongoDB', err);
+    process.exit(1);
   });
 
 // init app & middleware
