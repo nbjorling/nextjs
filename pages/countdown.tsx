@@ -111,7 +111,6 @@ export default function StartPage() {
               )}
             </div>
           </div>
-          <p className='absolute bottom-0 bg-red-500'>v1</p>
         </div>
       </div>
     </main>
