@@ -14,10 +14,7 @@
   font-family: 'Tiltwarp';
   src: url('../src/fonts/TiltWarp-Regular-VariableFont.ttf');
 }
-@font-face {
-  font-family: 'Mono';
-  src: url('../src/fonts/MajorMonoDisplay-Regular.ttf');
-}
+
 html,
 body {
   padding: 0;
