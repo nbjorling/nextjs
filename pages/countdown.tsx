@@ -9,10 +9,8 @@ export default function StartPage() {
     seconds: 0,
   });
 
-  const [done, setDone] = useState(false);
-
   useEffect(() => {
-    const targetDate = new Date('2024-12-13T13:46:00').getTime();
+    const targetDate = new Date('2024-12-13T15:00:00').getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -20,7 +18,6 @@ export default function StartPage() {
 
       if (difference < 0) {
         clearInterval(interval);
-        setDone(true);
         return;
       }
 
@@ -44,8 +41,6 @@ export default function StartPage() {
       main.current.requestFullscreen();
     }
   };
-
-  console.log('Koca: ', done);
 
   return (
     <main
@@ -72,43 +67,33 @@ export default function StartPage() {
               x-mas party!
             </h1>
             <div className='flex justify-center gap-32 text-[4rem] font-bold text-white drop-shadow-lg'>
-              {done ? (
-                <>
-                  <div className='text-[8rem]'>
-                    it is on 🤩, leeeeets gooo! 🍾{' '}
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div>
-                    <span className='mb-8 block text-[12rem]'>
-                      {timeLeft.days.toString().padStart(2, '0')}
-                    </span>
-                    days
-                  </div>
+              <div>
+                <span className='mb-8 block text-[12rem]'>
+                  {timeLeft.days.toString().padStart(2, '0')}
+                </span>
+                days
+              </div>
 
-                  <div>
-                    <span className='mb-8 block text-[12rem]'>
-                      {timeLeft.hours.toString().padStart(2, '0')}
-                    </span>
-                    hours
-                  </div>
+              <div>
+                <span className='mb-8 block text-[12rem]'>
+                  {timeLeft.hours.toString().padStart(2, '0')}
+                </span>
+                hours
+              </div>
 
-                  <div>
-                    <span className='mb-8 block text-[12rem]'>
-                      {timeLeft.minutes.toString().padStart(2, '0')}
-                    </span>
-                    minutes
-                  </div>
+              <div>
+                <span className='mb-8 block text-[12rem]'>
+                  {timeLeft.minutes.toString().padStart(2, '0')}
+                </span>
+                minutes
+              </div>
 
-                  <div>
-                    <span className='mb-8 block text-[12rem] text-red-500'>
-                      {timeLeft.seconds.toString().padStart(2, '0')}
-                    </span>
-                    seconds
-                  </div>
-                </>
-              )}
+              <div>
+                <span className='mb-8 block text-[12rem] text-red-500'>
+                  {timeLeft.seconds.toString().padStart(2, '0')}
+                </span>
+                seconds
+              </div>
             </div>
           </div>
         </div>
