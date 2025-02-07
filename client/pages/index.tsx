@@ -76,6 +76,24 @@ export const menuItems = [
     description: 'Idno what this is',
     href: '/mindset',
   },
+  {
+    icon: '💪',
+    title: 'Year of the Beast',
+    description: `It's time`,
+    href: '/beast',
+  },
+  {
+    icon: '🍺',
+    title: 'Beer Rating',
+    description: `For the love of beer`,
+    href: '/nonAlcoholBeer',
+  },
+  {
+    icon: '📋',
+    title: 'OAT',
+    description: `Open activity tracker`,
+    href: '/oat',
+  },
 ];
 
 function MenuItem({ href, title, description, icon }) {
