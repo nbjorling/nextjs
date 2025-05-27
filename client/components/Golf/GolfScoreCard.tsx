@@ -135,7 +135,7 @@ export function GolfScoreCard() {
   );
 
   return (
-    <div className='font-convergence min-h-screen w-full flex-row bg-gradient-to-tr from-emerald-900 to-emerald-400 p-4'>
+    <div className=' min-h-screen w-full flex-row bg-gradient-to-tr from-emerald-900 to-emerald-400 p-4'>
       <div className='flex w-full  rounded bg-white bg-opacity-40 p-2 '>
         <table className='w-full text-center'>
           <tbody>

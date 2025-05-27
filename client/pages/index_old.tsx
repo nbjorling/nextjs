@@ -83,7 +83,7 @@ function MenuItem({ href, title, description, icon, index }) {
         <div className='transition-color absolute left-[2px] top-[2px] z-10 h-[calc(100%-4px)] max-h-96  w-[calc(100%-4px)] cursor-pointer bg-slate-800 p-4 duration-300 hover:bg-slate-800  md:aspect-square'>
           <div className='flex h-full flex-col justify-center'>
             <h3 className='mb-2 select-none text-center text-4xl'>{icon}</h3>
-            <h3 className='font-convergence mb-2 select-none text-center text-2xl text-white'>
+            <h3 className=' mb-2 select-none text-center text-2xl text-white'>
               {title}
             </h3>
             {description && (
@@ -128,7 +128,7 @@ export default function Home() {
         >
           {emoji}
         </h1>
-        <h1 className='font-convergence mb-2 self-center text-2xl text-white'>
+        <h1 className='mb-2 self-center text-2xl text-white'>
           Your spirit emoji
         </h1>
         <p className='self-center font-hyperlegible text-xs text-white'>

@@ -104,7 +104,7 @@ function MenuItem({ href, title, description, icon }) {
         title={icon + ' - ' + title + ' - ' + description}
       >
         <div className='ml-4 flex w-fit flex-col p-1 hover:bg-slate-800'>
-          <p className='font-convergence select-none text-xs text-[#ddd]'>
+          <p className='select-none text-xs text-[#ddd]'>
             <span className='text-[#BBB]'>{`<`}</span>
             <span className='text-[#97CAB5]'>Link </span>
             <span className='italic text-[#FCCA65]'> href</span>
@@ -149,7 +149,7 @@ export default function Home() {
           >
             {emoji}
           </h1>
-          <h1 className='text-md font-convergence mb-2 self-center text-white'>
+          <h1 className='text-md mb-2 self-center text-white'>
             Your spirit emoji
           </h1>
           <p className='self-center font-hyperlegible text-xs text-orange-500'>

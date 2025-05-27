@@ -19,7 +19,7 @@ export default function StartPage() {
   return (
     <PageLayout>
       <div className='p-8'>
-        <h1 className='font-convergence mb-4 text-6xl text-white'>Code Pens</h1>
+        <h1 className='mb-4 text-6xl text-white'>Code Pens</h1>
         <ul className='font-hyperlegible text-white underline'>
           <LinkEl
             href='https://codepen.io/nbjorling/pen/abGaQpK'
