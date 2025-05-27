@@ -75,7 +75,7 @@ export default function BeerToplist() {
                   ⭐ {beer.niklas.rating + beer.hjalmar.rating}
                 </span>
               </div>
-              <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+              <div className='grid grid-cols-1 gap-4 pt-2  text-start md:grid-cols-2'>
                 <div>
                   <h4 className='text-xl font-semibold'>Niklas</h4>
                   <p className='text-yellow-400'>
@@ -83,7 +83,7 @@ export default function BeerToplist() {
                   </p>
                   <p className='text-gray-400'>{beer.niklas.notes}</p>
                 </div>
-                <div className='border-t border-gray-700 pt-4 md:border-l md:border-t-0 md:pl-4'>
+                <div className='border-t border-gray-700 pt-2 md:border-l md:border-t-0 md:pl-4'>
                   <h4 className='text-xl font-semibold'>Hjalmar</h4>
                   <p className='text-yellow-400'>
                     {renderStars(beer.hjalmar.rating)}

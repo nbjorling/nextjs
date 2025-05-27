@@ -26,6 +26,7 @@ mongoose
 const app = express();
 
 app.get('/users', async (req, res) => {
+  console.log('GET /users');
   User.find().then((result) => {
     res.send(result);
   });

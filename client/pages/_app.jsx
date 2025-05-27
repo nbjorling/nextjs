@@ -9,8 +9,11 @@ function MyApp({ Component, pageProps }) {
   return [
     <Head key='head'>
       <title>Dice Haven</title>
-      <meta name='description' content='I am Niklas Björling' />
-      <link href='http://fonts.cdnfonts.com/css/convergence' rel='stylesheet' />
+      <meta name='description' content='I am Niklas Björling' lang='en' />
+      <link
+        href='https://fonts.cdnfonts.com/css/convergence'
+        rel='stylesheet'
+      />
       <link rel='icon' href='/favicon.ico' />
     </Head>,
     <div

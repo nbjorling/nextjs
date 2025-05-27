@@ -131,7 +131,7 @@ export default function Home() {
         <h1 className='font-convergence mb-2 self-center text-2xl text-white'>
           Your spirit emoji
         </h1>
-        <p className='self-center font-hyperlegible text-xs text-slate-500 '>
+        <p className='self-center font-hyperlegible text-xs text-white'>
           {emojiText}
         </p>
       </div>

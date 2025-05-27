@@ -76,24 +76,24 @@ export const menuItems = [
     description: 'Idno what this is',
     href: '/mindset',
   },
-  {
-    icon: '💪',
-    title: 'Year of the Beast',
-    description: `It's time`,
-    href: '/beast',
-  },
+  // {
+  //   icon: '💪',
+  //   title: 'Year of the Beast',
+  //   description: `It's time`,
+  //   href: '/beast',
+  // },
   {
     icon: '🍺',
     title: 'Beer Rating',
     description: `For the love of beer`,
     href: '/nonAlcoholBeer',
   },
-  {
-    icon: '📋',
-    title: 'OAT',
-    description: `Open activity tracker`,
-    href: '/oat',
-  },
+  // {
+  //   icon: '📋',
+  //   title: 'OAT',
+  //   description: `Open activity tracker`,
+  //   href: '/oat',
+  // },
 ];
 
 function MenuItem({ href, title, description, icon }) {
@@ -104,14 +104,14 @@ function MenuItem({ href, title, description, icon }) {
         title={icon + ' - ' + title + ' - ' + description}
       >
         <div className='ml-4 flex w-fit flex-col p-1 hover:bg-slate-800'>
-          <h3 className='font-convergence select-none text-xs text-[#ddd]'>
+          <p className='font-convergence select-none text-xs text-[#ddd]'>
             <span className='text-[#BBB]'>{`<`}</span>
             <span className='text-[#97CAB5]'>Link </span>
             <span className='italic text-[#FCCA65]'> href</span>
             <span className='italic text-[#D0646D]'>=</span>
             <span>{`${href}`}</span>
             <span className='text-[#D0646D]'>...</span>
-          </h3>
+          </p>
         </div>
       </div>
     </Link>
@@ -152,7 +152,7 @@ export default function Home() {
           <h1 className='text-md font-convergence mb-2 self-center text-white'>
             Your spirit emoji
           </h1>
-          <p className='self-center font-hyperlegible text-xs text-slate-500 '>
+          <p className='self-center font-hyperlegible text-xs text-orange-500'>
             {emojiText}
           </p>
         </div>
