@@ -332,9 +332,66 @@ const concerts = [
     city: 'Stockholm',
     img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Tenacious_D_-_Rock_am_Ring_2016_-2016155215305_2016-06-03_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_0802_-_AK8I0813_mod.jpg/2880px-Tenacious_D_-_Rock_am_Ring_2016_-2016155215305_2016-06-03_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_0802_-_AK8I0813_mod.jpg',
   },
+  {
+    name: 'Ghost',
+    date: '2025-04-29',
+    time: '19.00',
+    place: 'Göransson Arena',
+    city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Tenacious_D_-_Rock_am_Ring_2016_-2016155215305_2016-06-03_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_0802_-_AK8I0813_mod.jpg/2880px-Tenacious_D_-_Rock_am_Ring_2016_-2016155215305_2016-06-03_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_0802_-_AK8I0813_mod.jpg',
+  },
+  {
+    name: 'Iron Maiden',
+    date: '2025-04-29',
+    time: '19.00',
+    place: 'Tele 2 Arena',
+    city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/1/1c/Iron_Maiden_47f_b.jpg',
+  },
+  {
+    name: 'Millencollin',
+    date: '2025-06-24',
+    time: '16.30',
+    place: 'Hovet',
+    city: 'Stockholm',
+    img: 'https://en.wikipedia.org/wiki/Millencolin#/media/File:Millencolin-2008.jpg',
+  },
+  {
+    name: 'Weezer',
+    date: '2025-06-24',
+    time: '17.30',
+    place: 'Hovet',
+    city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Weezer_Bethlehem_2019_1.jpg',
+  },
+  {
+    name: 'Green day',
+    date: '2025-06-24',
+    time: '19.00',
+    place: 'Hovet',
+    city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Green_Day_-_2022154231209_2022-06-03_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_3537_-_B70I8091.jpg',
+  },
+  {
+    name: 'Guns n Roses',
+    date: '2025-07-09',
+    time: '19.00',
+    place: 'Strawberry Arena',
+    city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Glasto2023_Guns_%27N%27_Roses_%28sans_Dave_Grohl%29.jpg',
+  },
 ];
 
-const upcomingConcerts = [];
+const upcomingConcerts = [
+  {
+    name: 'Kendrick Lamar',
+    date: '2025-07-09',
+    time: '19.00',
+    place: 'Hovet',
+    city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Tenacious_D_-_Rock_am_Ring_2016_-2016155215305_2016-06-03_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_0802_-_AK8I0813_mod.jpg/2880px-Tenacious_D_-_Rock_am_Ring_2016_-2016155215305_2016-06-03_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_0802_-_AK8I0813_mod.jpg',
+  },
+];
 
 export { upcomingConcerts, concerts };
 export type { ConcertProps };
