@@ -5,7 +5,7 @@ import User from './models/user.js';
 
 const MONGO_NAME = process.env.MONGO_NAME;
 const MONGO_PASSWORD = process.env.MONGO_PASSWORD;
-const SERVER_PORT = 3000;
+const SERVER_PORT = 3333;
 
 const dbUri = `mongodb+srv://${MONGO_NAME}:${MONGO_PASSWORD}@cluster0.jdnoq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 

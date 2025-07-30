@@ -338,7 +338,7 @@ const concerts = [
     time: '19.00',
     place: 'Göransson Arena',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Tenacious_D_-_Rock_am_Ring_2016_-2016155215305_2016-06-03_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_0802_-_AK8I0813_mod.jpg/2880px-Tenacious_D_-_Rock_am_Ring_2016_-2016155215305_2016-06-03_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_0802_-_AK8I0813_mod.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/f/f5/Ghost_live_in_Utrecht.jpg',
   },
   {
     name: 'Iron Maiden',
@@ -387,9 +387,9 @@ const upcomingConcerts = [
     name: 'Kendrick Lamar',
     date: '2025-07-09',
     time: '19.00',
-    place: 'Hovet',
+    place: 'Tele 2 Arena',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Tenacious_D_-_Rock_am_Ring_2016_-2016155215305_2016-06-03_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_0802_-_AK8I0813_mod.jpg/2880px-Tenacious_D_-_Rock_am_Ring_2016_-2016155215305_2016-06-03_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_0802_-_AK8I0813_mod.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Kendrick_Lamar_2018_Pulitzer_Prize_ceremony_%283x4_cropped%29.jpg',
   },
 ];
 
