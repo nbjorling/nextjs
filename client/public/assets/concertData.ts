@@ -87,7 +87,7 @@ const concerts = [
     time: '20:00',
     place: 'Globen',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/MichaelBubleDanceFeb2011.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/2/28/Michael_Buble_by_Gage_Skidmore_%28cropped%29.jpg',
   },
   {
     name: 'Loreen',
@@ -111,7 +111,7 @@ const concerts = [
     time: '23:00',
     place: 'Berns',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Panetoz_p%C3%A5_presentationen_Mello_2023_Link%C3%B6ping_1.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Panetoz-Mama_Africa_videoshoot.jpg',
   },
   {
     name: 'Roger Waters',
@@ -127,6 +127,7 @@ const concerts = [
     time: '19:30',
     place: 'Avicii Arena',
     city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Post_Malone_July_2021_%28cropped%29.jpg',
   },
   {
     name: 'Wutang Clan',
@@ -151,7 +152,7 @@ const concerts = [
     place: 'Slakthusområdet',
     festival: 'Mästerbotten',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Punctus_interrogativus_from_Bern%2C_B%C3%BCrgerbibliothek_Cod._162%2C_f._15r.jpg',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9ETRyM5yTFchMaWbkfvqv_CpTyJnFpv0kwQ&s',
   },
   {
     name: 'Broder John',
@@ -160,7 +161,7 @@ const concerts = [
     place: 'Slakthusområdet',
     festival: 'Mästerbotten',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Punctus_interrogativus_from_Bern%2C_B%C3%BCrgerbibliothek_Cod._162%2C_f._15r.jpg',
+    img: 'https://static-cdn.sr.se/images/4323/1a65710c-6f31-4188-acf5-1c52676ed0f6.jpg',
   },
   {
     name: 'Hoopdiggas Club',
@@ -169,7 +170,7 @@ const concerts = [
     place: 'Slakthusområdet',
     festival: 'Mästerbotten',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Punctus_interrogativus_from_Bern%2C_B%C3%BCrgerbibliothek_Cod._162%2C_f._15r.jpg',
+    img: 'https://mnd-assets.mynewsdesk.com/image/upload/ar_16:9,c_fill,dpr_auto,f_auto,g_sm,q_auto:good,w_746/n5kgtniloeqr54fakljh',
   },
   {
     name: 'Cleo',
@@ -196,7 +197,7 @@ const concerts = [
     place: 'Slakthusområdet',
     festival: 'Mästerbotten',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Punctus_interrogativus_from_Bern%2C_B%C3%BCrgerbibliothek_Cod._162%2C_f._15r.jpg',
+    img: 'https://wp.dopest.se/wp-content/uploads/2020/05/fridlyst-800x450.jpg',
   },
   {
     name: 'Dean Lewis',
@@ -205,6 +206,7 @@ const concerts = [
     place: 'Gärdet',
     festival: 'Lollapalooza',
     city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Dean_Lewis-7561.jpg',
   },
   {
     name: 'Thomas Stenström',
@@ -213,7 +215,7 @@ const concerts = [
     place: 'Gärdet',
     festival: 'Lollapalooza',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Punctus_interrogativus_from_Bern%2C_B%C3%BCrgerbibliothek_Cod._162%2C_f._15r.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Thomas_Stenstr%C3%B6m_%281%29_By_Daniel_%C3%85hs_Karlsson_%28cropped%29.jpg',
   },
   {
     name: 'Zara Larsson',
@@ -222,7 +224,7 @@ const concerts = [
     place: 'Gärdet',
     festival: 'Lollapalooza',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Punctus_interrogativus_from_Bern%2C_B%C3%BCrgerbibliothek_Cod._162%2C_f._15r.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/6/62/Zara_Larsson_-_Ilosaarirock_2018_-_17.jpg',
   },
   {
     name: 'Marcus Mumford',
@@ -231,6 +233,7 @@ const concerts = [
     place: 'Gärdet',
     festival: 'Lollapalooza',
     city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/2/2a/Marcus_Mumford_at_Newport_Folk_Festival_2018_by_Sachyn_Mital.jpg',
   },
   {
     name: 'Afrojack',
@@ -239,7 +242,7 @@ const concerts = [
     place: 'Gärdet',
     festival: 'Lollapalooza',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Punctus_interrogativus_from_Bern%2C_B%C3%BCrgerbibliothek_Cod._162%2C_f._15r.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Afrojack_2015.jpg',
   },
   {
     name: 'Kygo',
@@ -257,6 +260,7 @@ const concerts = [
     place: 'Gärder',
     festival: 'Lollapalooza',
     city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/Lil_Nas_X_Talks_About_Gaining_His_Father%27s_Acceptance%2C_Growing_Up_in_Atlanta%2C_%26_FINDING_HIMSELF_7-32_screenshot_%28headshot%29.jpg',
   },
   {
     name: 'Fatboy Slim',
@@ -265,6 +269,7 @@ const concerts = [
     place: 'Gärdet',
     festival: 'Lollapalooza',
     city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Fatboy_Slim%2C_Iris_Festival_2025.jpg',
   },
   {
     name: 'Sofi Tukker',
@@ -273,7 +278,7 @@ const concerts = [
     place: 'Gärdet',
     festival: 'Lollapalooza',
     city: 'Stockholm',
-    img: '',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/9/91/Sofi_Tukker_06_04_2016_-14_%2827454016316%29_%28cropped%29.jpg',
   },
   {
     name: 'Iann Dior',
@@ -282,7 +287,7 @@ const concerts = [
     place: 'Gärdet',
     festival: 'Lollapalooza',
     city: 'Stockholm',
-    img: '',
+    img: 'https://dynamicmedia.livenationinternational.com/Media/q/p/j/f9712910-1258-4048-8ec6-8e0b2fca3e55.jpg',
   },
   {
     name: 'Mumford and Sons',
@@ -291,6 +296,7 @@ const concerts = [
     place: 'Gärdet',
     festival: 'Lollapalooza',
     city: 'Stockholm',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Mumford_%26_Sons%2C_performing_at_Aviemore%2C_Scotland_2015.jpg',
   },
   {
     name: 'Olivia Lobato',
@@ -299,6 +305,7 @@ const concerts = [
     place: 'Slotsskogen',
     festival: 'Way Out West',
     city: 'Göteborg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Olivia_Lobato_Rockbj%C3%B6rnen_2024_%2854%29_%28cropped%29.jpg',
   },
   {
     name: 'Aurora',
@@ -307,6 +314,7 @@ const concerts = [
     place: 'Slotsskogen',
     festival: 'Way Out West',
     city: 'Göteborg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/6/65/AURORA%2C_Ravnedalen_Live_festival%2C_Kristiansand%2C_Norway_%2853867200364%29_%28cropped%29.jpg',
   },
   {
     name: 'Tove Lo',
@@ -315,6 +323,7 @@ const concerts = [
     place: 'Slotsskogen',
     festival: 'Way Out West',
     city: 'Göteborg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/2/26/Tove_Lo_%282%29_By_Daniel_%C3%85hs_Karlsson.jpeg',
   },
   {
     name: 'Blur',
@@ -323,6 +332,7 @@ const concerts = [
     place: 'Slotsskogen',
     festival: 'Way Out West',
     city: 'Göteborg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/1/1f/BlurWembley090723_%28166_of_172%29_colour_change_%28shorter_crop%29.jpg',
   },
   {
     name: 'Tenacious D',
@@ -338,7 +348,7 @@ const concerts = [
     time: '19.00',
     place: 'Göransson Arena',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/f/f5/Ghost_live_in_Utrecht.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Ghost_Rockavaria_2016_%2814_von_14%29.jpg',
   },
   {
     name: 'Iron Maiden',
@@ -354,7 +364,7 @@ const concerts = [
     time: '16.30',
     place: 'Hovet',
     city: 'Stockholm',
-    img: 'https://en.wikipedia.org/wiki/Millencolin#/media/File:Millencolin-2008.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Millencolin-2008.jpg',
   },
   {
     name: 'Weezer',
@@ -373,19 +383,16 @@ const concerts = [
     img: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Green_Day_-_2022154231209_2022-06-03_Rock_am_Ring_-_Sven_-_1D_X_MK_II_-_3537_-_B70I8091.jpg',
   },
   {
-    name: 'Guns n Roses',
+    name: `Guns N' Roses`,
     date: '2025-07-09',
     time: '19.00',
     place: 'Strawberry Arena',
     city: 'Stockholm',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Glasto2023_Guns_%27N%27_Roses_%28sans_Dave_Grohl%29.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/6/68/Guns_n_Roses_Nottingham_2012.JPG',
   },
-];
-
-const upcomingConcerts = [
   {
     name: 'Kendrick Lamar',
-    date: '2025-07-09',
+    date: '2025-08-09',
     time: '19.00',
     place: 'Tele 2 Arena',
     city: 'Stockholm',
@@ -393,5 +400,5 @@ const upcomingConcerts = [
   },
 ];
 
-export { upcomingConcerts, concerts };
+export { concerts };
 export type { ConcertProps };

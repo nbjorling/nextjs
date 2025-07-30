@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import Title from '../components/Title';
 import { ConcertProps, concerts } from '../public/assets/concertData';
 
@@ -45,27 +45,31 @@ const ArtistListItem = ({
     return Math.floor(Math.random() * 255);
   }
 
-  const backgroundColor = `rgb(${getColorValue()},${getColorValue()},${getColorValue()})`;
+  const backgroundColor = useMemo(() => {
+    return `rgb(${getColorValue()},${getColorValue()},${getColorValue()})`;
+  }, [concertData.name]);
 
   return (
     <figure
       style={{
         boxShadow:
           '3px 3px 6px #000, -3px -3px 6px rgb(30 41 59 / var(--tw-bg-opacity))',
-        border: '1px solid rgba(0,0,0,0.25)',
+        border: '1px solid rgba(255,255,255,0.25)',
         backgroundColor: !concertData.img && backgroundColor,
       }}
       className={`${
         active ? 'h-60' : 'h-12'
-      } relative w-full cursor-pointer overflow-hidden rounded-lg filter transition-all duration-300 hover:aspect-video`}
+      } relative w-full cursor-pointer overflow-hidden rounded-lg transition-all duration-300 hover:aspect-video`}
       onClick={onClick}
     >
       <div>
         {concertData.img && (
           <Image
-            width={1000}
-            height={1000}
-            className='w-full'
+            fill
+            quality={80}
+            // width={1000}
+            // height={1000}
+            className='h-full w-full object-cover'
             src={concertData.img}
             alt={concertData.name}
           />
@@ -73,12 +77,18 @@ const ArtistListItem = ({
       </div>
       <figcaption className='absolute inset-0 flex w-full  bg-black bg-opacity-60 px-2 py-1 text-lg font-bold text-white'>
         <div className='flex h-10 w-full justify-between'>
-          <p className='shrink-0 grow self-center text-lg font-bold'>
+          <p className='shrink-0 grow self-center font-bold'>
             {concertData.name}
           </p>
-          <div className='flex flex-col items-end'>
-            <p className='ml-2 flex text-sm'>{concertData.date}</p>
-            <p className='ml-2 flex text-sm'>@ {concertData.place}</p>
+          <div className='mt-1 flex flex-col items-end '>
+            <p className='ml-2 flex '>{concertData.date}</p>
+            <p
+              className={`${
+                active ? 'opacity-100' : 'opacity-0'
+              } ml-2 flex  transition-opacity duration-300`}
+            >
+              @ {concertData.place}
+            </p>
           </div>
         </div>
       </figcaption>
@@ -118,7 +128,7 @@ export default function Concerts() {
     'flex w-full flex-col gap-4 pb-4 mb-4 border-b border-black border-opacity-[0.2] lg:grid lg:grid-cols-3';
 
   return (
-    <main className='w-full  p-4'>
+    <main className='w-full p-4'>
       <>
         <Title size='sm'>Upcoming ({upcomingConcerts.length.toString()})</Title>
         <div className={classes}>
