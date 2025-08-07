@@ -126,66 +126,75 @@ export default function MusicPlayer() {
 
   return (
     <PageLayout>
-      <article className='group relative flex aspect-square  w-full overflow-hidden rounded-2xl border border-orange-500/50 shadow-lg'>
-        <canvas
-          className='absolute inset-0 z-10 h-full w-full  opacity-60'
-          ref={canvasRef}
-        />
-        <Image
-          fill
-          quality={80}
-          alt='Saxophone Dreams'
-          src={'/assets/saxophone_dreams.png'}
-        />
-      </article>
-      <div className='relative z-10 mt-4 flex w-full justify-between rounded-2xl bg-gray-900 p-4 shadow-md'>
-        <div className='flex flex-col'>
-          <p className=' text-orange-500'>Niklas with Ai</p>
-          <p className='text-sm text-white/70'>Saxophone Dreams</p>
-        </div>
-      </div>
-      <div className='relative z-10 mt-4 flex w-full flex-col items-center rounded-2xl bg-gray-900 p-4  shadow-md'>
-        <div className='mb-2 flex w-full justify-between text-sm text-white/80'>
-          <p>{formattedCurrentTime}</p>
-          <p>{formattedDuration}</p>
-        </div>
-        <RangeSlider
-          className='w-full cursor-pointer appearance-none rounded-full bg-[#010518] accent-orange-500 transition-all'
-          type='range'
-          id='progress'
-          name='progress'
-          min='0'
-          max='1000'
-          value={progress}
-          onChange={(e) => {
-            const audioElement = audioRef.current;
-            if (audioElement) {
-              audioElement.currentTime =
-                (e.target.value / 100) * audioElement.duration;
-            }
-          }}
-        />
+      <div className=' h-[calc(100vh-64px)] '>
+        <div className='grid h-full  grid-cols-1 gap-4 p-4 md:grid-cols-2'>
+          <div className='relative flex aspect-square max-h-[400px] w-full max-w-[400px] place-self-center self-end overflow-hidden rounded-2xl border border-orange-500/50 shadow-lg md:place-self-end md:self-start'>
+            <canvas
+              className='absolute inset-0 z-10 aspect-square h-full w-full opacity-60'
+              ref={canvasRef}
+            />
+            <Image
+              className='aspect-square h-full max-h-[400px] w-full max-w-[400px]'
+              fill
+              quality={80}
+              alt='Saxophone Dreams'
+              src={'/assets/saxophone_dreams.png'}
+            />
+          </div>
 
-        <div className='mt-4'>
-          {audioRef.current && isPlaying ? (
-            <button
-              type='button'
-              onClick={handleAudioPause}
-              className='rounded-full bg-[#010518] p-3'
-            >
-              <Pause size={32} />
-            </button>
-          ) : (
-            <button
-              type='button'
-              onClick={handleAudioPlay}
-              className='rounded-full bg-[#010518] p-3'
-            >
-              <Play size={32} />
-            </button>
-          )}
+          <div className='flex h-full w-full flex-col items-center gap-4'>
+            <div className='relative z-10  flex w-full  max-w-[400px] justify-between  rounded-2xl bg-gray-900 p-4 shadow-md md:place-self-start'>
+              <div className='flex flex-col'>
+                <p className=' text-orange-500'>Niklas with Ai</p>
+                <p className='text-sm text-white/70'>Saxophone Dreams</p>
+              </div>
+            </div>
+            <div className='relative z-10 flex w-full  max-w-[400px] flex-col  items-center rounded-2xl bg-gray-900 p-4 shadow-md  md:place-self-start'>
+              <div className='mb-2 flex w-full justify-between text-sm text-white/80'>
+                <p>{formattedCurrentTime}</p>
+                <p>{formattedDuration}</p>
+              </div>
+              <RangeSlider
+                className='w-full cursor-pointer appearance-none rounded-full bg-[#010518] accent-orange-500 transition-all'
+                type='range'
+                id='progress'
+                name='progress'
+                min='0'
+                max='1000'
+                value={progress}
+                onChange={(e) => {
+                  const audioElement = audioRef.current;
+                  if (audioElement) {
+                    audioElement.currentTime =
+                      (e.target.value / 100) * audioElement.duration;
+                  }
+                }}
+              />
+
+              <div className='mt-4'>
+                {audioRef.current && isPlaying ? (
+                  <button
+                    type='button'
+                    onClick={handleAudioPause}
+                    className='rounded-full bg-[#010518] p-3'
+                  >
+                    <Pause size={32} />
+                  </button>
+                ) : (
+                  <button
+                    type='button'
+                    onClick={handleAudioPlay}
+                    className='rounded-full bg-[#010518] p-3'
+                  >
+                    <Play size={32} />
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
       <audio />
     </PageLayout>
   );
