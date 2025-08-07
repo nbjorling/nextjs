@@ -169,6 +169,7 @@ export default function MusicPlayer() {
         <div className='mt-4'>
           {audioRef.current && isPlaying ? (
             <button
+              type='button'
               onClick={handleAudioPause}
               className='rounded-full bg-[#010518] p-3'
             >
@@ -176,6 +177,7 @@ export default function MusicPlayer() {
             </button>
           ) : (
             <button
+              type='button'
               onClick={handleAudioPlay}
               className='rounded-full bg-[#010518] p-3'
             >

@@ -1,7 +1,4 @@
 const RangeSlider = (props) => {
-  const percentage =
-    (100 * (props.value - props.min)) / (props.max - props.min);
-
   return (
     <input
       className={props.className}
