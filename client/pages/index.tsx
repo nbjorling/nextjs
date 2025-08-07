@@ -53,6 +53,12 @@ export const menuItems = [
   //   href: '/projects',
   // },
   {
+    icon: '📻',
+    title: 'Music Player',
+    description: 'Lets beat it up',
+    href: '/musicplayer',
+  },
+  {
     icon: '🔮',
     title: 'Code Pens',
     description: 'Link to useful codepens',
