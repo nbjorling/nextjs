@@ -23,13 +23,14 @@ export default function MusicPlayer() {
   };
 
   const handleAudioPlay = () => {
-    const audioElement = audioRef.current;
-    if (audioElement && audioElement.readyState >= 2) {
-      // Check if the audio element is loaded and ready to play
+    if (!audioRef.current) {
+      audioRef.current = new Audio('/assets/Saxophone_Dreams.mp3');
       audioRef.current.play();
       const audioContext = new AudioContext();
       if (!source.current) {
-        source.current = audioContext.createMediaElementSource(audioElement);
+        source.current = audioContext.createMediaElementSource(
+          audioRef.current
+        );
         const analyser = audioContext.createAnalyser();
         analyserRef.current = analyser;
         source.current.connect(analyser);
@@ -108,10 +109,6 @@ export default function MusicPlayer() {
     }
     return () => clearInterval(interval);
   }, [isPlaying]);
-
-  React.useEffect(() => {
-    audioRef.current = new Audio('/assets/Saxophone_Dreams.mp3');
-  }, []);
 
   const duration = audioRef.current?.duration || 0;
   const formattedDuration = new Date(duration * 1000)
