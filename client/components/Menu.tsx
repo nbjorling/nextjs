@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import * as React from 'react';
 import { menuItems } from '../pages';
+
 function LinkElement({ href, title, toggleMenu, icon }) {
   return (
     <Link href={href} passHref>
@@ -23,15 +24,17 @@ export function Menu() {
   };
 
   return (
-    <div className={`app-menu relative ${isMenuOpen ? 'menu-open' : ''}`}>
-      <div
-        className='relative z-50 cursor-pointer select-none'
+    <>
+      <button
+        type='button'
+        aria-label='Toggle Menu'
+        className='relative z-50  grow cursor-pointer hover:bg-slate-800'
         onClick={() => toggleMenu()}
       >
-        <div className='flex border-b border-slate-900 bg-slate-900 p-2 pl-8 text-white shadow-lg'>
+        <div className='flex border-b border-slate-900  p-2 pl-8 text-white shadow-lg'>
           {isMenuOpen ? '🍔 Close Menu' : '🍔 Menu'}
         </div>
-      </div>
+      </button>
       <div
         ref={menuRef}
         className={`fixed bottom-0 w-full transition-all ease-in-out ${
@@ -63,6 +66,6 @@ export function Menu() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

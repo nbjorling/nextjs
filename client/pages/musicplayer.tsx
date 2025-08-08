@@ -123,7 +123,7 @@ export default function MusicPlayer() {
   return (
     <PageLayout>
       <div className=' h-[calc(100vh-64px)] '>
-        <div className='grid h-full  grid-cols-1 gap-4 p-4 md:grid-cols-2'>
+        <div className='grid h-full grid-cols-1 gap-4 md:grid-cols-2'>
           <div className='relative flex aspect-square max-h-[400px] w-full max-w-[400px] place-self-center self-end overflow-hidden rounded-2xl border border-orange-500/50 shadow-lg md:place-self-end md:self-start'>
             <canvas
               className='absolute inset-0 z-10 aspect-square h-full w-full opacity-60'
