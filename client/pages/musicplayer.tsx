@@ -163,10 +163,9 @@ export default function MusicPlayer() {
                 value={progress}
                 onChange={(e) => {
                   const audioElement = audioRef.current;
-                  console.log('Koca: e.target.value ', e.target.value);
                   if (audioElement) {
                     audioElement.currentTime =
-                      (e.target.value / 1000) * audioElement.duration;
+                      (Number(e.target.value) / 1000) * audioElement.duration;
                   }
                 }}
               />
