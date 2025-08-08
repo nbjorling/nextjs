@@ -2,7 +2,6 @@ import { Pause, Play } from '@phosphor-icons/react';
 import Image from 'next/image';
 import React, { useRef } from 'react';
 import PageLayout from '../components/PageLayout/PageLayout';
-import RangeSlider from '../components/RangeSlider/RangeSlider';
 
 export default function MusicPlayer() {
   const audioRef = React.useRef<HTMLAudioElement | undefined>();
@@ -27,7 +26,7 @@ export default function MusicPlayer() {
     const audioElement = audioRef.current;
     if (audioElement && audioElement.readyState >= 2) {
       // Check if the audio element is loaded and ready to play
-      audioElement.play();
+      audioRef.current.play();
       const audioContext = new AudioContext();
       if (!source.current) {
         source.current = audioContext.createMediaElementSource(audioElement);
@@ -36,7 +35,7 @@ export default function MusicPlayer() {
         source.current.connect(analyser);
         analyser.connect(audioContext.destination);
       }
-      visualizeAudio(); // visualize audio
+      visualizeAudio();
     }
     setIsPlaying(true);
   };
@@ -154,7 +153,7 @@ export default function MusicPlayer() {
                 <p>{formattedCurrentTime}</p>
                 <p>{formattedDuration}</p>
               </div>
-              <RangeSlider
+              <input
                 className='w-full cursor-pointer appearance-none rounded-full bg-[#010518] accent-orange-500 transition-all'
                 type='range'
                 id='progress'
@@ -164,9 +163,10 @@ export default function MusicPlayer() {
                 value={progress}
                 onChange={(e) => {
                   const audioElement = audioRef.current;
+                  console.log('Koca: e.target.value ', e.target.value);
                   if (audioElement) {
                     audioElement.currentTime =
-                      (e.target.value / 100) * audioElement.duration;
+                      (e.target.value / 1000) * audioElement.duration;
                   }
                 }}
               />
